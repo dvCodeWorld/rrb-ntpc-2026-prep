@@ -1,8 +1,12 @@
-# RRB NTPC & Station Master 2026 — Exam Prep & CBT Simulator
+# RRB NTPC & Station Master 2026 — Bilingual Exam Prep & CBT Simulator
 
-A responsive, local-first React + TypeScript + Tailwind CSS preparation suite tailored for **RRB NTPC (CBT-1 & CBT-2)** and **RRB Station Master (Level-6 & CBAT)**.
+A responsive, bilingual (**Hindi + English**), local-first React + TypeScript + Tailwind CSS preparation suite tailored for **RRB NTPC (CBT-1 & CBT-2)** and **RRB Station Master (Level-6 & CBAT)**.
+
+- **Live App (Phone & Desktop):** https://dvcodeworld.github.io/rrb-ntpc-2026-prep/
+- **Repository:** https://github.com/dvCodeWorld/rrb-ntpc-2026-prep
 
 ## Features
+- **Bilingual Exam Interface (`हिं + EN` / `हिंदी` / `EN`):** Switch languages anytime in the navbar or mid-exam without losing selected answers.
 - **Official 2026 Syllabus Categorization:** General Awareness, Mathematics, General Intelligence & Reasoning, and Station Master CBAT across 45 official sub-categories.
 - **Weighted Mock Generators:** CBT-1 (`40:30:30`, `-1/3` negative marking), CBT-2 (`50:35:35`, `-1/3` negative marking), Station Master CBAT Battery (`0` negative marking), and Custom Topic Drill Builder.
 - **TCS iON–Style CBT Simulator:** Countdown timer, section switcher, 5-state Question Palette (`Not Visited`, `Not Answered`, `Answered`, `Marked`, `Answered & Marked`), and support for both **MCQ** and **Fill-in-the-Blank** questions.

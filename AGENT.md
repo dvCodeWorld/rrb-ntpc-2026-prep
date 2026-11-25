@@ -1,8 +1,11 @@
 # AGENT.md — Project Memory & Engineering Guide
 
 > **Canonical AI Agent Memory** for **RRB NTPC & RRB Station Master 2026** Exam Prep & CBT Simulator.  
-> **Last Verified Against Live Web Sources:** `2026-11-25`  
-> **Workspace Root:** `C:\Users\divya\.gemini\antigravity\scratch\rrb-ntpc-2026-prep`
+> **Last Verified:** `2026-11-25`  
+> **Workspace Root:** `C:\Users\divya\.gemini\antigravity\scratch\rrb-ntpc-2026-prep`  
+> **Live Production URL:** https://dvcodeworld.github.io/rrb-ntpc-2026-prep/  
+> **GitHub Repository:** https://github.com/dvCodeWorld/rrb-ntpc-2026-prep  
+> **Auto-Deploy:** GitHub Actions (`.github/workflows/deploy.yml`) on every push to `main` (`vite.config.ts` uses `base: './'`).
 
 ---
 
@@ -10,10 +13,10 @@
 This is a local-first, production-grade **React + TypeScript + Tailwind CSS** web application for **RRB NTPC (CEN 06/2026 / Classic CBT-1 & CBT-2)** and **RRB Station Master (Level-6, CEN 08/2026 & CBAT)** preparation.
 
 Core capabilities:
-1. Structured local question bank in [`src/data/questions.json`](src/data/questions.json) supporting both `mcq` and `fill_in_blank` items.
+1. Structured bilingual (Hindi + English) local question bank in [`src/data/questions.json`](src/data/questions.json) supporting both `mcq` and `fill_in_blank` items (`questionHi`, `optionsHi`, `correctAnswerHi`, `explanationHi`).
 2. Official 4-category / 45-sub-category RRB syllabus taxonomy in [`src/data/syllabus.ts`](src/data/syllabus.ts).
-3. Client-side persistence in `localStorage` (`rrb_ntpc_2026_prep_v1`) for seen question IDs, bookmarks, custom imported JSON questions, test history, and candidate settings.
-4. Authentic TCS iON–style CBT Exam Simulator with countdown timer, section switcher, 5-state Question Palette, and `-1/3` negative marking (`0` for CBAT/Study mode).
+3. Client-side persistence in `localStorage` (`rrb_ntpc_2026_prep_v1`) for seen question IDs, bookmarks, custom imported JSON questions, test history, candidate settings, and language preference (`'both' | 'hi' | 'en'`, defaulting to `'both'`).
+4. Authentic TCS iON–style bilingual CBT Exam Simulator with live `हिं+EN` / `हिंदी` / `EN` switcher, countdown timer, section switcher, 5-state Question Palette, and `-1/3` negative marking (`0` for CBAT/Study mode).
 5. Interactive Station Master CBAT Psycho Lab (Track/Station Memory, Sum of Odd Numbers, Spatial Shortest Route).
 6. Client-side **PDF Scorecard & Complete Answer Key** generator using `jspdf` + `jspdf-autotable`.
 
@@ -38,9 +41,18 @@ Run after any code, syllabus, or `questions.json` edit:
 ```powershell
 npm run build
 npm run lint
-node -e "const qs = require('./src/data/questions.json'); const ids = new Set(qs.map(q=>q.id)); const badMcq = qs.filter(q=>q.type==='mcq' && !q.options.includes(q.correctAnswer)); const badBlank = qs.filter(q=>q.type==='fill_in_blank' && q.options.length !== 0); console.log({total: qs.length, uniqueIds: ids.size, badMcq: badMcq.map(q=>q.id), badBlank: badBlank.map(q=>q.id)});"
+node -e "const qs = require('./src/data/questions.json'); const ids = new Set(qs.map(q=>q.id)); const badMcq = qs.filter(q=>q.type==='mcq' && !q.options.includes(q.correctAnswer)); const badBlank = qs.filter(q=>q.type==='fill_in_blank' && q.options.length !== 0); const badHi = qs.filter(q=>!q.questionHi || !q.explanationHi || (q.type==='mcq' && (!Array.isArray(q.optionsHi) || q.optionsHi.length !== q.options.length))); console.log({total: qs.length, uniqueIds: ids.size, badMcq: badMcq.map(q=>q.id), badBlank: badBlank.map(q=>q.id), badHi: badHi.map(q=>q.id)});"
 ```
-Expected baseline (as of `2026-11-25`): `npm run build` exits 0, `npm run lint` reports `0 warnings and 0 errors`, and `questions.json` reports `{ total: 86, uniqueIds: 86, badMcq: [], badBlank: [] }`.
+Expected baseline (as of `2026-11-25`): `npm run build` exits 0, `npm run lint` reports `0 warnings and 0 errors`, and `questions.json` reports `{ total: 86, uniqueIds: 86, badMcq: [], badBlank: [], badHi: [] }`.
+
+### Deployment Commands
+Pushing to `main` automatically deploys to GitHub Pages via `.github/workflows/deploy.yml`:
+```powershell
+git add .
+git commit -m "chore: update exam data"
+git push origin main
+gh run list -L 3
+```
 
 ---
 

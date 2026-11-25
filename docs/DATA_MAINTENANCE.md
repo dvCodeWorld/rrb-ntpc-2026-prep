@@ -39,9 +39,13 @@ Every entry in [`src/data/questions.json`](../src/data/questions.json) MUST conf
   "subCategory": "Current Affairs (National & International)",
   "examTag": ["CBT-1", "CBT-2", "Station Master"],
   "question": "Question stem goes here?",
+  "questionHi": "यहाँ हिंदी प्रश्न लिखें?",
   "options": ["Option A", "Option B", "Option C", "Option D"],
+  "optionsHi": ["विकल्प A", "विकल्प B", "विकल्प C", "विकल्प D"],
   "correctAnswer": "Option A",
-  "explanation": "Concise, accurate explanation."
+  "correctAnswerHi": "विकल्प A",
+  "explanation": "Concise, accurate explanation.",
+  "explanationHi": "संक्षिप्त और सटीक हिंदी व्याख्या।"
 }
 ```
 

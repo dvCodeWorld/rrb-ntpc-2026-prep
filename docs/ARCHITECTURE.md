@@ -34,16 +34,20 @@ App (ProgressStore in localStorage)
   - `category: ExamCategory` (one of the 4 official categories)
   - `subCategory: string`
   - `examTag: ExamTag[]` (`'CBT-1' | 'CBT-2' | 'Station Master'`)
-  - `question: string`
-  - `options: string[]` (`>= 2` strings for `mcq`; `[]` for `fill_in_blank`)
-  - `correctAnswer: string`
-  - `explanation: string`
+  - `question: string` and optional `questionHi?: string`
+  - `options: string[]` (`>= 2` strings for `mcq`; `[]` for `fill_in_blank`) and optional `optionsHi?: string[]` (same length & order as `options`)
+  - `correctAnswer: string` and optional `correctAnswerHi?: string`
+  - `explanation: string` and optional `explanationHi?: string`
 - **`ProgressStore`** (persisted under `localStorage` key `rrb_ntpc_2026_prep_v1`):
   - `seenQuestionIds: string[]` — IDs of questions visited (not `not_visited`) during submitted exams/practice.
   - `bookmarkedIds: string[]` — User-saved question IDs.
   - `customQuestions: Question[]` — Validated user-imported questions merged over `BASE_QUESTIONS` by ID.
   - `testHistory: TestAttempt[]` — Capped at the 50 most recent attempts (`appendTestAttempt`).
-  - `settings: UserSettings` — `{ candidateName, targetExam, prioritizeUnseen }`.
+  - `settings: UserSettings` — `{ candidateName, targetExam, prioritizeUnseen, language }` (`language` defaults to `'both'`).
+
+### Deployment Architecture
+- `vite.config.ts` sets `base: './'` for portable static hosting.
+- `.github/workflows/deploy.yml` builds (`npm ci && npm run build`) and deploys `dist/` to GitHub Pages (`https://dvcodeworld.github.io/rrb-ntpc-2026-prep/`) on every push to `main`.
 
 ---
 

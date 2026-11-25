@@ -4,6 +4,7 @@ import { DashboardView } from './components/DashboardView';
 import { ExamSimulator } from './components/ExamSimulator';
 import { HistoryView } from './components/HistoryView';
 import { MockBuilderView } from './components/MockBuilderView';
+import { PyqView } from './components/PyqView';
 import { type ActiveTab, Navbar } from './components/Navbar';
 import { QuestionBankView } from './components/QuestionBankView';
 import { TestResultView } from './components/TestResultView';
@@ -33,6 +34,8 @@ export function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
   const [activeTest, setActiveTest] = useState<TestConfig | null>(null);
   const [viewingAttempt, setViewingAttempt] = useState<TestAttempt | null>(null);
+  // Previous-year questions loaded on demand (kept for the session so results can show images & sources)
+  const [pyqQuestions, setPyqQuestions] = useState<Map<string, Question>>(() => new Map());
 
   useEffect(() => {
     saveProgressStore(store);
@@ -44,10 +47,10 @@ export function App() {
   );
 
   const questionMap = useMemo(() => {
-    const map = new Map<string, Question>();
+    const map = new Map<string, Question>(pyqQuestions);
     for (const q of allQuestions) map.set(q.id, q);
     return map;
-  }, [allQuestions]);
+  }, [allQuestions, pyqQuestions]);
 
   const activeTestQuestions = useMemo(() => {
     if (!activeTest) return [];
@@ -128,6 +131,17 @@ export function App() {
     });
   };
 
+  const handleStartPyqTest = (config: TestConfig, questions: Question[]) => {
+    if (questions.length === 0) return;
+    setPyqQuestions((prev) => {
+      const next = new Map(prev);
+      for (const q of questions) next.set(q.id, q);
+      return next;
+    });
+    setViewingAttempt(null);
+    setActiveTest(config);
+  };
+
   const handleTestComplete = (attempt: TestAttempt, seenQuestionIds: string[]) => {
     setStore((prev) => ({
       ...prev,
@@ -206,6 +220,15 @@ export function App() {
             onStartPreset={(preset) => handleStartPreset(preset)}
             onPracticeCategory={handlePracticeCategory}
             onNavigate={(tab) => setActiveTab(tab)}
+          />
+        ) : activeTab === 'pyq' ? (
+          <PyqView
+            seenIds={store.seenQuestionIds}
+            bookmarkedIds={store.bookmarkedIds}
+            language={store.settings.language}
+            prioritizeUnseen={store.settings.prioritizeUnseen}
+            onStartTest={handleStartPyqTest}
+            onToggleBookmark={handleToggleBookmark}
           />
         ) : activeTab === 'mock' ? (
           <MockBuilderView

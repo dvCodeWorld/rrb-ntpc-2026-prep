@@ -5,6 +5,7 @@ import {
   BrainCircuit,
   CheckCircle2,
   ClipboardList,
+  FileText,
   Flame,
   Play,
   Target,
@@ -144,6 +145,31 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Previous Year Papers entry */}
+      <button
+        type="button"
+        onClick={() => onNavigate('pyq')}
+        className="flex w-full flex-col gap-3 rounded-2xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-sky-50 p-5 text-left shadow-xs transition hover:border-indigo-400 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div className="flex items-start gap-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white">
+            <FileText className="h-5 w-5" />
+          </div>
+          <div>
+            <h2 className="text-base font-bold text-slate-900">
+              Previous Year Papers — 45,000+ real questions (2016–2026)
+            </h2>
+            <p className="mt-0.5 text-xs leading-relaxed text-slate-600 sm:text-sm">
+              Year-wise mocks, original shift papers, questions asked again and again, with the
+              exact exam date &amp; shift for every question.
+            </p>
+          </div>
+        </div>
+        <span className="inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-indigo-600 px-4 text-sm font-bold text-white">
+          Open PYQs <ArrowRight className="h-4 w-4" />
+        </span>
+      </button>
 
       {/* KPI Metrics */}
       <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">

@@ -4,6 +4,7 @@ Use this guide whenever:
 - RRB publishes a new CEN notification, exam date, vacancy update, or pattern change.
 - You want to add, edit, or audit questions in [`src/data/questions.json`](../src/data/questions.json).
 - You want to add a new preset exam track (such as **CEN 08/2026 Standalone Station Master**) to the simulator.
+- You have new previous-year PDF papers to add to the **PYQ bank** → see "Rebuilding the PYQ bank" at the end and [`PYQ_BANK.md`](PYQ_BANK.md).
 
 ---
 
@@ -83,3 +84,26 @@ node -e "const qs = require('./src/data/questions.json'); const ids = new Set(qs
 ```
 
 All error arrays (`badMcq`, `badBlank`, `badCat`) must be `[]`, `uniqueIds` must equal `total`, `npm run build` must exit `0`, and `npm run lint` must report `0 warnings and 0 errors`.
+
+---
+
+## Rebuilding the PYQ bank (`public/pyq/`)
+
+Run on Windows (the extractor uses the built-in Windows OCR engine; Python 3 with `pymupdf`, `numpy`,
+`Pillow` and the `winrt-*` OCR packages):
+
+```powershell
+# 1. Extract every PDF in a folder (per-file results are cached, so re-runs resume)
+$env:IMG_ROOT = "<pdf folder>"; $env:NPROC = "8"
+python -P scripts/extraction/extract.py "<pdf folder>" "<pdf folder>/_extraction/out"
+# 2. Merge, validate and write questions.json + skipped_questions.* + extraction_report.txt
+python -P scripts/extraction/merge.py "<pdf folder>" "<pdf folder>/_extraction/out" "<pdf folder>"
+# 3. Build the app data (dedupe, sections, sittings, chunks, images)
+python -P scripts/build_pyq.py "<pdf folder>"
+# 4. Verify, then build/lint as usual
+node scripts/check_pyq.mjs
+npm run build
+npm run lint
+```
+
+Then update the numbers in [`PYQ_BANK.md`](PYQ_BANK.md) and `AGENT.md` from `public/pyq/build_report.json`.

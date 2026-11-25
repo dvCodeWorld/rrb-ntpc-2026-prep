@@ -1,7 +1,7 @@
 # AGENT.md — Project Memory & Engineering Guide
 
 > **Canonical AI Agent Memory** for **RRB NTPC & RRB Station Master 2026** Exam Prep & CBT Simulator.  
-> **Last Verified:** `2026-11-25`  
+> **Last Verified:** `2026-11-26`  
 > **Workspace Root:** `D:\f2\Personal Project\rrb-ntpc-2026-prep`  
 > **Live Production URL:** https://dvcodeworld.github.io/rrb-ntpc-2026-prep/  
 > **GitHub Repository:** https://github.com/dvCodeWorld/rrb-ntpc-2026-prep  
@@ -18,7 +18,8 @@ Core capabilities:
 3. Client-side persistence in `localStorage` (`rrb_ntpc_2026_prep_v1`) for seen question IDs, bookmarks, custom imported JSON questions, test history, candidate settings, and language preference (`'both' | 'hi' | 'en'`, defaulting to `'both'`).
 4. Authentic TCS iON–style bilingual CBT Exam Simulator with live `हिं+EN` / `हिंदी` / `EN` switcher, countdown timer, section switcher, 5-state Question Palette, and `-1/3` negative marking (`0` for CBAT/Study mode).
 5. Interactive Station Master CBAT Psycho Lab (Track/Station Memory, Sum of Odd Numbers, Spatial Shortest Route).
-6. Client-side **PDF Scorecard & Complete Answer Key** generator using `jspdf` + `jspdf-autotable`.
+6. Client-side **PDF Scorecard & Complete Answer Key** generator using `jspdf` + `jspdf-autotable` (lazy-loaded; Hindi/₹ text is drawn via canvas so it renders correctly).
+7. **Previous Year Papers (PYQ) bank** in `public/pyq/` — 45,268 unique real RRB NTPC questions (2016–2026) from 626 papers, each tagged with every exam shift it was asked in; year-wise mocks, original-paper replays, most-repeated lists and search. See [`docs/PYQ_BANK.md`](docs/PYQ_BANK.md).
 
 ---
 
@@ -45,6 +46,8 @@ node -e "const qs = require('./src/data/questions.json'); const ids = new Set(qs
 ```
 Expected baseline (as of `2026-11-25`): `npm run build` exits 0, `npm run lint` reports `0 warnings and 0 errors`, and `questions.json` reports `{ total: 86, uniqueIds: 86, badMcq: [], badBlank: [], badHi: [] }`.
 
+PYQ bank check (as of `2026-11-26`): `node scripts/check_pyq.mjs` reports `problems: 0` with `questions: 45268, uniqueIds: 45268, sittings: 313` (see [`docs/PYQ_BANK.md`](docs/PYQ_BANK.md)).
+
 ### Deployment Commands
 Pushing to `main` automatically deploys to GitHub Pages via `.github/workflows/deploy.yml`:
 ```powershell
@@ -63,6 +66,13 @@ gh run list -L 3
 | [`docs/EXAM_SPEC_2026.md`](docs/EXAM_SPEC_2026.md) | Web-verified 2026 RRB NTPC & Station Master exam rules, dates, CBAT T-score 42, A-2 medical, and question audit |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Module architecture, `localStorage` schema, scoring formulas, and PDF export pipeline |
 | [`docs/DATA_MAINTENANCE.md`](docs/DATA_MAINTENANCE.md) | Step-by-step instructions to update exam specs, syllabus, and `questions.json` |
+| [`docs/PYQ_BANK.md`](docs/PYQ_BANK.md) | Previous-Year-Question bank: file formats, build pipeline, dedup/section rules, app integration |
+| [`public/pyq/`](public/pyq) | PYQ data: `index.json`, `c/*.json` question chunks, `img/` (built by `scripts/build_pyq.py`) |
+| [`scripts/`](scripts) | `extraction/` (PDF → questions.json), `build_pyq.py` (→ `public/pyq`), `check_pyq.mjs` (integrity) |
+| [`src/utils/pyq.ts`](src/utils/pyq.ts) | PYQ loading (lazy chunks), filters, sitting labels, mock selection |
+| [`src/components/PyqView.tsx`](src/components/PyqView.tsx) | Previous Papers tab (mocks, original papers, most repeated, browse & search) |
+| [`src/components/QuestionExtras.tsx`](src/components/QuestionExtras.tsx) | Shared question images, passage, "asked in" chips, OCR note |
+| [`src/utils/pdfText.ts`](src/utils/pdfText.ts) / [`pdfLazy.ts`](src/utils/pdfLazy.ts) | Canvas text for Hindi in PDFs / lazy-loading of the PDF engine |
 | [`src/types/exam.ts`](src/types/exam.ts) | Canonical TypeScript interfaces (`Question`, `TestConfig`, `TestAttempt`, `ProgressStore`) |
 | [`src/data/syllabus.ts`](src/data/syllabus.ts) | 4 official categories, 45 sub-categories, `EXAM_PATTERNS`, and `matchesSubCategory()` |
 | [`src/data/questions.json`](src/data/questions.json) | Master local question bank (86 verified questions: 30 GA, 25 Math, 20 Reasoning, 11 CBAT) |
@@ -70,7 +80,7 @@ gh run list -L 3
 | [`src/utils/scoring.ts`](src/utils/scoring.ts) | Preset/custom mock generators, unseen prioritization, answer normalization, `-1/3` scoring |
 | [`src/utils/pdfExport.ts`](src/utils/pdfExport.ts) | Client-side PDF scorecard & answer key export |
 | [`src/App.tsx`](src/App.tsx) | Root state container, view router, fullscreen CBT Simulator switch |
-| [`src/components/`](src/components) | `Navbar`, `DashboardView`, `MockBuilderView`, `ExamSimulator`, `TestResultView`, `QuestionBankView`, `CbatLabView`, `HistoryView` |
+| [`src/components/`](src/components) | `Navbar`, `DashboardView`, `PyqView`, `MockBuilderView`, `ExamSimulator`, `TestResultView`, `QuestionBankView`, `CbatLabView`, `HistoryView` |
 
 ---
 

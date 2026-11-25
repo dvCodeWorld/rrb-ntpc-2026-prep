@@ -48,10 +48,17 @@ export function loadProgressStore(): ProgressStore {
 }
 
 export function saveProgressStore(store: ProgressStore): void {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
-  } catch {
-    // Ignore quota errors cleanly
+  // Full 100-question PYQ attempts (with Hindi text) are large; if the ~5 MB localStorage quota is
+  // hit, keep everything else and drop the oldest test attempts until it fits.
+  let history = store.testHistory;
+  for (;;) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...store, testHistory: history }));
+      return;
+    } catch {
+      if (history.length === 0) return; // nothing more we can trim
+      history = history.slice(0, Math.floor(history.length * 0.75));
+    }
   }
 }
 

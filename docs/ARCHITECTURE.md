@@ -1,7 +1,7 @@
 # Architecture & Technical Memory (`docs/ARCHITECTURE.md`)
 
 > **Applies to:** `rrb-ntpc-2026-prep`  
-> **Last Verified:** `2026-11-25`
+> **Last Verified:** `2026-11-26`
 
 ---
 
@@ -18,6 +18,7 @@ App (ProgressStore in localStorage)
  └── activeTest === null ──► Standard Layout (<Navbar /> + main + footer)
                                 ├── viewingAttempt !== null ──► <TestResultView />
                                 ├── tab: "dashboard" ──► <DashboardView />
+                                ├── tab: "pyq"       ──► <PyqView />  (loads public/pyq lazily; starts tests via onStartTest)
                                 ├── tab: "mock"      ──► <MockBuilderView />
                                 ├── tab: "bank"      ──► <QuestionBankView />
                                 ├── tab: "cbat"      ──► <CbatLabView />
@@ -38,11 +39,14 @@ App (ProgressStore in localStorage)
   - `options: string[]` (`>= 2` strings for `mcq`; `[]` for `fill_in_blank`) and optional `optionsHi?: string[]` (same length & order as `options`)
   - `correctAnswer: string` and optional `correctAnswerHi?: string`
   - `explanation: string` and optional `explanationHi?: string`
+  - Optional (PYQ): `images?`, `optionImages?` (per option), `passage?`, `passageImages?`, `source?: QuestionSource` (`repeatCount`, `askedIn` labels, `years`, `ocr`, `sectionInferred`, `note`)
+- **`TestMode`** adds `'pyq_mock' | 'pyq_paper'`; `QuestionAttemptDetail.askedIn?` keeps PYQ exam shifts with each attempt.
+- **Previous Year Questions** are not in `questions.json`; see [`PYQ_BANK.md`](PYQ_BANK.md). `App.tsx` keeps loaded PYQs in session state `pyqQuestions` and merges them into `questionMap`.
 - **`ProgressStore`** (persisted under `localStorage` key `rrb_ntpc_2026_prep_v1`):
   - `seenQuestionIds: string[]` — IDs of questions visited (not `not_visited`) during submitted exams/practice.
   - `bookmarkedIds: string[]` — User-saved question IDs.
   - `customQuestions: Question[]` — Validated user-imported questions merged over `BASE_QUESTIONS` by ID.
-  - `testHistory: TestAttempt[]` — Capped at the 50 most recent attempts (`appendTestAttempt`).
+  - `testHistory: TestAttempt[]` — Capped at the 50 most recent attempts (`appendTestAttempt`). If the ~5 MB `localStorage` quota is hit, `saveProgressStore` drops the oldest attempts until the store fits.
   - `settings: UserSettings` — `{ candidateName, targetExam, prioritizeUnseen, language }` (`language` defaults to `'both'`).
 
 ### Deployment Architecture
@@ -79,7 +83,7 @@ App (ProgressStore in localStorage)
 
 ## 4. Client-Side PDF Export Pipeline ([`src/utils/pdfExport.ts`](../src/utils/pdfExport.ts))
 
-`exportAttemptToPdf(attempt, candidateName)` builds an A4 portrait PDF entirely in the browser:
+`exportAttemptToPdf(attempt, candidateName)` builds an A4 portrait PDF entirely in the browser. It is loaded on demand through [`pdfLazy.ts`](../src/utils/pdfLazy.ts) (`downloadAttemptPdf`) so the ~430 kB PDF engine is not part of the initial bundle. Answer-key cells containing non-Latin-1 text (Hindi, ₹, √) are drawn on a canvas by [`pdfText.ts`](../src/utils/pdfText.ts) and embedded as JPEG images, because jsPDF's built-in fonts cannot shape Devanagari. PYQ rows also list the exam shifts the question was asked in:
 1. Dark slate/indigo header banner with candidate name and formatted `IN` timestamp.
 2. 4-column KPI summary box (`Net Score`, `Accuracy`, `Negative Penalty`, `Time & Attempt`).
 3. Section-wise performance table via `autoTable(doc, ...)`.

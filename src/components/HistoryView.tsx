@@ -8,7 +8,7 @@ import {
   Trophy,
 } from 'lucide-react';
 import type { TestAttempt } from '../types/exam';
-import { exportAttemptToPdf } from '../utils/pdfExport';
+import { downloadAttemptPdf } from '../utils/pdfLazy';
 import { formatDuration } from '../utils/scoring';
 
 interface HistoryViewProps {
@@ -117,7 +117,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({
                 </button>
                 <button
                   type="button"
-                  onClick={() => exportAttemptToPdf(attempt, candidateName)}
+                  onClick={() => void downloadAttemptPdf(attempt, candidateName)}
                   className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-3.5 py-2 text-xs font-bold text-white hover:bg-indigo-700"
                 >
                   <Download className="h-3.5 w-3.5" />

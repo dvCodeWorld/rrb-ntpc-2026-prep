@@ -10,6 +10,21 @@ export type ExamCategory =
 
 export type ExamTag = 'CBT-1' | 'CBT-2' | 'Station Master';
 
+/** Where a previous-year question (PYQ) was asked, as read from the original RRB papers. */
+export interface QuestionSource {
+  /** Number of distinct exam sittings (date + shift) this question appeared in. */
+  repeatCount: number;
+  /** Human-readable exam sittings, e.g. "CBT-1 · 11 Jan 2021 · Shift 2 (3:00 PM)". */
+  askedIn: string[];
+  years: number[];
+  /** Text was read by OCR from an image/scan; compare with the image if something looks off. */
+  ocr?: boolean;
+  /** Section was inferred by the text classifier (the paper did not label it). */
+  sectionInferred?: boolean;
+  /** Note printed in the source paper (e.g. question dropped by RRB). */
+  note?: string;
+}
+
 export interface Question {
   id: string;
   type: QuestionType;
@@ -24,6 +39,15 @@ export interface Question {
   correctAnswerHi?: string;
   explanation: string;
   explanationHi?: string;
+  /** Diagram / formula / scan images that belong to the question (URLs). */
+  images?: string[];
+  /** One image list per option (same order as options). */
+  optionImages?: string[][];
+  /** Shared passage / table text shown above the question (comprehension sets). */
+  passage?: string;
+  passageImages?: string[];
+  /** Present for previous-year questions. */
+  source?: QuestionSource;
 }
 
 export type QuestionVisitStatus =
@@ -45,7 +69,9 @@ export type TestMode =
   | 'cbt2_mock'
   | 'cbat_mock'
   | 'custom_mock'
-  | 'practice';
+  | 'practice'
+  | 'pyq_mock'
+  | 'pyq_paper';
 
 export interface TestConfig {
   id: string;
@@ -83,6 +109,8 @@ export interface QuestionAttemptDetail {
   isAttempted: boolean;
   explanation: string;
   timeSpentSeconds: number;
+  /** PYQ only: exam sittings this question was asked in. */
+  askedIn?: string[];
 }
 
 export interface TestAttempt {

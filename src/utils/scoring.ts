@@ -306,6 +306,7 @@ export function evaluateTestAttempt(
       isAttempted,
       explanation: q.explanation,
       timeSpentSeconds: resp?.timeSpentSeconds ?? 0,
+      ...(q.source ? { askedIn: q.source.askedIn } : {}),
     };
   });
 

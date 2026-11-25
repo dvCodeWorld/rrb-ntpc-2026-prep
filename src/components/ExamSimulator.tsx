@@ -25,6 +25,7 @@ import type {
   TestConfig,
 } from '../types/exam';
 import { evaluateTestAttempt, formatDuration, isAnswerCorrect } from '../utils/scoring';
+import { AskedInChips, ImageList, PassageBlock, SourceNotes } from './QuestionExtras';
 
 interface ExamSimulatorProps {
   config: TestConfig;
@@ -340,19 +341,28 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
   return (
     <div className="flex min-h-screen flex-col bg-slate-100">
       {/* Top CBT Header */}
-      <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-900 px-4 py-3 text-white shadow-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3">
-          <div className="min-w-0">
-            <h1 className="truncate text-sm font-bold sm:text-base">{config.title}</h1>
-            <p className="text-[11px] text-slate-400">
-              Q {currentIndex + 1} of {questions.length} •{' '}
-              {config.negativeMarking > 0
-                ? 'Marking: +1.00 / -0.33'
-                : 'No Negative Marking'}
-            </p>
+      <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-900 px-3 py-2.5 text-white shadow-sm sm:px-4 sm:py-3">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+          <div className="flex min-w-0 items-center justify-between gap-2">
+            <div className="min-w-0">
+              <h1 className="truncate text-sm font-bold sm:text-base">{config.title}</h1>
+              <p className="truncate text-[11px] text-slate-400">
+                Q {currentIndex + 1} of {questions.length} •{' '}
+                {config.negativeMarking > 0
+                  ? 'Marking: +1.00 / -0.33'
+                  : 'No Negative Marking'}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={onCancel}
+              className="shrink-0 rounded-lg border border-slate-700 px-2.5 py-1.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 sm:hidden"
+            >
+              Exit
+            </button>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center justify-between gap-2 sm:justify-end sm:gap-3">
             {/* Bilingual Language Switcher */}
             <div className="inline-flex rounded-lg border border-slate-700 bg-slate-800 p-0.5 text-[11px] font-bold">
               {(
@@ -400,7 +410,7 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
             <button
               type="button"
               onClick={onCancel}
-              className="rounded-lg border border-slate-700 px-2.5 py-1.5 text-xs font-semibold text-slate-300 hover:bg-slate-800"
+              className="hidden rounded-lg border border-slate-700 px-2.5 py-1.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 sm:inline-block"
             >
               Exit
             </button>
@@ -485,6 +495,17 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
               </button>
             </div>
 
+            {currentQuestion.source && (
+              <div className="mb-4">
+                <AskedInChips key={currentQuestion.id} source={currentQuestion.source} />
+              </div>
+            )}
+
+            <PassageBlock
+              passage={currentQuestion.passage}
+              images={currentQuestion.passageImages}
+            />
+
             {/* Question Stem */}
             <div className="space-y-2">
               {(language === 'hi' || language === 'both') && currentQuestion.questionHi && (
@@ -503,6 +524,11 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
                   {currentQuestion.question}
                 </p>
               )}
+              <ImageList srcs={currentQuestion.images} alt="Question figure" />
+              <SourceNotes
+                source={currentQuestion.source}
+                hasImage={Boolean(currentQuestion.images?.length)}
+              />
             </div>
 
             {/* Input Area */}
@@ -550,6 +576,11 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
                               {opt}
                             </span>
                           )}
+                          <ImageList
+                            srcs={currentQuestion.optionImages?.[i]}
+                            alt={`Option ${letter}`}
+                            link={false}
+                          />
                         </span>
                       </button>
                     );

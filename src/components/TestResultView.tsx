@@ -9,8 +9,9 @@ import {
   XCircle,
 } from 'lucide-react';
 import type { ExamLanguage, Question, TestAttempt } from '../types/exam';
-import { exportAttemptToPdf } from '../utils/pdfExport';
+import { downloadAttemptPdf } from '../utils/pdfLazy';
 import { formatDuration } from '../utils/scoring';
+import { AskedInChips, ImageList } from './QuestionExtras';
 
 interface TestResultViewProps {
   attempt: TestAttempt;
@@ -59,7 +60,7 @@ export const TestResultView: React.FC<TestResultViewProps> = ({
 
         <button
           type="button"
-          onClick={() => exportAttemptToPdf(attempt, candidateName)}
+          onClick={() => void downloadAttemptPdf(attempt, candidateName)}
           className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-indigo-700"
         >
           <Download className="h-4 w-4" />
@@ -238,6 +239,15 @@ export const TestResultView: React.FC<TestResultViewProps> = ({
         <div className="space-y-3">
           {filteredDetails.map((item, idx) => {
             const fullQ = questionMap.get(item.questionId);
+            const source =
+              fullQ?.source ??
+              (item.askedIn
+                ? { repeatCount: item.askedIn.length, askedIn: item.askedIn, years: [] }
+                : undefined);
+            const optionImage = (answer: string) => {
+              const i = item.options.indexOf(answer);
+              return i >= 0 ? fullQ?.optionImages?.[i] : undefined;
+            };
             return (
               <div
                 key={`${item.questionId}-${idx}`}
@@ -285,6 +295,12 @@ export const TestResultView: React.FC<TestResultViewProps> = ({
                       {item.question}
                     </p>
                   )}
+                  <ImageList srcs={fullQ?.images} alt="Question figure" />
+                  {source && (
+                    <div className="pt-1">
+                      <AskedInChips source={source} />
+                    </div>
+                  )}
                 </div>
 
                 <div className="mt-3 grid gap-2 text-xs sm:grid-cols-2">
@@ -301,6 +317,9 @@ export const TestResultView: React.FC<TestResultViewProps> = ({
                     >
                       {item.isAttempted ? item.userAnswer : 'Not Attempted'}
                     </span>
+                    {item.isAttempted && (
+                      <ImageList srcs={optionImage(item.userAnswer)} alt="Your answer" small />
+                    )}
                   </div>
                   <div className="rounded-lg bg-emerald-50/60 px-3 py-2">
                     <span className="font-semibold text-emerald-800">Correct Answer: </span>
@@ -313,6 +332,7 @@ export const TestResultView: React.FC<TestResultViewProps> = ({
                         fullQ.correctAnswerHi !== item.correctAnswer &&
                         ` (${item.correctAnswer})`}
                     </span>
+                    <ImageList srcs={optionImage(item.correctAnswer)} alt="Correct answer" small />
                   </div>
                 </div>
 

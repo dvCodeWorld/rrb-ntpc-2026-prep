@@ -1,6 +1,7 @@
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import type { TestAttempt } from '../types/exam';
+import { needsRaster, rasterText, type RasterText, toPdfText } from './pdfText';
 import { formatDuration } from './scoring';
 
 export function exportAttemptToPdf(attempt: TestAttempt, candidateName: string): void {
@@ -38,7 +39,7 @@ export function exportAttemptToPdf(attempt: TestAttempt, candidateName: string):
   doc.setTextColor(15, 23, 42);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13);
-  doc.text(attempt.title, 14, 46);
+  doc.text(toPdfText(attempt.title), 14, 46);
 
   // KPI summary grid
   doc.setFillColor(248, 250, 252);
@@ -133,24 +134,40 @@ export function exportAttemptToPdf(attempt: TestAttempt, candidateName: string):
   doc.setTextColor(15, 23, 42);
   doc.text('Complete Answer Key & Explanations', 14, lastTableY + 11);
 
+  // Cells whose text has Hindi / ₹ etc. are drawn as canvas images: jsPDF's built-in fonts cannot
+  // shape Devanagari, while the browser canvas can.
+  const COL_WIDTHS: Record<number, number> = { 2: 78, 3: 24, 4: 26 };
+  const CELL_PAD = 2.5;
+  const rasterCells = new Map<string, RasterText>();
+
   autoTable(doc, {
     startY: lastTableY + 14,
     head: [['#', 'ID & Topic', 'Question', 'Your Ans', 'Correct Ans', 'Status']],
     body: attempt.details.map((d, idx) => {
       const statusText = !d.isAttempted ? 'Skipped' : d.isCorrect ? 'Correct' : 'Wrong';
-      const cleanQuestion = `${d.question}\n\nExplanation: ${d.explanation}`;
+      const askedIn =
+        d.askedIn && d.askedIn.length > 0
+          ? `
+
+Asked in (${d.askedIn.length}): ${d.askedIn.slice(0, 4).join('; ')}${
+              d.askedIn.length > 4 ? ' ...' : ''
+            }`
+          : '';
       return [
         String(idx + 1),
-        `${d.questionId}\n${d.subCategory}`,
-        cleanQuestion,
-        d.isAttempted ? d.userAnswer : '—',
-        d.correctAnswer,
+        `${d.questionId}
+${d.subCategory}`,
+        toPdfText(`${d.question}
+
+Explanation: ${d.explanation}${askedIn}`),
+        d.isAttempted ? toPdfText(d.userAnswer) : '-',
+        toPdfText(d.correctAnswer),
         statusText,
       ];
     }),
     styles: {
       fontSize: 7.8,
-      cellPadding: 2.5,
+      cellPadding: CELL_PAD,
       valign: 'top',
       overflow: 'linebreak',
     },
@@ -168,7 +185,8 @@ export function exportAttemptToPdf(attempt: TestAttempt, candidateName: string):
       5: { cellWidth: 18, halign: 'center', fontStyle: 'bold' },
     },
     didParseCell: (hookData) => {
-      if (hookData.section === 'body' && hookData.column.index === 5) {
+      if (hookData.section !== 'body') return;
+      if (hookData.column.index === 5) {
         const val = String(hookData.cell.raw);
         if (val === 'Correct') {
           hookData.cell.styles.textColor = [5, 150, 105];
@@ -177,6 +195,28 @@ export function exportAttemptToPdf(attempt: TestAttempt, candidateName: string):
         } else {
           hookData.cell.styles.textColor = [100, 116, 139];
         }
+      }
+      const width = COL_WIDTHS[hookData.column.index];
+      const raw = String(hookData.cell.raw);
+      if (width && needsRaster(raw)) {
+        const img = rasterText(raw, width - CELL_PAD * 2, 7.8);
+        rasterCells.set(`${hookData.row.index}-${hookData.column.index}`, img);
+        hookData.cell.text = [''];
+        hookData.cell.styles.minCellHeight = img.heightMm + CELL_PAD * 2;
+      }
+    },
+    didDrawCell: (hookData) => {
+      if (hookData.section !== 'body') return;
+      const img = rasterCells.get(`${hookData.row.index}-${hookData.column.index}`);
+      if (img) {
+        doc.addImage(
+          img.dataUrl,
+          'JPEG',
+          hookData.cell.x + CELL_PAD,
+          hookData.cell.y + CELL_PAD,
+          img.widthMm,
+          img.heightMm,
+        );
       }
     },
     margin: { left: 14, right: 14 },

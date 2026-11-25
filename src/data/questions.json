@@ -1,0 +1,2234 @@
+[
+  {
+    "id": "RRB_GA_001",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Current Affairs (National & International)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "India's first indigenously built high-speed Kavach 4.0 automatic train protection system is primarily designed to prevent which railway hazard?",
+    "options": [
+      "Signal Passing at Danger (SPAD) and head-on collisions",
+      "Overhead OHE wire voltage fluctuations",
+      "Axle overheating in freight wagons",
+      "Platform overcrowding during peak hours"
+    ],
+    "correctAnswer": "Signal Passing at Danger (SPAD) and head-on collisions",
+    "explanation": "Kavach (Automatic Train Protection system developed by RDSO) automatically applies brakes if the loco pilot fails to control speed or passes a red signal (SPAD), preventing collisions.",
+    "questionHi": "भारत की पहली स्वदेशी हाई-स्पीड 'कवच 4.0' स्वचालित ट्रेन सुरक्षा प्रणाली मुख्य रूप से किस रेलवे खतरे को रोकने के लिए डिज़ाइन की गई है?",
+    "optionsHi": [
+      "खतरे पर सिग्नल पार करना (SPAD) और आमने-सामने की टक्कर",
+      "ओवरहेड OHE तार में वोल्टेज का उतार-चढ़ाव",
+      "मालगाड़ी के वैगनों में एक्सल का अधिक गर्म होना",
+      "पीक आवर्स के दौरान प्लेटफॉर्म पर भीड़भाड़"
+    ],
+    "correctAnswerHi": "खतरे पर सिग्नल पार करना (SPAD) और आमने-सामने की टक्कर",
+    "explanationHi": "कवच (RDSO द्वारा विकसित स्वचालित ट्रेन सुरक्षा प्रणाली) यदि लोको पायलट गति नियंत्रित करने में विफल रहता है या लाल सिग्नल (SPAD) पार करता है, तो स्वतः ब्रेक लगाकर टक्कर को रोकता है।"
+  },
+  {
+    "id": "RRB_GA_002",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "Indian Polity & Governance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Article ______ of the Indian Constitution deals with the abolition of untouchability.",
+    "options": [],
+    "correctAnswer": "17",
+    "explanation": "Article 17 under Fundamental Rights (Right to Equality) abolishes untouchability and forbids its practice in any form.",
+    "questionHi": "भारतीय संविधान का अनुच्छेद ______ अस्पृश्यता (छुआछूत) के उन्मूलन से संबंधित है।",
+    "optionsHi": [],
+    "correctAnswerHi": "17",
+    "explanationHi": "मौलिक अधिकारों (समानता का अधिकार) के अंतर्गत अनुच्छेद 17 अस्पृश्यता को समाप्त करता है और किसी भी रूप में इसके आचरण को प्रतिबंधित करता है।"
+  },
+  {
+    "id": "RRB_GA_003",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Current Affairs (National & International)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which Indian city hosts the headquarters of the newly operational International Big Cat Alliance (IBCA) Secretariat?",
+    "options": [
+      "New Delhi",
+      "Dehradun",
+      "Bengaluru",
+      "Guwahati"
+    ],
+    "correctAnswer": "New Delhi",
+    "explanation": "India hosts the International Big Cat Alliance (IBCA) Secretariat in New Delhi to coordinate global conservation of seven big cats.",
+    "questionHi": "नव-संचालित अंतर्राष्ट्रीय बिग कैट एलायंस (IBCA) सचिवालय का मुख्यालय किस भारतीय शहर में स्थित है?",
+    "optionsHi": [
+      "नई दिल्ली",
+      "देहरादून",
+      "बेंगलुरु",
+      "गुवाहाटी"
+    ],
+    "correctAnswerHi": "नई दिल्ली",
+    "explanationHi": "सात बड़ी बिल्ली प्रजातियों के वैश्विक संरक्षण के समन्वय हेतु भारत नई दिल्ली में अंतर्राष्ट्रीय बिग कैट एलायंस (IBCA) सचिवालय की मेजबानी करता है।"
+  },
+  {
+    "id": "RRB_GA_004",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "General Science (Physics, Chemistry, Biology - up to 10th CBSE)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which mirror is used by dentists to obtain a magnified erect image of teeth?",
+    "options": [
+      "Concave mirror",
+      "Convex mirror",
+      "Plane mirror",
+      "Parabolic convex mirror"
+    ],
+    "correctAnswer": "Concave mirror",
+    "explanation": "When an object is placed between the pole and the principal focus of a concave mirror, it forms a virtual, erect, and magnified image.",
+    "questionHi": "दांतों का बड़ा और सीधा प्रतिबिंब प्राप्त करने के लिए दंत चिकित्सक किस दर्पण का उपयोग करते हैं?",
+    "optionsHi": [
+      "अवतल दर्पण",
+      "उत्तल दर्पण",
+      "समतल दर्पण",
+      "परवलयिक उत्तल दर्पण"
+    ],
+    "correctAnswerHi": "अवतल दर्पण",
+    "explanationHi": "जब वस्तु को अवतल दर्पण के ध्रुव और मुख्य फोकस के बीच रखा जाता है, तो यह आभासी, सीधा और आवर्धित प्रतिबिंब बनाता है।"
+  },
+  {
+    "id": "RRB_GA_005",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "General Science (Physics, Chemistry, Biology - up to 10th CBSE)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "The SI unit of electrical resistance is the ______.",
+    "options": [],
+    "correctAnswer": "ohm",
+    "explanation": "Electrical resistance is measured in Ohms (Ω), named after Georg Simon Ohm (R = V/I).",
+    "questionHi": "विद्युत प्रतिरोध का SI मात्रक ______ है।",
+    "optionsHi": [],
+    "correctAnswerHi": "ओम",
+    "explanationHi": "विद्युत प्रतिरोध को जॉर्ज साइमन ओम के नाम पर ओम (Ω) में मापा जाता है (R = V/I)।"
+  },
+  {
+    "id": "RRB_GA_006",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "General Science (Physics, Chemistry, Biology - up to 10th CBSE)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which gas is evolved when dilute hydrochloric acid reacts with zinc granules?",
+    "options": [
+      "Hydrogen",
+      "Oxygen",
+      "Chlorine",
+      "Nitrogen"
+    ],
+    "correctAnswer": "Hydrogen",
+    "explanation": "Zn + 2HCl -> ZnCl2 + H2(g). Active metals react with dilute acids to liberate hydrogen gas, which burns with a pop sound.",
+    "questionHi": "जब तनु हाइड्रोक्लोरिक अम्ल जस्ते (ज़िंक) के दानों से अभिक्रिया करता है, तो कौन-सी गैस निकलती है?",
+    "optionsHi": [
+      "हाइड्रोजन",
+      "ऑक्सीजन",
+      "क्लोरीन",
+      "नाइट्रोजन"
+    ],
+    "correctAnswerHi": "हाइड्रोजन",
+    "explanationHi": "Zn + 2HCl -> ZnCl2 + H2(g)। सक्रिय धातुएं तनु अम्लों से अभिक्रिया करके हाइड्रोजन गैस मुक्त करती हैं, जो पॉप ध्वनि के साथ जलती है।"
+  },
+  {
+    "id": "RRB_GA_007",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "General Science (Physics, Chemistry, Biology - up to 10th CBSE)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "In human physiology, which blood vessel carries oxygenated blood from the lungs back to the left atrium of the heart?",
+    "options": [
+      "Pulmonary vein",
+      "Pulmonary artery",
+      "Superior vena cava",
+      "Aorta"
+    ],
+    "correctAnswer": "Pulmonary vein",
+    "explanation": "Pulmonary veins are the only veins in the adult human body that carry oxygenated blood, transporting it from the lungs to the left atrium.",
+    "questionHi": "मानव शरीर क्रिया विज्ञान में, कौन-सी रक्त वाहिका फेफड़ों से ऑक्सीजन युक्त रक्त को हृदय के बाएं आलिंद तक ले जाती है?",
+    "optionsHi": [
+      "फुफ्फुसीय शिरा",
+      "फुफ्फुसीय धमनी",
+      "उच्च महाशिरा",
+      "महाधमनी"
+    ],
+    "correctAnswerHi": "फुफ्फुसीय शिरा",
+    "explanationHi": "फुफ्फुसीय शिराएं वयस्क मानव शरीर की एकमात्र शिराएं हैं जो फेफड़ों से बाएं आलिंद तक ऑक्सीजन युक्त रक्त ले जाती हैं।"
+  },
+  {
+    "id": "RRB_GA_008",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian History & Freedom Struggle",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Who presided over the historic 1929 Lahore Session of the Indian National Congress where 'Purna Swaraj' was declared?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Subhas Chandra Bose",
+      "Vallabhbhai Patel",
+      "Motilal Nehru"
+    ],
+    "correctAnswer": "Jawaharlal Nehru",
+    "explanation": "Under Jawaharlal Nehru's presidency in December 1929, the Lahore Congress adopted Purna Swaraj (Complete Independence) and fixed 26 January 1930 as Independence Day.",
+    "questionHi": "भारतीय राष्ट्रीय कांग्रेस के ऐतिहासिक 1929 लाहौर अधिवेशन की अध्यक्षता किसने की थी, जहाँ 'पूर्ण स्वराज' की घोषणा की गई थी?",
+    "optionsHi": [
+      "जवाहरलाल नेहरू",
+      "सुभाष चंद्र बोस",
+      "वल्लभभाई पटेल",
+      "मोतीलाल नेहरू"
+    ],
+    "correctAnswerHi": "जवाहरलाल नेहरू",
+    "explanationHi": "दिसंबर 1929 में जवाहरलाल नेहरू की अध्यक्षता में लाहौर कांग्रेस ने पूर्ण स्वराज अपनाया और 26 जनवरी 1930 को स्वतंत्रता दिवस के रूप में तय किया।"
+  },
+  {
+    "id": "RRB_GA_009",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "Indian History & Freedom Struggle",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "The Battle of Plassey was fought in the year ______ between Siraj-ud-Daulah and the British East India Company.",
+    "options": [],
+    "correctAnswer": "1757",
+    "explanation": "The Battle of Plassey took place on 23 June 1757, laying the foundation of British political rule in Bengal.",
+    "questionHi": "प्लासी का युद्ध वर्ष ______ में सिराजुद्दौला और ब्रिटिश ईस्ट इंडिया कंपनी के बीच लड़ा गया था।",
+    "optionsHi": [],
+    "correctAnswerHi": "1757",
+    "explanationHi": "प्लासी का युद्ध 23 जून 1757 को हुआ था, जिसने बंगाल में ब्रिटिश राजनीतिक शासन की नींव रखी।"
+  },
+  {
+    "id": "RRB_GA_010",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian History & Freedom Struggle",
+    "examTag": [
+      "CBT-1",
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "In which year did the first passenger train in India run between Bori Bunder (Mumbai) and Thane?",
+    "options": [
+      "1853",
+      "1857",
+      "1862",
+      "1849"
+    ],
+    "correctAnswer": "1853",
+    "explanation": "India's first passenger train ran on 16 April 1853 over a 34 km stretch from Bori Bunder to Thane.",
+    "questionHi": "भारत में पहली यात्री ट्रेन बोरी बंदर (मुंबई) और ठाणे के बीच किस वर्ष चली थी?",
+    "optionsHi": [
+      "1853",
+      "1857",
+      "1862",
+      "1849"
+    ],
+    "correctAnswerHi": "1853",
+    "explanationHi": "भारत की पहली यात्री ट्रेन 16 अप्रैल 1853 को बोरी बंदर से ठाणे के बीच 34 किमी की दूरी पर चली थी।"
+  },
+  {
+    "id": "RRB_GA_011",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian & World Geography",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which Indian river is known as 'Dakshin Ganga' or 'Vridha Ganga' due to its size and age?",
+    "options": [
+      "Godavari",
+      "Krishna",
+      "Kaveri",
+      "Mahanadi"
+    ],
+    "correctAnswer": "Godavari",
+    "explanation": "The Godavari is the longest river in Peninsular India (~1,465 km) and is called Dakshin Ganga or Vridha Ganga.",
+    "questionHi": "किस भारतीय नदी को उसके आकार और आयु के कारण 'दक्षिण गंगा' या 'वृद्ध गंगा' कहा जाता है?",
+    "optionsHi": [
+      "गोदावरी",
+      "कृष्णा",
+      "कावेरी",
+      "महानदी"
+    ],
+    "correctAnswerHi": "गोदावरी",
+    "explanationHi": "गोदावरी प्रायद्वीपीय भारत की सबसे लंबी नदी (~1,465 किमी) है और इसे दक्षिण गंगा या वृद्ध गंगा कहा जाता है।"
+  },
+  {
+    "id": "RRB_GA_012",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "Indian & World Geography",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "The narrow channel of sea separating India and Sri Lanka is known as the ______ Strait.",
+    "options": [],
+    "correctAnswer": "Palk",
+    "explanation": "The Palk Strait connects the Bay of Bengal in the northeast with Palk Bay and the Gulf of Mannar in the southwest, separating Tamil Nadu and Sri Lanka.",
+    "questionHi": "भारत और श्रीलंका को अलग करने वाले संकरे समुद्री जलडमरूमध्य को ______ जलसंधि कहा जाता है।",
+    "optionsHi": [],
+    "correctAnswerHi": "पाक",
+    "explanationHi": "पाक जलसंधि उत्तर-पूर्व में बंगाल की खाड़ी को दक्षिण-पश्चिम में पाक खाड़ी और मन्नार की खाड़ी से जोड़ती है तथा तमिलनाडु को श्रीलंका से अलग करती है।"
+  },
+  {
+    "id": "RRB_GA_013",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian & World Geography",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which mountain pass connects Srinagar with Leh in Ladakh?",
+    "options": [
+      "Zoji La",
+      "Nathu La",
+      "Shipki La",
+      "Bomdi La"
+    ],
+    "correctAnswer": "Zoji La",
+    "explanation": "Zoji La is a high mountain pass in the Himalayas on NH-1 connecting Srinagar in Kashmir Valley with Kargil and Leh.",
+    "questionHi": "कौन-सा पर्वतीय दर्रा लद्दाख में श्रीनगर को लेह से जोड़ता है?",
+    "optionsHi": [
+      "ज़ोजिला",
+      "नाथूला",
+      "शिपकी ला",
+      "बोमडिला"
+    ],
+    "correctAnswerHi": "ज़ोजिला",
+    "explanationHi": "ज़ोजिला हिमालय में NH-1 पर स्थित एक ऊंचा पर्वतीय दर्रा है जो कश्मीर घाटी के श्रीनगर को कारगिल और लेह से जोड़ता है।"
+  },
+  {
+    "id": "RRB_GA_014",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian Polity & Governance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which Constitutional Amendment lowered the voting age in India from 21 years to 18 years?",
+    "options": [
+      "61st Amendment Act, 1988",
+      "42nd Amendment Act, 1976",
+      "44th Amendment Act, 1978",
+      "73rd Amendment Act, 1992"
+    ],
+    "correctAnswer": "61st Amendment Act, 1988",
+    "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 to lower the voting age for Lok Sabha and Assembly elections from 21 to 18 years.",
+    "questionHi": "किस संविधान संशोधन ने भारत में मतदान की आयु 21 वर्ष से घटाकर 18 वर्ष कर दी?",
+    "optionsHi": [
+      "61वां संशोधन अधिनियम, 1988",
+      "42वां संशोधन अधिनियम, 1976",
+      "44वां संशोधन अधिनियम, 1978",
+      "73वां संशोधन अधिनियम, 1992"
+    ],
+    "correctAnswerHi": "61वां संशोधन अधिनियम, 1988",
+    "explanationHi": "61वें संविधान संशोधन अधिनियम, 1988 ने अनुच्छेद 326 में संशोधन करके लोकसभा और विधानसभा चुनावों में मतदान की आयु 21 से घटाकर 18 वर्ष कर दी।"
+  },
+  {
+    "id": "RRB_GA_015",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian Polity & Governance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Who acts as the ex-officio Chairman of the Rajya Sabha?",
+    "options": [
+      "Vice-President of India",
+      "Prime Minister of India",
+      "Speaker of Lok Sabha",
+      "Chief Justice of India"
+    ],
+    "correctAnswer": "Vice-President of India",
+    "explanation": "Under Article 64 of the Constitution, the Vice-President of India is the ex-officio Chairman of the Council of States (Rajya Sabha).",
+    "questionHi": "राज्यसभा के पदेन सभापति के रूप में कौन कार्य करता है?",
+    "optionsHi": [
+      "भारत के उपराष्ट्रपति",
+      "भारत के प्रधानमंत्री",
+      "लोकसभा अध्यक्ष",
+      "भारत के मुख्य न्यायाधीश"
+    ],
+    "correctAnswerHi": "भारत के उपराष्ट्रपति",
+    "explanationHi": "संविधान के अनुच्छेद 64 के अंतर्गत भारत के उपराष्ट्रपति राज्यों की परिषद (राज्यसभा) के पदेन सभापति होते हैं।"
+  },
+  {
+    "id": "RRB_GA_016",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian Economy",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which rate is defined as the interest rate at which the Reserve Bank of India (RBI) lends short-term funds to commercial banks against government securities?",
+    "options": [
+      "Repo Rate",
+      "Reverse Repo Rate",
+      "Cash Reserve Ratio (CRR)",
+      "Statutory Liquidity Ratio (SLR)"
+    ],
+    "correctAnswer": "Repo Rate",
+    "explanation": "Repo Rate (Repurchase Option Rate) is the policy rate at which RBI lends money to commercial banks against approved collateral to inject liquidity.",
+    "questionHi": "उस ब्याज दर को क्या कहते हैं जिस पर भारतीय रिज़र्व बैंक (RBI) सरकारी प्रतिभूतियों के बदले वाणिज्यिक बैंकों को अल्पकालिक ऋण देता है?",
+    "optionsHi": [
+      "रेपो दर",
+      "रिवर्स रेपो दर",
+      "नकद आरक्षित अनुपात (CRR)",
+      "सांविधिक तरलता अनुपात (SLR)"
+    ],
+    "correctAnswerHi": "रेपो दर",
+    "explanationHi": "रेपो दर वह नीतिगत दर है जिस पर RBI तरलता बढ़ाने के लिए स्वीकृत संपार्श्विक के बदले वाणिज्यिक बैंकों को ऋण देता है।"
+  },
+  {
+    "id": "RRB_GA_017",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "Indian Economy",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "The Goods and Services Tax (GST) in India was implemented nationwide on 1 July ______.",
+    "options": [],
+    "correctAnswer": "2017",
+    "explanation": "GST came into effect across India on 1 July 2017 via the 101st Constitutional Amendment Act.",
+    "questionHi": "भारत में वस्तु एवं सेवा कर (GST) देश भर में 1 जुलाई ______ को लागू किया गया था।",
+    "optionsHi": [],
+    "correctAnswerHi": "2017",
+    "explanationHi": "101वें संविधान संशोधन अधिनियम के माध्यम से 1 जुलाई 2017 को पूरे भारत में GST लागू हुआ।"
+  },
+  {
+    "id": "RRB_GA_018",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Static GK (Art & Culture, Awards, Sports, Books, Monuments)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Sattriya, one of the eight classical dance forms of India, originated in which state?",
+    "options": [
+      "Assam",
+      "Manipur",
+      "Odisha",
+      "Kerala"
+    ],
+    "correctAnswer": "Assam",
+    "explanation": "Sattriya was introduced in the 15th century by the Vaishnava saint Srimanta Sankardev in the monasteries (Sattras) of Assam.",
+    "questionHi": "भारत के आठ शास्त्रीय नृत्य रूपों में से एक 'सत्रिया' की उत्पत्ति किस राज्य में हुई?",
+    "optionsHi": [
+      "असम",
+      "मणिपुर",
+      "ओडिशा",
+      "केरल"
+    ],
+    "correctAnswerHi": "असम",
+    "explanationHi": "सत्रिया की शुरुआत 15वीं शताब्दी में वैष्णव संत श्रीमंत शंकरदेव द्वारा असम के मठों (सत्रों) में की गई थी।"
+  },
+  {
+    "id": "RRB_GA_019",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Static GK (Art & Culture, Awards, Sports, Books, Monuments)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Who authored the classic book 'Wings of Fire'?",
+    "options": [
+      "Dr. A.P.J. Abdul Kalam & Arun Tiwari",
+      "Vikram Sarabhai",
+      "Satish Dhawan",
+      "C.V. Raman"
+    ],
+    "correctAnswer": "Dr. A.P.J. Abdul Kalam & Arun Tiwari",
+    "explanation": "'Wings of Fire' is the autobiography of Dr. A.P.J. Abdul Kalam, co-authored with Arun Tiwari.",
+    "questionHi": "प्रसिद्ध पुस्तक 'विंग्स ऑफ फायर' के लेखक कौन हैं?",
+    "optionsHi": [
+      "डॉ. ए.पी.जे. अब्दुल कलाम और अरुण तिवारी",
+      "विक्रम साराभाई",
+      "सतीश धवन",
+      "सी.वी. रमन"
+    ],
+    "correctAnswerHi": "डॉ. ए.पी.जे. अब्दुल कलाम और अरुण तिवारी",
+    "explanationHi": "'विंग्स ऑफ फायर' डॉ. ए.पी.जे. अब्दुल कलाम की आत्मकथा है, जिसके सह-लेखक अरुण तिवारी हैं।"
+  },
+  {
+    "id": "RRB_GA_020",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Static GK (Art & Culture, Awards, Sports, Books, Monuments)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "Which Indian railway station is recognized as a UNESCO World Heritage Site?",
+    "options": [
+      "Chhatrapati Shivaji Maharaj Terminus, Mumbai",
+      "Howrah Junction, Kolkata",
+      "New Delhi Railway Station",
+      "Chennai Central"
+    ],
+    "correctAnswer": "Chhatrapati Shivaji Maharaj Terminus, Mumbai",
+    "explanation": "Chhatrapati Shivaji Maharaj Terminus (formerly Victoria Terminus) in Mumbai was inscribed as a UNESCO World Heritage Site in 2004.",
+    "questionHi": "भारत के किस रेलवे स्टेशन को यूनेस्को विश्व धरोहर स्थल के रूप में मान्यता प्राप्त है?",
+    "optionsHi": [
+      "छत्रपति शिवाजी महाराज टर्मिनस, मुंबई",
+      "हावड़ा जंक्शन, कोलकाता",
+      "नई दिल्ली रेलवे स्टेशन",
+      "चेन्नई सेंट्रल"
+    ],
+    "correctAnswerHi": "छत्रपति शिवाजी महाराज टर्मिनस, मुंबई",
+    "explanationHi": "मुंबई के छत्रपति शिवाजी महाराज टर्मिनस (पूर्व में विक्टोरिया टर्मिनस) को 2004 में यूनेस्को विश्व धरोहर स्थल घोषित किया गया था।"
+  },
+  {
+    "id": "RRB_GA_021",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Science & Technology (Space & Nuclear)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "What is the name of the rover deployed by ISRO's Chandrayaan-3 mission on the lunar south pole region?",
+    "options": [
+      "Pragyan",
+      "Vikram",
+      "Aditya",
+      "Gaganyaan"
+    ],
+    "correctAnswer": "Pragyan",
+    "explanation": "Chandrayaan-3 landed near the lunar south pole on 23 August 2023 using the Vikram lander and deployed the 6-wheeled Pragyan rover.",
+    "questionHi": "चंद्रमा के दक्षिणी ध्रुव क्षेत्र में इसरो के चंद्रयान-3 मिशन द्वारा तैनात रोवर का नाम क्या है?",
+    "optionsHi": [
+      "प्रज्ञान",
+      "विक्रम",
+      "आदित्य",
+      "गगनयान"
+    ],
+    "correctAnswerHi": "प्रज्ञान",
+    "explanationHi": "चंद्रयान-3 ने 23 अगस्त 2023 को विक्रम लैंडर की सहायता से चंद्रमा के दक्षिणी ध्रुव के पास लैंडिंग की और 6 पहियों वाला प्रज्ञान रोवर तैनात किया।"
+  },
+  {
+    "id": "RRB_GA_022",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "Science & Technology (Space & Nuclear)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "India's first nuclear power plant was commissioned at ______ in Maharashtra in 1969.",
+    "options": [],
+    "correctAnswer": "Tarapur",
+    "explanation": "Tarapur Atomic Power Station (TAPS) in Palghar, Maharashtra was India's first commercial nuclear power station.",
+    "questionHi": "भारत का पहला परमाणु ऊर्जा संयंत्र 1969 में महाराष्ट्र के ______ में चालू किया गया था।",
+    "optionsHi": [],
+    "correctAnswerHi": "तारापुर",
+    "explanationHi": "पालघर, महाराष्ट्र में स्थित तारापुर परमाणु ऊर्जा स्टेशन (TAPS) भारत का पहला वाणिज्यिक परमाणु ऊर्जा केंद्र था।"
+  },
+  {
+    "id": "RRB_GA_023",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Basics of Computers & Environment",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "In computing, which protocol is used to securely transfer web pages over TLS/SSL encryption?",
+    "options": [
+      "HTTPS",
+      "FTP",
+      "SMTP",
+      "TELNET"
+    ],
+    "correctAnswer": "HTTPS",
+    "explanation": "HTTPS (Hypertext Transfer Protocol Secure) uses TLS/SSL encryption to protect data integrity and confidentiality between browser and server.",
+    "questionHi": "कंप्यूटिंग में, TLS/SSL एन्क्रिप्शन के माध्यम से वेब पेजों को सुरक्षित रूप से स्थानांतरित करने के लिए किस प्रोटोकॉल का उपयोग किया जाता है?",
+    "optionsHi": [
+      "HTTPS",
+      "FTP",
+      "SMTP",
+      "TELNET"
+    ],
+    "correctAnswerHi": "HTTPS",
+    "explanationHi": "HTTPS (हाइपरटेक्स्ट ट्रांसफर प्रोटोकॉल सिक्योर) ब्राउज़र और सर्वर के बीच डेटा की गोपनीयता और सुरक्षा के लिए TLS/SSL एन्क्रिप्शन का उपयोग करता है।"
+  },
+  {
+    "id": "RRB_GA_024",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Basics of Computers & Environment",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Which international treaty was adopted in 1987 to phase out ozone-depleting substances such as CFCs?",
+    "options": [
+      "Montreal Protocol",
+      "Kyoto Protocol",
+      "Basel Convention",
+      "Stockholm Convention"
+    ],
+    "correctAnswer": "Montreal Protocol",
+    "explanation": "The Montreal Protocol on Substances that Deplete the Ozone Layer (1987) successfully phased out chlorofluorocarbons (CFCs).",
+    "questionHi": "CFC जैसे ओजोन-क्षयकारी पदार्थों को चरणबद्ध तरीके से समाप्त करने के लिए 1987 में कौन-सी अंतर्राष्ट्रीय संधि अपनाई गई थी?",
+    "optionsHi": [
+      "मॉन्ट्रियल प्रोटोकॉल",
+      "क्योटो प्रोटोकॉल",
+      "बेसल कन्वेंशन",
+      "स्टॉकहोम कन्वेंशन"
+    ],
+    "correctAnswerHi": "मॉन्ट्रियल प्रोटोकॉल",
+    "explanationHi": "ओजोन परत को क्षीण करने वाले पदार्थों पर मॉन्ट्रियल प्रोटोकॉल (1987) ने क्लोरोफ्लोरोकार्बन (CFCs) को सफलतापूर्वक चरणबद्ध ढंग से समाप्त किया।"
+  },
+  {
+    "id": "RRB_GA_025",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "Basics of Computers & Environment",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "One kilobyte (KB) in binary computer memory equals ______ bytes.",
+    "options": [],
+    "correctAnswer": "1024",
+    "explanation": "In binary memory addressing (KiB/KB convention in exams), 1 KB = 2^10 = 1024 bytes.",
+    "questionHi": "बाइनरी कंप्यूटर मेमोरी में एक किलोबाइट (KB) ______ बाइट्स के बराबर होता है।",
+    "optionsHi": [],
+    "correctAnswerHi": "1024",
+    "explanationHi": "बाइनरी मेमोरी एड्रेसिंग (परीक्षा में प्रचलित KiB/KB मानक) में 1 KB = 2^10 = 1024 बाइट्स होता है।"
+  },
+  {
+    "id": "RRB_MATH_001",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Time, Speed & Distance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "A train 150m long passes a pole in 15 seconds. What is its speed in km/hr?",
+    "options": [
+      "36 km/hr",
+      "40 km/hr",
+      "45 km/hr",
+      "50 km/hr"
+    ],
+    "correctAnswer": "36 km/hr",
+    "explanation": "Speed = 150m / 15s = 10 m/s. In km/hr = 10 * (18/5) = 36 km/hr.",
+    "questionHi": "150 मीटर लंबी एक ट्रेन एक खंभे को 15 सेकंड में पार करती है। इसकी गति किमी/घंटा में क्या है?",
+    "optionsHi": [
+      "36 किमी/घंटा",
+      "40 किमी/घंटा",
+      "45 किमी/घंटा",
+      "50 किमी/घंटा"
+    ],
+    "correctAnswerHi": "36 किमी/घंटा",
+    "explanationHi": "गति = 150 मीटर / 15 सेकंड = 10 मीटर/सेकंड। किमी/घंटा में = 10 × (18/5) = 36 किमी/घंटा।"
+  },
+  {
+    "id": "RRB_MATH_002",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Number System",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "What is the remainder when 7^100 is divided by 6?",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "1",
+    "explanation": "Since 7 ≡ 1 (mod 6), 7^100 ≡ 1^100 ≡ 1 (mod 6). Therefore the remainder is 1.",
+    "questionHi": "7^100 को 6 से विभाजित करने पर शेषफल क्या होगा?",
+    "optionsHi": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "correctAnswerHi": "1",
+    "explanationHi": "चूंकि 7 ≡ 1 (mod 6), इसलिए 7^100 ≡ 1^100 ≡ 1 (mod 6)। अतः शेषफल 1 होगा।"
+  },
+  {
+    "id": "RRB_MATH_003",
+    "type": "fill_in_blank",
+    "category": "Mathematics",
+    "subCategory": "Simplification & BODMAS",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Evaluate using BODMAS: 48 ÷ 6 × 3 + 12 - 4 = ______",
+    "options": [],
+    "correctAnswer": "32",
+    "explanation": "First divide: 48 ÷ 6 = 8. Then multiply: 8 × 3 = 24. Then 24 + 12 - 4 = 32.",
+    "questionHi": "BODMAS का उपयोग करके मान ज्ञात कीजिए: 48 ÷ 6 × 3 + 12 - 4 = ______",
+    "optionsHi": [],
+    "correctAnswerHi": "32",
+    "explanationHi": "पहले भाग: 48 ÷ 6 = 8। फिर गुणा: 8 × 3 = 24। फिर 24 + 12 - 4 = 32।"
+  },
+  {
+    "id": "RRB_MATH_004",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Decimals & Fractions",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Express the recurring decimal 0.363636... as a simplified fraction.",
+    "options": [
+      "4/11",
+      "9/25",
+      "3/11",
+      "6/17"
+    ],
+    "correctAnswer": "4/11",
+    "explanation": "0.36̄ = 36/99. Dividing numerator and denominator by 9 gives 4/11.",
+    "questionHi": "आवर्ती दशमलव 0.363636... को सरलतम भिन्न के रूप में व्यक्त कीजिए।",
+    "optionsHi": [
+      "4/11",
+      "9/25",
+      "3/11",
+      "6/17"
+    ],
+    "correctAnswerHi": "4/11",
+    "explanationHi": "0.36̄ = 36/99। अंश और हर दोनों को 9 से भाग देने पर 4/11 प्राप्त होता है।"
+  },
+  {
+    "id": "RRB_MATH_005",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "LCM & HCF",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "The HCF and LCM of two numbers are 12 and 240 respectively. If one number is 48, find the other number.",
+    "options": [
+      "60",
+      "48",
+      "72",
+      "36"
+    ],
+    "correctAnswer": "60",
+    "explanation": "Product of two numbers = HCF × LCM => 48 × x = 12 × 240 => x = 2880 / 48 = 60.",
+    "questionHi": "दो संख्याओं का HCF और LCM क्रमशः 12 और 240 है। यदि एक संख्या 48 है, तो दूसरी संख्या ज्ञात कीजिए।",
+    "optionsHi": [
+      "60",
+      "48",
+      "72",
+      "36"
+    ],
+    "correctAnswerHi": "60",
+    "explanationHi": "दो संख्याओं का गुणनफल = HCF × LCM => 48 × x = 12 × 240 => x = 2880 / 48 = 60।"
+  },
+  {
+    "id": "RRB_MATH_006",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Ratio & Proportion",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "If A : B = 3 : 4 and B : C = 8 : 9, then what is A : C?",
+    "options": [
+      "2 : 3",
+      "1 : 3",
+      "3 : 4",
+      "4 : 9"
+    ],
+    "correctAnswer": "2 : 3",
+    "explanation": "Multiply ratios: (A/B) × (B/C) = (3/4) × (8/9) = 24/36 = 2/3, so A : C = 2 : 3.",
+    "questionHi": "यदि A : B = 3 : 4 और B : C = 8 : 9 है, तो A : C क्या होगा?",
+    "optionsHi": [
+      "2 : 3",
+      "1 : 3",
+      "3 : 4",
+      "4 : 9"
+    ],
+    "correctAnswerHi": "2 : 3",
+    "explanationHi": "अनुपातों का गुणा: (A/B) × (B/C) = (3/4) × (8/9) = 24/36 = 2/3, इसलिए A : C = 2 : 3।"
+  },
+  {
+    "id": "RRB_MATH_007",
+    "type": "fill_in_blank",
+    "category": "Mathematics",
+    "subCategory": "Percentage",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "If a train fare increases by 20% and later decreases by 20%, the net percentage change is a decrease of ______%.",
+    "options": [],
+    "correctAnswer": "4",
+    "explanation": "Net change = +20 - 20 + (20 × -20)/100 = -4%, i.e., a decrease of 4%.",
+    "questionHi": "यदि ट्रेन के किराए में पहले 20% की वृद्धि होती है और बाद में 20% की कमी होती है, तो शुद्ध प्रतिशत परिवर्तन ______% की कमी होगी।",
+    "optionsHi": [],
+    "correctAnswerHi": "4",
+    "explanationHi": "शुद्ध परिवर्तन = +20 - 20 + (20 × -20)/100 = -4%, अर्थात 4% की कमी।"
+  },
+  {
+    "id": "RRB_MATH_008",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Mensuration (2D & 3D)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "The radius of a cylindrical water tank is 7 cm and its height is 10 cm. Find its volume (use π = 22/7).",
+    "options": [
+      "1540 cm³",
+      "1440 cm³",
+      "770 cm³",
+      "3080 cm³"
+    ],
+    "correctAnswer": "1540 cm³",
+    "explanation": "Volume = π r² h = (22/7) × 7 × 7 × 10 = 22 × 70 = 1540 cm³.",
+    "questionHi": "एक बेलनाकार पानी की टंकी की त्रिज्या 7 सेमी और ऊंचाई 10 सेमी है। इसका आयतन ज्ञात कीजिए (π = 22/7 लें)।",
+    "optionsHi": [
+      "1540 सेमी³",
+      "1440 सेमी³",
+      "770 सेमी³",
+      "3080 सेमी³"
+    ],
+    "correctAnswerHi": "1540 सेमी³",
+    "explanationHi": "आयतन = π r² h = (22/7) × 7 × 7 × 10 = 22 × 70 = 1540 सेमी³।"
+  },
+  {
+    "id": "RRB_MATH_009",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Time & Work",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "A can complete a track maintenance job in 12 days and B can do it in 15 days. Working together, in how many days will they finish?",
+    "options": [
+      "6 2/3 days",
+      "6 days",
+      "7 1/2 days",
+      "5 1/2 days"
+    ],
+    "correctAnswer": "6 2/3 days",
+    "explanation": "Combined rate = 1/12 + 1/15 = (5 + 4)/60 = 9/60 = 3/20 per day. Time = 20/3 = 6 2/3 days.",
+    "questionHi": "A एक ट्रैक रखरखाव कार्य 12 दिनों में और B इसे 15 दिनों में पूरा कर सकता है। दोनों एक साथ मिलकर इसे कितने दिनों में पूरा करेंगे?",
+    "optionsHi": [
+      "6 2/3 दिन",
+      "6 दिन",
+      "7 1/2 दिन",
+      "5 1/2 दिन"
+    ],
+    "correctAnswerHi": "6 2/3 दिन",
+    "explanationHi": "संयुक्त कार्य दर = 1/12 + 1/15 = (5 + 4)/60 = 9/60 = 3/20 प्रति दिन। समय = 20/3 = 6 2/3 दिन।"
+  },
+  {
+    "id": "RRB_MATH_010",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Time, Speed & Distance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "Two trains of lengths 140m and 160m run on parallel tracks in opposite directions at 54 km/hr and 36 km/hr. How long do they take to cross each other completely?",
+    "options": [
+      "12 seconds",
+      "10 seconds",
+      "15 seconds",
+      "18 seconds"
+    ],
+    "correctAnswer": "12 seconds",
+    "explanation": "Total distance = 140 + 160 = 300m. Relative speed = 54 + 36 = 90 km/hr = 90 × (5/18) = 25 m/s. Time = 300 / 25 = 12 seconds.",
+    "questionHi": "140 मीटर और 160 मीटर लंबी दो ट्रेनें समानांतर पटरियों पर विपरीत दिशाओं में 54 किमी/घंटा और 36 किमी/घंटा की गति से चल रही हैं। वे एक-दूसरे को पूरी तरह पार करने में कितना समय लेंगी?",
+    "optionsHi": [
+      "12 सेकंड",
+      "10 सेकंड",
+      "15 सेकंड",
+      "18 सेकंड"
+    ],
+    "correctAnswerHi": "12 सेकंड",
+    "explanationHi": "कुल दूरी = 140 + 160 = 300 मीटर। सापेक्ष गति = 54 + 36 = 90 किमी/घंटा = 25 मीटर/सेकंड। समय = 300 / 25 = 12 सेकंड।"
+  },
+  {
+    "id": "RRB_MATH_011",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Simple & Compound Interest",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Find the compound interest on ₹10,000 for 2 years at 10% per annum compounded annually.",
+    "options": [
+      "₹2,100",
+      "₹2,000",
+      "₹2,200",
+      "₹1,900"
+    ],
+    "correctAnswer": "₹2,100",
+    "explanation": "Amount = 10000 × (1.1)² = 10000 × 1.21 = ₹12,100. CI = 12100 - 10000 = ₹2,100.",
+    "questionHi": "₹10,000 पर 10% वार्षिक दर से 2 वर्षों का वार्षिक रूप से संयोजित चक्रवृद्धि ब्याज ज्ञात कीजिए।",
+    "optionsHi": [
+      "₹2,100",
+      "₹2,000",
+      "₹2,200",
+      "₹1,900"
+    ],
+    "correctAnswerHi": "₹2,100",
+    "explanationHi": "मिश्रधन = 10000 × (1.1)² = 10000 × 1.21 = ₹12,100। चक्रवृद्धि ब्याज = 12100 - 10000 = ₹2,100।"
+  },
+  {
+    "id": "RRB_MATH_012",
+    "type": "fill_in_blank",
+    "category": "Mathematics",
+    "subCategory": "Profit & Loss",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "An item bought for ₹800 is sold for ₹920. The profit percentage is ______%.",
+    "options": [],
+    "correctAnswer": "15",
+    "explanation": "Profit = 920 - 800 = ₹120. Profit % = (120 / 800) × 100 = 15%.",
+    "questionHi": "₹800 में खरीदी गई एक वस्तु ₹920 में बेची जाती है। लाभ प्रतिशत ______% है।",
+    "optionsHi": [],
+    "correctAnswerHi": "15",
+    "explanationHi": "लाभ = 920 - 800 = ₹120। लाभ % = (120 / 800) × 100 = 15%।"
+  },
+  {
+    "id": "RRB_MATH_013",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Elementary Algebra",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "If x + 1/x = 5, what is the value of x² + 1/x²?",
+    "options": [
+      "23",
+      "25",
+      "27",
+      "21"
+    ],
+    "correctAnswer": "23",
+    "explanation": "Squaring both sides: x² + 1/x² + 2 = 25 => x² + 1/x² = 23.",
+    "questionHi": "यदि x + 1/x = 5 है, तो x² + 1/x² का मान क्या है?",
+    "optionsHi": [
+      "23",
+      "25",
+      "27",
+      "21"
+    ],
+    "correctAnswerHi": "23",
+    "explanationHi": "दोनों पक्षों का वर्ग करने पर: x² + 1/x² + 2 = 25 => x² + 1/x² = 23।"
+  },
+  {
+    "id": "RRB_MATH_014",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Geometry & Trigonometry",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "In a right-angled triangle, if sin θ = 3/5 (where θ is acute), what is the value of tan θ?",
+    "options": [
+      "3/4",
+      "4/3",
+      "4/5",
+      "5/3"
+    ],
+    "correctAnswer": "3/4",
+    "explanation": "With perpendicular = 3 and hypotenuse = 5, base = √(5² - 3²) = 4. Hence tan θ = perpendicular / base = 3/4.",
+    "questionHi": "एक समकोण त्रिभुज में, यदि sin θ = 3/5 (जहाँ θ न्यून कोण है), तो tan θ का मान क्या है?",
+    "optionsHi": [
+      "3/4",
+      "4/3",
+      "4/5",
+      "5/3"
+    ],
+    "correctAnswerHi": "3/4",
+    "explanationHi": "लंब = 3 और कर्ण = 5 होने पर आधार = √(5² - 3²) = 4। अतः tan θ = लंब / आधार = 3/4।"
+  },
+  {
+    "id": "RRB_MATH_015",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Geometry & Trigonometry",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "What is the sum of all interior angles of a regular hexagon?",
+    "options": [
+      "720°",
+      "540°",
+      "900°",
+      "360°"
+    ],
+    "correctAnswer": "720°",
+    "explanation": "Sum of interior angles of an n-sided polygon = (n - 2) × 180°. For a hexagon (n = 6), (6 - 2) × 180° = 720°.",
+    "questionHi": "एक सम षट्भुज (रेगुलर हेक्सागोन) के सभी आंतरिक कोणों का योग कितना होता है?",
+    "optionsHi": [
+      "720°",
+      "540°",
+      "900°",
+      "360°"
+    ],
+    "correctAnswerHi": "720°",
+    "explanationHi": "n-भुजाओं वाले बहुभुज के आंतरिक कोणों का योग = (n - 2) × 180°। षट्भुज (n = 6) के लिए (6 - 2) × 180° = 720°।"
+  },
+  {
+    "id": "RRB_MATH_016",
+    "type": "fill_in_blank",
+    "category": "Mathematics",
+    "subCategory": "Elementary Statistics",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Find the median of the observations: 14, 9, 21, 18, 12, 25, 16. Answer: ______",
+    "options": [],
+    "correctAnswer": "16",
+    "explanation": "Arranging in ascending order: 9, 12, 14, 16, 18, 21, 25. There are 7 terms, so the 4th term (16) is the median.",
+    "questionHi": "प्रेक्षणों 14, 9, 21, 18, 12, 25, 16 की माध्यिका (Median) ज्ञात कीजिए। उत्तर: ______",
+    "optionsHi": [],
+    "correctAnswerHi": "16",
+    "explanationHi": "आरोही क्रम में व्यवस्थित करने पर: 9, 12, 14, 16, 18, 21, 25। कुल 7 पद हैं, अतः चौथा पद (16) माध्यिका है।"
+  },
+  {
+    "id": "RRB_MATH_017",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Elementary Statistics",
+    "examTag": [
+      "CBT-2"
+    ],
+    "question": "For a moderately skewed distribution, if Mean = 28 and Median = 25, what is the empirical Mode?",
+    "options": [
+      "19",
+      "22",
+      "31",
+      "26.5"
+    ],
+    "correctAnswer": "19",
+    "explanation": "Empirical relation: Mode = 3(Median) - 2(Mean) = 3(25) - 2(28) = 75 - 56 = 19.",
+    "questionHi": "एक मध्यम रूप से विषम बंटन के लिए, यदि माध्य (Mean) = 28 और माध्यिका (Median) = 25 है, तो आनुभविक बहुलक (Mode) क्या होगा?",
+    "optionsHi": [
+      "19",
+      "22",
+      "31",
+      "26.5"
+    ],
+    "correctAnswerHi": "19",
+    "explanationHi": "आनुभविक संबंध: बहुलक = 3(माध्यिका) - 2(माध्य) = 3(25) - 2(28) = 75 - 56 = 19।"
+  },
+  {
+    "id": "RRB_MATH_018",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Data Interpretation",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "A railway zone recorded passenger counts (in thousands): Mon=40, Tue=50, Wed=45, Thu=55, Fri=60. What is the percentage increase from Monday to Friday?",
+    "options": [
+      "50%",
+      "40%",
+      "33.3%",
+      "60%"
+    ],
+    "correctAnswer": "50%",
+    "explanation": "Increase = 60 - 40 = 20 thousand. Percentage increase = (20 / 40) × 100 = 50%.",
+    "questionHi": "एक रेलवे ज़ोन ने यात्रियों की संख्या (हज़ार में) दर्ज की: सोम=40, मंगल=50, बुध=45, गुरु=55, शुक्र=60। सोमवार से शुक्रवार तक प्रतिशत वृद्धि क्या है?",
+    "optionsHi": [
+      "50%",
+      "40%",
+      "33.3%",
+      "60%"
+    ],
+    "correctAnswerHi": "50%",
+    "explanationHi": "वृद्धि = 60 - 40 = 20 हज़ार। प्रतिशत वृद्धि = (20 / 40) × 100 = 50%।"
+  },
+  {
+    "id": "RRB_MATH_019",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Profit & Loss",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "A shopkeeper marks goods 25% above cost price and allows a 20% discount. What is his net profit or loss percentage?",
+    "options": [
+      "No profit, no loss (0%)",
+      "5% profit",
+      "5% loss",
+      "4% profit"
+    ],
+    "correctAnswer": "No profit, no loss (0%)",
+    "explanation": "Let CP = 100. MP = 125. SP = 125 × 0.80 = 100. Hence 0% profit or loss.",
+    "questionHi": "एक दुकानदार वस्तुओं का मूल्य क्रय मूल्य से 25% अधिक अंकित करता है और 20% की छूट देता है। उसका शुद्ध लाभ या हानि प्रतिशत क्या है?",
+    "optionsHi": [
+      "न लाभ, न हानि (0%)",
+      "5% लाभ",
+      "5% हानि",
+      "4% लाभ"
+    ],
+    "correctAnswerHi": "न लाभ, न हानि (0%)",
+    "explanationHi": "माना क्रय मूल्य = 100। अंकित मूल्य = 125। विक्रय मूल्य = 125 × 0.80 = 100। अतः 0% लाभ या हानि।"
+  },
+  {
+    "id": "RRB_MATH_020",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Number System",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "How many prime numbers lie between 1 and 30?",
+    "options": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ],
+    "correctAnswer": "10",
+    "explanation": "The primes between 1 and 30 are: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 — a total of 10 primes.",
+    "questionHi": "1 और 30 के बीच कितनी अभाज्य संख्याएं (Prime Numbers) हैं?",
+    "optionsHi": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ],
+    "correctAnswerHi": "10",
+    "explanationHi": "1 और 30 के बीच अभाज्य संख्याएं हैं: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 — कुल 10 अभाज्य संख्याएं।"
+  },
+  {
+    "id": "RRB_REAS_001",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Analogies",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Thermometer : Temperature :: Barometer : ?",
+    "options": [
+      "Atmospheric Pressure",
+      "Humidity",
+      "Wind Speed",
+      "Electric Current"
+    ],
+    "correctAnswer": "Atmospheric Pressure",
+    "explanation": "A thermometer measures temperature; similarly, a barometer measures atmospheric pressure.",
+    "questionHi": "थर्मामीटर : तापमान :: बैरोमीटर : ?",
+    "optionsHi": [
+      "वायुमंडलीय दाब",
+      "आर्द्रता",
+      "पवन गति",
+      "विद्युत धारा"
+    ],
+    "correctAnswerHi": "वायुमंडलीय दाब",
+    "explanationHi": "थर्मामीटर तापमान मापता है; इसी प्रकार बैरोमीटर वायुमंडलीय दाब मापता है।"
+  },
+  {
+    "id": "RRB_REAS_002",
+    "type": "fill_in_blank",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Number & Alphabet Series",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Find the missing number in the series: 3, 7, 15, 31, 63, ______",
+    "options": [],
+    "correctAnswer": "127",
+    "explanation": "Pattern: next = 2 × current + 1. Thus 2 × 63 + 1 = 127.",
+    "questionHi": "श्रृंखला में लुप्त संख्या ज्ञात कीजिए: 3, 7, 15, 31, 63, ______",
+    "optionsHi": [],
+    "correctAnswerHi": "127",
+    "explanationHi": "पैटर्न: अगली संख्या = 2 × वर्तमान संख्या + 1। अतः 2 × 63 + 1 = 127।"
+  },
+  {
+    "id": "RRB_REAS_003",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Coding-Decoding",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "In a certain code, 'TRAIN' is written as 'USBJO'. How is 'SIGNAL' written in that code?",
+    "options": [
+      "TJHOBM",
+      "TJHOBN",
+      "SJHOBM",
+      "TJHPBM"
+    ],
+    "correctAnswer": "TJHOBM",
+    "explanation": "Each letter shifts +1 forward: S->T, I->J, G->H, N->O, A->B, L->M => TJHOBM.",
+    "questionHi": "एक निश्चित कूट भाषा में 'TRAIN' को 'USBJO' लिखा जाता है। उसी कूट भाषा में 'SIGNAL' को कैसे लिखा जाएगा?",
+    "optionsHi": [
+      "TJHOBM",
+      "TJHOBN",
+      "SJHOBM",
+      "TJHPBM"
+    ],
+    "correctAnswerHi": "TJHOBM",
+    "explanationHi": "प्रत्येक अक्षर +1 आगे बढ़ता है: S->T, I->J, G->H, N->O, A->B, L->M => TJHOBM।"
+  },
+  {
+    "id": "RRB_REAS_004",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Mathematical Operations",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "If '+' means '×', '×' means '-', '-' means '÷', and '÷' means '+', then evaluate: 18 - 3 + 5 ÷ 4 × 2",
+    "options": [
+      "32",
+      "28",
+      "34",
+      "30"
+    ],
+    "correctAnswer": "32",
+    "explanation": "Substituting operators: 18 ÷ 3 × 5 + 4 - 2 = 6 × 5 + 4 - 2 = 30 + 4 - 2 = 32.",
+    "questionHi": "यदि '+' का अर्थ '×', '×' का अर्थ '-', '-' का अर्थ '÷' और '÷' का अर्थ '+' है, तो मान ज्ञात कीजिए: 18 - 3 + 5 ÷ 4 × 2",
+    "optionsHi": [
+      "32",
+      "28",
+      "34",
+      "30"
+    ],
+    "correctAnswerHi": "32",
+    "explanationHi": "संकेत बदलने पर: 18 ÷ 3 × 5 + 4 - 2 = 6 × 5 + 4 - 2 = 30 + 4 - 2 = 32।"
+  },
+  {
+    "id": "RRB_REAS_005",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Similarities & Differences",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Four letter clusters are given below, out of which three are alike in a certain way. Select the odd one out.",
+    "options": [
+      "CEG",
+      "JLN",
+      "PRT",
+      "UVX"
+    ],
+    "correctAnswer": "UVX",
+    "explanation": "CEG (+2, +2), JLN (+2, +2), PRT (+2, +2) follow +2 steps. UVX has +1 (U->V) and +2 (V->X), making it the odd one.",
+    "questionHi": "नीचे चार अक्षर-समूह दिए गए हैं, जिनमें से तीन किसी निश्चित तरीके से समान हैं। विषम (असंगत) को चुनिए।",
+    "optionsHi": [
+      "CEG",
+      "JLN",
+      "PRT",
+      "UVX"
+    ],
+    "correctAnswerHi": "UVX",
+    "explanationHi": "CEG (+2, +2), JLN (+2, +2), PRT (+2, +2) में +2 का अंतर है। UVX में +1 (U->V) और +2 (V->X) है, इसलिए यह विषम है।"
+  },
+  {
+    "id": "RRB_REAS_006",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Blood Relations",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Pointing to a photograph, Amit said, 'He is the only son of my grandfather's only daughter.' How is the person in the photograph related to Amit (Amit has no siblings and Amit's mother is the grandfather's only child)?",
+    "options": [
+      "Amit himself",
+      "Cousin",
+      "Uncle",
+      "Nephew"
+    ],
+    "correctAnswer": "Amit himself",
+    "explanation": "Grandfather's only daughter is Amit's mother. Her only son is Amit himself.",
+    "questionHi": "एक तस्वीर की ओर इशारा करते हुए अमित ने कहा, 'वह मेरे दादाजी की इकलौती बेटी का इकलौता बेटा है।' तस्वीर में दिख रहा व्यक्ति अमित से किस प्रकार संबंधित है (अमित का कोई भाई-बहन नहीं है और अमित की माँ दादाजी की इकलौती संतान हैं)?",
+    "optionsHi": [
+      "स्वयं अमित",
+      "चचेरा भाई",
+      "चाचा/मामा",
+      "भतीजा/भांजा"
+    ],
+    "correctAnswerHi": "स्वयं अमित",
+    "explanationHi": "दादाजी की इकलौती बेटी अमित की माँ हैं। उनका इकलौता बेटा स्वयं अमित है।"
+  },
+  {
+    "id": "RRB_REAS_007",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Analytical Reasoning",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "How many triangles are formed when both diagonals of a square are drawn?",
+    "options": [
+      "8",
+      "4",
+      "6",
+      "10"
+    ],
+    "correctAnswer": "8",
+    "explanation": "There are 4 small triangles formed at the center, plus 4 larger triangles formed by combining pairs of adjacent small triangles (each diagonal splits the square into 2, giving 2+2=4). Total = 8.",
+    "questionHi": "जब किसी वर्ग के दोनों विकर्ण खींचे जाते हैं, तो कितने त्रिभुज बनते हैं?",
+    "optionsHi": [
+      "8",
+      "4",
+      "6",
+      "10"
+    ],
+    "correctAnswerHi": "8",
+    "explanationHi": "केंद्र पर 4 छोटे त्रिभुज बनते हैं, और दो-दो छोटे त्रिभुजों को मिलाकर 4 बड़े त्रिभुज बनते हैं (प्रत्येक विकर्ण वर्ग को 2 भागों में बांटता है, 2+2=4)। कुल = 8।"
+  },
+  {
+    "id": "RRB_REAS_008",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Syllogism",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Statements: All trains are coaches. Some coaches are engines. Conclusions: I. Some trains are engines. II. Some engines are coaches.",
+    "options": [
+      "Only conclusion II follows",
+      "Only conclusion I follows",
+      "Both I and II follow",
+      "Neither I nor II follows"
+    ],
+    "correctAnswer": "Only conclusion II follows",
+    "explanation": "'Some coaches are engines' implies 'Some engines are coaches' (II follows). There is no definite overlap between trains and engines, so I does not follow.",
+    "questionHi": "कथन: सभी ट्रेनें कोच हैं। कुछ कोच इंजन हैं। निष्कर्ष: I. कुछ ट्रेनें इंजन हैं। II. कुछ इंजन कोच हैं।",
+    "optionsHi": [
+      "केवल निष्कर्ष II अनुसरण करता है",
+      "केवल निष्कर्ष I अनुसरण करता है",
+      "I और II दोनों अनुसरण करते हैं",
+      "न तो I और न ही II अनुसरण करता है"
+    ],
+    "correctAnswerHi": "केवल निष्कर्ष II अनुसरण करता है",
+    "explanationHi": "'कुछ कोच इंजन हैं' का अर्थ है 'कुछ इंजन कोच हैं' (II अनुसरण करता है)। ट्रेनों और इंजनों के बीच कोई निश्चित संबंध नहीं है, इसलिए I अनुसरण नहीं करता।"
+  },
+  {
+    "id": "RRB_REAS_009",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Jumbling",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Rearrange the letters 'R A T N I' to form a meaningful word and select the category it belongs to.",
+    "options": [
+      "Transport",
+      "Fruit",
+      "Animal",
+      "Color"
+    ],
+    "correctAnswer": "Transport",
+    "explanation": "The letters 'R A T N I' unscramble to 'TRAIN', which is a mode of transport.",
+    "questionHi": "अक्षरों 'R A T N I' को पुनर्व्यवस्थित करके एक सार्थक शब्द बनाएं और चुनें कि वह किस श्रेणी से संबंधित है।",
+    "optionsHi": [
+      "परिवहन (Transport)",
+      "फल",
+      "जानवर",
+      "रंग"
+    ],
+    "correctAnswerHi": "परिवहन (Transport)",
+    "explanationHi": "अक्षर 'R A T N I' को व्यवस्थित करने पर 'TRAIN' शब्द बनता है, जो परिवहन का एक साधन है।"
+  },
+  {
+    "id": "RRB_REAS_010",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Venn Diagrams",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "In a group of 50 candidates, 30 study Reasoning, 25 study Mathematics, and 10 study both. How many study neither?",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "0"
+    ],
+    "correctAnswer": "5",
+    "explanation": "n(R ∪ M) = 30 + 25 - 10 = 45. Neither = 50 - 45 = 5.",
+    "questionHi": "50 अभ्यर्थियों के एक समूह में, 30 रीज़निंग पढ़ते हैं, 25 गणित पढ़ते हैं और 10 दोनों पढ़ते हैं। कितने अभ्यर्थी दोनों में से कोई भी विषय नहीं पढ़ते हैं?",
+    "optionsHi": [
+      "5",
+      "10",
+      "15",
+      "0"
+    ],
+    "correctAnswerHi": "5",
+    "explanationHi": "n(R ∪ M) = 30 + 25 - 10 = 45। कोई भी नहीं पढ़ने वाले = 50 - 45 = 5।"
+  },
+  {
+    "id": "RRB_REAS_011",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Puzzles",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Five stations P, Q, R, S, T lie in a row facing North. R is immediately right of P. T is at the extreme right end. Q is between R and S. S is immediately left of T. Which station is in the middle?",
+    "options": [
+      "Q",
+      "R",
+      "S",
+      "P"
+    ],
+    "correctAnswer": "Q",
+    "explanation": "From left to right: P, R, Q, S, T. The middle (3rd) station is Q.",
+    "questionHi": "पांच स्टेशन P, Q, R, S, T उत्तर की ओर मुख करके एक पंक्ति में स्थित हैं। R, P के ठीक दाईं ओर है। T सबसे दाहिने छोर पर है। Q, R और S के बीच है। S, T के ठीक बाईं ओर है। मध्य में कौन-सा स्टेशन है?",
+    "optionsHi": [
+      "Q",
+      "R",
+      "S",
+      "P"
+    ],
+    "correctAnswerHi": "Q",
+    "explanationHi": "बाएं से दाएं क्रम: P, R, Q, S, T। मध्य (तीसरा) स्टेशन Q है।"
+  },
+  {
+    "id": "RRB_REAS_012",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Data Sufficiency",
+    "examTag": [
+      "CBT-2"
+    ],
+    "question": "Question: On which day of the week did Train 12951 depart? Statement I: It departed two days after Wednesday. Statement II: It departed before Saturday.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both I and II together are required",
+      "Even together they are not sufficient"
+    ],
+    "correctAnswer": "Statement I alone is sufficient",
+    "explanation": "Statement I uniquely determines the day as Friday (Wednesday + 2 days). Statement II gives multiple possibilities.",
+    "questionHi": "प्रश्न: ट्रेन 12951 सप्ताह के किस दिन रवाना हुई? कथन I: यह बुधवार के दो दिन बाद रवाना हुई। कथन II: यह शनिवार से पहले रवाना हुई।",
+    "optionsHi": [
+      "केवल कथन I पर्याप्त है",
+      "केवल कथन II पर्याप्त है",
+      "I और II दोनों एक साथ आवश्यक हैं",
+      "एक साथ भी पर्याप्त नहीं हैं"
+    ],
+    "correctAnswerHi": "केवल कथन I पर्याप्त है",
+    "explanationHi": "कथन I से स्पष्ट रूप से शुक्रवार (बुधवार + 2 दिन) प्राप्त होता है। कथन II से कई दिन संभव हैं।"
+  },
+  {
+    "id": "RRB_REAS_013",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Statement-Conclusion & Courses of Action",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Statement: Dense fog has severely reduced visibility across Northern Railway tracks. Course of Action: I. Speed restrictions and fog-safe GPS devices should be enforced on trains. II. All railway tracks across the country should be permanently closed.",
+    "options": [
+      "Only I follows",
+      "Only II follows",
+      "Both I and II follow",
+      "Neither I nor II follows"
+    ],
+    "correctAnswer": "Only I follows",
+    "explanation": "Enforcing speed restrictions and fog-safe devices is practical and proportionate (I). Permanently closing tracks nationwide is extreme and impractical (II).",
+    "questionHi": "कथन: घने कोहरे ने उत्तर रेलवे की पटरियों पर दृश्यता को गंभीर रूप से कम कर दिया है। कार्यवाही: I. ट्रेनों पर गति प्रतिबंध और फॉग-सेफ GPS उपकरण लागू किए जाने चाहिए। II. देश भर की सभी रेलवे पटरियों को स्थायी रूप से बंद कर दिया जाना चाहिए।",
+    "optionsHi": [
+      "केवल I अनुसरण करता है",
+      "केवल II अनुसरण करता है",
+      "I और II दोनों अनुसरण करते हैं",
+      "न तो I और न ही II अनुसरण करता है"
+    ],
+    "correctAnswerHi": "केवल I अनुसरण करता है",
+    "explanationHi": "गति प्रतिबंध और फॉग-सेफ उपकरण लागू करना व्यावहारिक और उचित है (I)। देश भर की पटरियां स्थायी रूप से बंद करना अव्यावहारिक है (II)।"
+  },
+  {
+    "id": "RRB_REAS_014",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Decision Making",
+    "examTag": [
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "A ticket booking clerk discovers a system mismatch of ₹500 at shift close. What is the most appropriate decision?",
+    "options": [
+      "Record the discrepancy in the official cash register and immediately report it to the Station Superintendent",
+      "Pay ₹500 from personal pocket without logging it",
+      "Alter the last ticket entry to balance the ledger",
+      "Leave the counter and inform nobody"
+    ],
+    "correctAnswer": "Record the discrepancy in the official cash register and immediately report it to the Station Superintendent",
+    "explanation": "Transparency, accurate logging, and prompt escalation to the supervising authority is the only compliant railway procedure.",
+    "questionHi": "एक टिकट बुकिंग क्लर्क को शिफ्ट समाप्ति पर सिस्टम में ₹500 का अंतर मिलता है। सबसे उपयुक्त निर्णय क्या है?",
+    "optionsHi": [
+      "आधिकारिक कैश रजिस्टर में अंतर दर्ज करें और तुरंत स्टेशन अधीक्षक को सूचित करें",
+      "बिना दर्ज किए अपनी जेब से ₹500 जमा कर दें",
+      "खाता संतुलित करने के लिए अंतिम टिकट प्रविष्टि बदल दें",
+      "काउंटर छोड़ दें और किसी को न बताएं"
+    ],
+    "correctAnswerHi": "आधिकारिक कैश रजिस्टर में अंतर दर्ज करें और तुरंत स्टेशन अधीक्षक को सूचित करें",
+    "explanationHi": "पारदर्शिता, सटीक लॉगिंग और पर्यवेक्षी अधिकारी को तुरंत सूचित करना ही एकमात्र सही रेलवे प्रक्रिया है।"
+  },
+  {
+    "id": "RRB_REAS_015",
+    "type": "fill_in_blank",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Direction & Distance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Ravi walks 6 km North, then turns right and walks 8 km East. His shortest straight-line distance from the starting point is ______ km.",
+    "options": [],
+    "correctAnswer": "10",
+    "explanation": "By Pythagoras theorem: √(6² + 8²) = √(36 + 64) = √100 = 10 km.",
+    "questionHi": "रवि उत्तर की ओर 6 किमी चलता है, फिर दाईं ओर मुड़ता है और पूर्व की ओर 8 किमी चलता है। प्रारंभिक बिंदु से उसकी सबसे कम सीधी दूरी ______ किमी है।",
+    "optionsHi": [],
+    "correctAnswerHi": "10",
+    "explanationHi": "पाइथागोरस प्रमेय द्वारा: √(6² + 8²) = √(36 + 64) = √100 = 10 किमी।"
+  },
+  {
+    "id": "RRB_REAS_016",
+    "type": "fill_in_blank",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Ranking",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "In a row of 40 aspirants, Priya ranks 13th from the left end. What is her rank from the right end? ______",
+    "options": [],
+    "correctAnswer": "28",
+    "explanation": "Rank from right = Total - Rank from left + 1 = 40 - 13 + 1 = 28.",
+    "questionHi": "40 अभ्यर्थियों की एक पंक्ति में प्रिया बाएं छोर से 13वें स्थान पर है। दाएं छोर से उसका स्थान क्या है? ______",
+    "optionsHi": [],
+    "correctAnswerHi": "28",
+    "explanationHi": "दाएं से स्थान = कुल - बाएं से स्थान + 1 = 40 - 13 + 1 = 28।"
+  },
+  {
+    "id": "RRB_REAS_017",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Number & Alphabet Series",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Complete the alphabet series: AZ, CX, FU, JQ, ?",
+    "options": [
+      "OL",
+      "PK",
+      "OM",
+      "NL"
+    ],
+    "correctAnswer": "OL",
+    "explanation": "First letters increase by +2, +3, +4, +5 (A->C->F->J->O). Second letters are reverse-pair opposites (Z, X, U, Q, L). Thus OL.",
+    "questionHi": "अक्षर श्रृंखला को पूरा कीजिए: AZ, CX, FU, JQ, ?",
+    "optionsHi": [
+      "OL",
+      "PK",
+      "OM",
+      "NL"
+    ],
+    "correctAnswerHi": "OL",
+    "explanationHi": "पहले अक्षर +2, +3, +4, +5 से बढ़ते हैं (A->C->F->J->O)। दूसरे अक्षर विपरीत युग्म हैं (Z, X, U, Q, L)। अतः उत्तर OL होगा।"
+  },
+  {
+    "id": "RRB_REAS_018",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Coding-Decoding",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "If 'RAIL' = 40 (sum of alphabetical positions A=1..Z=26), what is the value of 'TRACK'?",
+    "options": [
+      "53",
+      "51",
+      "55",
+      "49"
+    ],
+    "correctAnswer": "53",
+    "explanation": "RAIL: R(18)+A(1)+I(9)+L(12)=40. TRACK: T(20)+R(18)+A(1)+C(3)+K(11) = 53.",
+    "questionHi": "यदि 'RAIL' = 40 (वर्णमाला मान A=1..Z=26 का योग), तो 'TRACK' का मान क्या होगा?",
+    "optionsHi": [
+      "53",
+      "51",
+      "55",
+      "49"
+    ],
+    "correctAnswerHi": "53",
+    "explanationHi": "RAIL: R(18)+A(1)+I(9)+L(12)=40। TRACK: T(20)+R(18)+A(1)+C(3)+K(11) = 53।"
+  },
+  {
+    "id": "RRB_CBAT_001",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Memory Test (Track/Station Memory)",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Track Memory Recall] Memorize the Station-Code pairs: KOTA = Platform 4, AJMER = Platform 2, UDAIPUR = Platform 6, JAIPUR = Platform 1, ALWAR = Platform 5. Without looking back at the list mentally, which platform was assigned to UDAIPUR?",
+    "options": [
+      "Platform 6",
+      "Platform 4",
+      "Platform 2",
+      "Platform 5"
+    ],
+    "correctAnswer": "Platform 6",
+    "explanation": "In the CBAT Track/Station Memory battery, accurate association recall is tested under strict time limits: UDAIPUR corresponds to Platform 6.",
+    "questionHi": "[ट्रैक मेमोरी स्मरण] स्टेशन-कोड युग्मों को याद करें: KOTA = प्लेटफॉर्म 4, AJMER = प्लेटफॉर्म 2, UDAIPUR = प्लेटफॉर्म 6, JAIPUR = प्लेटफॉर्म 1, ALWAR = प्लेटफॉर्म 5। सूची को दोबारा देखे बिना बताएं कि UDAIPUR को कौन-सा प्लेटफॉर्म आवंटित था?",
+    "optionsHi": [
+      "प्लेटफॉर्म 6",
+      "प्लेटफॉर्म 4",
+      "प्लेटफॉर्म 2",
+      "प्लेटफॉर्म 5"
+    ],
+    "correctAnswerHi": "प्लेटफॉर्म 6",
+    "explanationHi": "CBAT ट्रैक/स्टेशन मेमोरी बैटरी में सख्त समय सीमा के भीतर सटीक युग्म स्मरण की जांच की जाती है: UDAIPUR प्लेटफॉर्म 6 से संबंधित है।"
+  },
+  {
+    "id": "RRB_CBAT_002",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Memory Test (Track/Station Memory)",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Signal & Route Memory] Study this sequence of Track Signals along Mainline-B: Signal S1 (Green), Signal S2 (Double Yellow), Signal S3 (Yellow), Signal S4 (Red). What aspect does Signal S2 display?",
+    "options": [
+      "Double Yellow",
+      "Yellow",
+      "Green",
+      "Red"
+    ],
+    "correctAnswer": "Double Yellow",
+    "explanation": "Signal S2 displays Double Yellow (Attention aspect, meaning proceed and be prepared to pass next signal at restricted speed).",
+    "questionHi": "[सिग्नल और रूट मेमोरी] मेनलाइन-B पर ट्रैक सिग्नल के इस क्रम का अध्ययन करें: सिग्नल S1 (हरा), सिग्नल S2 (डबल पीला), सिग्नल S3 (पीला), सिग्नल S4 (लाल)। सिग्नल S2 कौन-सा संकेत प्रदर्शित करता है?",
+    "optionsHi": [
+      "डबल पीला",
+      "पीला",
+      "हरा",
+      "लाल"
+    ],
+    "correctAnswerHi": "डबल पीला",
+    "explanationHi": "सिग्नल S2 डबल पीला (ध्यान संकेत - आगे बढ़ें और अगले सिग्नल को सीमित गति से पार करने के लिए तैयार रहें) प्रदर्शित करता है।"
+  },
+  {
+    "id": "RRB_CBAT_003",
+    "type": "fill_in_blank",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Selective Attention (Odd Figure / Sum of Odd Numbers)",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Sum of Odd Numbers Drill] Calculate the sum of ONLY the ODD numbers in the following CBAT row: [ 14, 7, 22, 9, 18, 11, 4, 3, 16 ]. Sum = ______",
+    "options": [],
+    "correctAnswer": "30",
+    "explanation": "Odd numbers in the row are 7, 9, 11, and 3. Their sum = 7 + 9 + 11 + 3 = 30.",
+    "questionHi": "[विषम संख्याओं का योग अभ्यास] निम्नलिखित CBAT पंक्ति में केवल विषम (ODD) संख्याओं का योग ज्ञात कीजिए: [ 14, 7, 22, 9, 18, 11, 4, 3, 16 ]। योग = ______",
+    "optionsHi": [],
+    "correctAnswerHi": "30",
+    "explanationHi": "पंक्ति में विषम संख्याएं 7, 9, 11 और 3 हैं। इनका योग = 7 + 9 + 11 + 3 = 30।"
+  },
+  {
+    "id": "RRB_CBAT_004",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Selective Attention (Odd Figure / Sum of Odd Numbers)",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Odd Figure / Pattern Attention] Identify the row that differs from the other three in symbol-digit pairing rule: A) [★4★4]  B) [▲7▲7]  C) [●9●8]  D) [■5■5]",
+    "options": [
+      "C) [●9●8]",
+      "A) [★4★4]",
+      "B) [▲7▲7]",
+      "D) [■5■5]"
+    ],
+    "correctAnswer": "C) [●9●8]",
+    "explanation": "In A, B, and D the two digits match each other (4-4, 7-7, 5-5). Only C has mismatched digits (9 and 8).",
+    "questionHi": "[विषम आकृति / पैटर्न ध्यान] उस पंक्ति की पहचान करें जो प्रतीक-अंक युग्म नियम में अन्य तीन से भिन्न है: A) [★4★4]  B) [▲7▲7]  C) [●9●8]  D) [■5■5]",
+    "optionsHi": [
+      "C) [●9●8]",
+      "A) [★4★4]",
+      "B) [▲7▲7]",
+      "D) [■5■5]"
+    ],
+    "correctAnswerHi": "C) [●9●8]",
+    "explanationHi": "A, B और D में दोनों अंक आपस में समान हैं (4-4, 7-7, 5-5)। केवल C में असमान अंक (9 और 8) हैं।"
+  },
+  {
+    "id": "RRB_CBAT_005",
+    "type": "fill_in_blank",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Selective Attention (Odd Figure / Sum of Odd Numbers)",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Sum of Odd Numbers Drill] Find the sum of all ODD numbers in this CBAT row: [ 21, 12, 5, 8, 13, 24, 1, 10 ]. Sum = ______",
+    "options": [],
+    "correctAnswer": "40",
+    "explanation": "Odd numbers are 21, 5, 13, 1. Sum = 21 + 5 + 13 + 1 = 40.",
+    "questionHi": "[विषम संख्याओं का योग अभ्यास] इस CBAT पंक्ति में सभी विषम (ODD) संख्याओं का योग ज्ञात कीजिए: [ 21, 12, 5, 8, 13, 24, 1, 10 ]। योग = ______",
+    "optionsHi": [],
+    "correctAnswerHi": "40",
+    "explanationHi": "विषम संख्याएं 21, 5, 13, 1 हैं। योग = 21 + 5 + 13 + 1 = 40।"
+  },
+  {
+    "id": "RRB_CBAT_006",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Spatial Scanning (Shortest Route Finder)",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Shortest Route Finder] In a railway yard network, route distances (in km) are: A->B (4), A->C (2), C->B (1), B->D (5), C->D (7). What is the shortest route and total distance from Station A to Station D?",
+    "options": [
+      "A -> C -> B -> D (8 km)",
+      "A -> B -> D (9 km)",
+      "A -> C -> D (9 km)",
+      "A -> B -> C -> D (12 km)"
+    ],
+    "correctAnswer": "A -> C -> B -> D (8 km)",
+    "explanation": "Compare routes: A->B->D = 4+5 = 9 km; A->C->D = 2+7 = 9 km; A->C->B->D = 2+1+5 = 8 km (shortest).",
+    "questionHi": "[सबसे छोटा मार्ग खोजक] रेलवे यार्ड नेटवर्क में मार्ग की दूरियां (किमी में) हैं: A->B (4), A->C (2), C->B (1), B->D (5), C->D (7)। स्टेशन A से स्टेशन D तक सबसे छोटा मार्ग और कुल दूरी क्या है?",
+    "optionsHi": [
+      "A -> C -> B -> D (8 किमी)",
+      "A -> B -> D (9 किमी)",
+      "A -> C -> D (9 किमी)",
+      "A -> B -> C -> D (12 किमी)"
+    ],
+    "correctAnswerHi": "A -> C -> B -> D (8 किमी)",
+    "explanationHi": "मार्गों की तुलना: A->B->D = 4+5 = 9 किमी; A->C->D = 2+7 = 9 किमी; A->C->B->D = 2+1+5 = 8 किमी (सबसे छोटा)।"
+  },
+  {
+    "id": "RRB_CBAT_007",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Spatial Scanning (Shortest Route Finder)",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Obstacle Bypass Route] From Junction X to Yard Y, direct track X->Y is blocked for maintenance. Available paths are: X->M (3 km) -> N (2 km) -> Y (4 km), OR X->P (5 km) -> Y (3 km), OR X->M (3 km) -> P (4 km) -> Y (3 km). Which open route is shortest?",
+    "options": [
+      "X -> P -> Y (8 km)",
+      "X -> M -> N -> Y (9 km)",
+      "X -> M -> P -> Y (10 km)",
+      "X -> Y direct (blocked)"
+    ],
+    "correctAnswer": "X -> P -> Y (8 km)",
+    "explanation": "Since direct X->Y is blocked, X->P->Y takes 5 + 3 = 8 km, which is shorter than 9 km and 10 km.",
+    "questionHi": "[बाधा बायपास मार्ग] जंक्शन X से यार्ड Y तक सीधा ट्रैक X->Y रखरखाव के लिए अवरुद्ध है। उपलब्ध मार्ग हैं: X->M (3 किमी) -> N (2 किमी) -> Y (4 किमी), या X->P (5 किमी) -> Y (3 किमी), या X->M (3 किमी) -> P (4 किमी) -> Y (3 किमी)। कौन-सा खुला मार्ग सबसे छोटा है?",
+    "optionsHi": [
+      "X -> P -> Y (8 किमी)",
+      "X -> M -> N -> Y (9 किमी)",
+      "X -> M -> P -> Y (10 किमी)",
+      "X -> Y सीधा (अवरुद्ध)"
+    ],
+    "correctAnswerHi": "X -> P -> Y (8 किमी)",
+    "explanationHi": "चूंकि सीधा मार्ग X->Y अवरुद्ध है, X->P->Y की दूरी 5 + 3 = 8 किमी है, जो 9 किमी और 10 किमी से कम है।"
+  },
+  {
+    "id": "RRB_CBAT_008",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Information Ordering",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Train Dispatch Operation Ordering] Arrange the Station Master's train reception/dispatch steps in correct logical sequence: (1) Verify line clear from advance station (2) Lower home/starter signal (3) Ensure points are correctly set and locked (4) Observe train tail-lamp/LV board after arrival.",
+    "options": [
+      "3 -> 1 -> 2 -> 4",
+      "1 -> 2 -> 3 -> 4",
+      "2 -> 3 -> 1 -> 4",
+      "3 -> 2 -> 4 -> 1"
+    ],
+    "correctAnswer": "3 -> 1 -> 2 -> 4",
+    "explanation": "First ensure points are set and locked (3), verify line clear (1), clear signals (2), and verify complete arrival via tail-lamp/LV board (4).",
+    "questionHi": "[ट्रेन प्रेषण संचालन क्रम] स्टेशन मास्टर के ट्रेन आगमन/प्रस्थान चरणों को सही तार्किक क्रम में व्यवस्थित करें: (1) अग्रिम स्टेशन से लाइन क्लियर सत्यापित करें (2) होम/स्टार्टर सिग्नल झुकाएं (3) सुनिश्चित करें कि पॉइंट सही ढंग से सेट और लॉक हैं (4) आगमन के बाद ट्रेन का टेल-लैंप/LV बोर्ड देखें।",
+    "optionsHi": [
+      "3 -> 1 -> 2 -> 4",
+      "1 -> 2 -> 3 -> 4",
+      "2 -> 3 -> 1 -> 4",
+      "3 -> 2 -> 4 -> 1"
+    ],
+    "correctAnswerHi": "3 -> 1 -> 2 -> 4",
+    "explanationHi": "पहले सुनिश्चित करें कि पॉइंट सेट और लॉक हैं (3), लाइन क्लियर सत्यापित करें (1), सिग्नल दें (2), और टेल-लैंप/LV बोर्ड से पूर्ण आगमन की पुष्टि करें (4)।"
+  },
+  {
+    "id": "RRB_CBAT_009",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Information Ordering",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "[Code Transformation Ordering] Apply the sequential rules to input '264': Step 1: Add 2 to each digit. Step 2: Swap first and last digits. Step 3: Subtract 1 from the middle digit. What is the final output?",
+    "options": [
+      "674",
+      "476",
+      "694",
+      "486"
+    ],
+    "correctAnswer": "674",
+    "explanation": "Start with 264 -> Step 1 (+2 to each digit): 486 -> Step 2 (swap first & last): 684 -> Step 3 (middle digit - 1): 674.",
+    "questionHi": "[कोड रूपांतरण क्रम] इनपुट '264' पर क्रमिक नियम लागू करें: चरण 1: प्रत्येक अंक में 2 जोड़ें। चरण 2: पहले और अंतिम अंक को आपस में बदलें। चरण 3: बीच वाले अंक में से 1 घटाएं। अंतिम परिणाम क्या है?",
+    "optionsHi": [
+      "674",
+      "476",
+      "694",
+      "486"
+    ],
+    "correctAnswerHi": "674",
+    "explanationHi": "264 से शुरू -> चरण 1 (प्रत्येक अंक में +2): 486 -> चरण 2 (पहला और अंतिम बदलें): 684 -> चरण 3 (बीच का अंक - 1): 674।"
+  },
+  {
+    "id": "RRB_CBAT_010",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Personality/Situational Judgment",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "As an on-duty Station Master, you notice a minor track circuit failure indicator flashing red just 4 minutes before an Express train is scheduled to pass through on the mainline. What should you do?",
+    "options": [
+      "Immediately keep signals at Red, alert the Section Controller and S&T staff, and hold/caution the train per Rule Book",
+      "Clear the starter signal manually to avoid delaying the Express train",
+      "Wait 10 minutes to see if the indicator resets on its own",
+      "Ask a platform porter to check the track visually while clearing the signal"
+    ],
+    "correctAnswer": "Immediately keep signals at Red, alert the Section Controller and S&T staff, and hold/caution the train per Rule Book",
+    "explanation": "Railway safety is paramount (zero tolerance for unsafe signaling). Holding signals at Danger and notifying Section Control & Signal/Telecom (S&T) is mandatory.",
+    "questionHi": "ड्यूटी पर तैनात स्टेशन मास्टर के रूप में, आप देखते हैं कि मेनलाइन पर एक एक्सप्रेस ट्रेन के गुजरने से ठीक 4 मिनट पहले ट्रैक सर्किट फेलियर इंडिकेटर लाल चमक रहा है। आपको क्या करना चाहिए?",
+    "optionsHi": [
+      "तुरंत सिग्नल लाल रखें, सेक्शन कंट्रोलर और S&T स्टाफ को सूचित करें, और नियम पुस्तिका के अनुसार ट्रेन को रोकें/सतर्क करें",
+      "एक्सप्रेस ट्रेन में देरी से बचने के लिए स्टार्टर सिग्नल मैन्युअल रूप से क्लियर कर दें",
+      "10 मिनट प्रतीक्षा करें कि क्या इंडिकेटर अपने आप रीसेट होता है",
+      "सिग्नल क्लियर करते समय किसी प्लेटफॉर्म पोर्टर से ट्रैक को आंखों से देखने के लिए कहें"
+    ],
+    "correctAnswerHi": "तुरंत सिग्नल लाल रखें, सेक्शन कंट्रोलर और S&T स्टाफ को सूचित करें, और नियम पुस्तिका के अनुसार ट्रेन को रोकें/सतर्क करें",
+    "explanationHi": "रेलवे सुरक्षा सर्वोपरि है। सिग्नल को खतरे (Red) पर रखना और सेक्शन कंट्रोल व S&T को सूचित करना अनिवार्य है।"
+  },
+  {
+    "id": "RRB_CBAT_011",
+    "type": "mcq",
+    "category": "Station Master Special — CBAT",
+    "subCategory": "Personality/Situational Judgment",
+    "examTag": [
+      "Station Master"
+    ],
+    "question": "During heavy monsoon rain, a Pointsman reports waterlogging near Points No. 14A. You are managing two crossing passenger trains. What is your primary priority?",
+    "options": [
+      "Ensure safe verification of point setting/clamping and coordinate speed restrictions with Control before admitting any train",
+      "Ignore the report because passenger trains run on tight schedules",
+      "Divert both trains onto the same loop line simultaneously",
+      "Hand over the panel to an unauthorized trainee"
+    ],
+    "correctAnswer": "Ensure safe verification of point setting/clamping and coordinate speed restrictions with Control before admitting any train",
+    "explanation": "Station Masters must prioritize safe track routing, physical verification/clamping if required, and Section Control coordination over schedule pressure.",
+    "questionHi": "भारी मानसूनी बारिश के दौरान, एक पॉइंट्समैन पॉइंट नंबर 14A के पास जलभराव की सूचना देता है। आप दो क्रॉसिंग यात्री ट्रेनों का प्रबंधन कर रहे हैं। आपकी प्राथमिक प्राथमिकता क्या है?",
+    "optionsHi": [
+      "किसी भी ट्रेन को प्रवेश देने से पहले पॉइंट सेटिंग/क्लैम्पिंग का सुरक्षित सत्यापन सुनिश्चित करें और कंट्रोल के साथ गति प्रतिबंधों का समन्वय करें",
+      "रिपोर्ट को अनदेखा करें क्योंकि यात्री ट्रेनें सख्त समय सारिणी पर चलती हैं",
+      "दोनों ट्रेनों को एक साथ एक ही लूप लाइन पर डायवर्ट कर दें",
+      "पैनल को किसी अनधिकृत प्रशिक्षु को सौंप दें"
+    ],
+    "correctAnswerHi": "किसी भी ट्रेन को प्रवेश देने से पहले पॉइंट सेटिंग/क्लैम्पिंग का सुरक्षित सत्यापन सुनिश्चित करें और कंट्रोल के साथ गति प्रतिबंधों का समन्वय करें",
+    "explanationHi": "स्टेशन मास्टर को समय सारिणी के दबाव की तुलना में सुरक्षित ट्रैक रूटिंग, भौतिक सत्यापन/क्लैम्पिंग और सेक्शन कंट्रोल समन्वय को प्राथमिकता देनी चाहिए।"
+  },
+  {
+    "id": "RRB_GA_026",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "General Science (Physics, Chemistry, Biology - up to 10th CBSE)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "What is the approximate pH value of pure neutral water at 25°C?",
+    "options": [
+      "7",
+      "0",
+      "5.5",
+      "14"
+    ],
+    "correctAnswer": "7",
+    "explanation": "Pure water at 25°C has equal H+ and OH- concentrations (10^-7 M), giving a neutral pH of 7.",
+    "questionHi": "25°C पर शुद्ध उदासीन जल का अनुमानित pH मान क्या होता है?",
+    "optionsHi": [
+      "7",
+      "0",
+      "5.5",
+      "14"
+    ],
+    "correctAnswerHi": "7",
+    "explanationHi": "25°C पर शुद्ध जल में H+ और OH- आयनों की सांद्रता बराबर (10^-7 M) होती है, जिससे इसका pH मान 7 (उदासीन) होता है।"
+  },
+  {
+    "id": "RRB_GA_027",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Indian History & Freedom Struggle",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Who founded the 'Forward Bloc' in 1939 after resigning from the presidency of the Indian National Congress?",
+    "options": [
+      "Subhas Chandra Bose",
+      "Chittaranjan Das",
+      "Lala Lajpat Rai",
+      "Bhagat Singh"
+    ],
+    "correctAnswer": "Subhas Chandra Bose",
+    "explanation": "Subhas Chandra Bose formed the All India Forward Bloc in May 1939 within the Congress after the Tripuri Session.",
+    "questionHi": "1939 में भारतीय राष्ट्रीय कांग्रेस के अध्यक्ष पद से इस्तीफा देने के बाद 'फॉरवर्ड ब्लॉक' की स्थापना किसने की?",
+    "optionsHi": [
+      "सुभाष चंद्र बोस",
+      "चित्तरंजन दास",
+      "लाला लाजपत राय",
+      "भगत सिंह"
+    ],
+    "correctAnswerHi": "सुभाष चंद्र बोस",
+    "explanationHi": "सुभाष चंद्र बोस ने त्रिपुरी अधिवेशन के बाद मई 1939 में कांग्रेस के भीतर ऑल इंडिया फॉरवर्ड ब्लॉक का गठन किया।"
+  },
+  {
+    "id": "RRB_GA_028",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Current Affairs (National & International)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "Which Indian Railways trainset introduced sleeper-variant semi-high-speed long-distance travel across major trunk routes?",
+    "options": [
+      "Vande Bharat Sleeper",
+      "Tejas Express",
+      "Humsafar Express",
+      "Garib Rath"
+    ],
+    "correctAnswer": "Vande Bharat Sleeper",
+    "explanation": "The Vande Bharat Sleeper trainset extends India's indigenous semi-high-speed EMU platform to overnight long-distance rail routes.",
+    "questionHi": "भारतीय रेलवे के किस ट्रेनसेट ने प्रमुख ट्रंक मार्गों पर स्लीपर-वेरिएंट सेमी-हाई-स्पीड लंबी दूरी की यात्रा की शुरुआत की?",
+    "optionsHi": [
+      "वंदे भारत स्लीपर",
+      "तेजस एक्सप्रेस",
+      "हमसफर एक्सप्रेस",
+      "गरीब रथ"
+    ],
+    "correctAnswerHi": "वंदे भारत स्लीपर",
+    "explanationHi": "वंदे भारत स्लीपर ट्रेनसेट भारत के स्वदेशी सेमी-हाई-स्पीड EMU प्लेटफॉर्म को रात्रिकालीन लंबी दूरी के रेल मार्गों तक विस्तारित करता है।"
+  },
+  {
+    "id": "RRB_GA_029",
+    "type": "fill_in_blank",
+    "category": "General Awareness",
+    "subCategory": "Static GK (Art & Culture, Awards, Sports, Books, Monuments)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "The Konark Sun Temple in Odisha was built by King Narasimhadeva I of the Eastern ______ dynasty.",
+    "options": [],
+    "correctAnswer": "Ganga",
+    "explanation": "King Narasimhadeva I of the Eastern Ganga dynasty constructed the 13th-century Konark Sun Temple.",
+    "questionHi": "ओडिशा में कोणार्क सूर्य मंदिर का निर्माण पूर्वी ______ राजवंश के राजा नरसिंहदेव प्रथम द्वारा करवाया गया था।",
+    "optionsHi": [],
+    "correctAnswerHi": "गंग",
+    "explanationHi": "पूर्वी गंग राजवंश के राजा नरसिंहदेव प्रथम ने 13वीं शताब्दी में कोणार्क सूर्य मंदिर का निर्माण कराया था।"
+  },
+  {
+    "id": "RRB_GA_030",
+    "type": "mcq",
+    "category": "General Awareness",
+    "subCategory": "Science & Technology (Space & Nuclear)",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Aditya-L1, India's first space-based solar observatory, is placed in a halo orbit around which Lagrangian point?",
+    "options": [
+      "L1",
+      "L2",
+      "L4",
+      "L5"
+    ],
+    "correctAnswer": "L1",
+    "explanation": "Aditya-L1 orbits the Sun-Earth Lagrange Point 1 (L1), located about 1.5 million km from Earth, providing an uninterrupted view of the Sun.",
+    "questionHi": "भारत की पहली अंतरिक्ष-आधारित सौर वेधशाला आदित्य-L1 किस लैग्रेंजियन बिंदु के चारों ओर प्रभामंडल (हेलो) कक्षा में स्थापित है?",
+    "optionsHi": [
+      "L1",
+      "L2",
+      "L4",
+      "L5"
+    ],
+    "correctAnswerHi": "L1",
+    "explanationHi": "आदित्य-L1 पृथ्वी से लगभग 15 लाख किमी दूर सूर्य-पृथ्वी लैग्रेंज बिंदु 1 (L1) की परिक्रमा करता है, जिससे सूर्य का निर्बाध अवलोकन मिलता है।"
+  },
+  {
+    "id": "RRB_MATH_021",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Time, Speed & Distance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2",
+      "Station Master"
+    ],
+    "question": "A passenger train takes 30 seconds to cross a 250m long platform at 54 km/hr. What is the length of the train?",
+    "options": [
+      "200 m",
+      "150 m",
+      "250 m",
+      "180 m"
+    ],
+    "correctAnswer": "200 m",
+    "explanation": "Speed = 54 × (5/18) = 15 m/s. Distance covered in 30s = 15 × 30 = 450m. Train length = 450 - 250 = 200 m.",
+    "questionHi": "एक यात्री ट्रेन 54 किमी/घंटा की गति से 250 मीटर लंबे प्लेटफॉर्म को पार करने में 30 सेकंड लेती है। ट्रेन की लंबाई क्या है?",
+    "optionsHi": [
+      "200 मीटर",
+      "150 मीटर",
+      "250 मीटर",
+      "180 मीटर"
+    ],
+    "correctAnswerHi": "200 मीटर",
+    "explanationHi": "गति = 54 × (5/18) = 15 मीटर/सेकंड। 30 सेकंड में तय दूरी = 15 × 30 = 450 मीटर। ट्रेन की लंबाई = 450 - 250 = 200 मीटर।"
+  },
+  {
+    "id": "RRB_MATH_022",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Time & Work",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Pipe A can fill a railway overhead tank in 6 hours and Pipe B can empty it in 12 hours. If both are opened together, in how many hours will the empty tank be filled?",
+    "options": [
+      "12 hours",
+      "8 hours",
+      "9 hours",
+      "18 hours"
+    ],
+    "correctAnswer": "12 hours",
+    "explanation": "Net filling rate = 1/6 - 1/12 = 1/12 per hour. So it takes 12 hours to fill.",
+    "questionHi": "पाइप A एक रेलवे ओवरहेड टैंक को 6 घंटे में भर सकता है और पाइप B इसे 12 घंटे में खाली कर सकता है। यदि दोनों को एक साथ खोला जाए, तो खाली टैंक कितने घंटे में भर जाएगा?",
+    "optionsHi": [
+      "12 घंटे",
+      "8 घंटे",
+      "9 घंटे",
+      "18 घंटे"
+    ],
+    "correctAnswerHi": "12 घंटे",
+    "explanationHi": "शुद्ध भरने की दर = 1/6 - 1/12 = 1/12 प्रति घंटा। इसलिए टैंक भरने में 12 घंटे लगेंगे।"
+  },
+  {
+    "id": "RRB_MATH_023",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Ratio & Proportion",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Divide ₹3,600 among A, B, and C in the ratio 2 : 3 : 4. What is C's share?",
+    "options": [
+      "₹1,600",
+      "₹1,200",
+      "₹800",
+      "₹1,800"
+    ],
+    "correctAnswer": "₹1,600",
+    "explanation": "Total parts = 2 + 3 + 4 = 9. C's share = (4/9) × 3600 = ₹1,600.",
+    "questionHi": "₹3,600 को A, B और C में 2 : 3 : 4 के अनुपात में बांटिए। C का हिस्सा कितना है?",
+    "optionsHi": [
+      "₹1,600",
+      "₹1,200",
+      "₹800",
+      "₹1,800"
+    ],
+    "correctAnswerHi": "₹1,600",
+    "explanationHi": "कुल भाग = 2 + 3 + 4 = 9। C का हिस्सा = (4/9) × 3600 = ₹1,600।"
+  },
+  {
+    "id": "RRB_MATH_024",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Simple & Compound Interest",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "At what simple interest rate per annum will a sum of money double itself in 8 years?",
+    "options": [
+      "12.5%",
+      "10%",
+      "15%",
+      "8.5%"
+    ],
+    "correctAnswer": "12.5%",
+    "explanation": "To double, SI = Principal (P). So P = (P × R × 8)/100 => R = 100/8 = 12.5%.",
+    "questionHi": "किस साधारण ब्याज की वार्षिक दर से कोई धनराशि 8 वर्षों में दोगुनी हो जाएगी?",
+    "optionsHi": [
+      "12.5%",
+      "10%",
+      "15%",
+      "8.5%"
+    ],
+    "correctAnswerHi": "12.5%",
+    "explanationHi": "दोगुना होने के लिए साधारण ब्याज = मूलधन (P)। अतः P = (P × R × 8)/100 => R = 100/8 = 12.5%।"
+  },
+  {
+    "id": "RRB_MATH_025",
+    "type": "mcq",
+    "category": "Mathematics",
+    "subCategory": "Data Interpretation",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "In a pie chart representing RRB marks distribution (100 Qs total), General Awareness accounts for 40 questions. What central angle does General Awareness represent?",
+    "options": [
+      "144°",
+      "108°",
+      "120°",
+      "160°"
+    ],
+    "correctAnswer": "144°",
+    "explanation": "Central angle = (40 / 100) × 360° = 144°.",
+    "questionHi": "RRB अंकों के वितरण (कुल 100 प्रश्न) को दर्शाने वाले पाई चार्ट में सामान्य जागरूकता के 40 प्रश्न हैं। सामान्य जागरूकता का केंद्रीय कोण कितना होगा?",
+    "optionsHi": [
+      "144°",
+      "108°",
+      "120°",
+      "160°"
+    ],
+    "correctAnswerHi": "144°",
+    "explanationHi": "केंद्रीय कोण = (40 / 100) × 360° = 144°।"
+  },
+  {
+    "id": "RRB_REAS_019",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Direction & Distance",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "A loco pilot starts facing East, turns 90° clockwise, then turns 180° anticlockwise, and finally turns 45° clockwise. Which direction is he facing now?",
+    "options": [
+      "North-East",
+      "North-West",
+      "South-East",
+      "North"
+    ],
+    "correctAnswer": "North-East",
+    "explanation": "Net rotation = +90° (CW) - 180° (ACW) + 45° (CW) = -45° (45° anticlockwise from East) = North-East.",
+    "questionHi": "एक लोको पायलट पूर्व की ओर मुख करके शुरू करता है, 90° दक्षिणावर्त (clockwise) मुड़ता है, फिर 180° वामावर्त (anticlockwise) मुड़ता है, और अंत में 45° दक्षिणावर्त मुड़ता है। अब वह किस दिशा की ओर मुख किए हुए है?",
+    "optionsHi": [
+      "उत्तर-पूर्व",
+      "उत्तर-पश्चिम",
+      "दक्षिण-पूर्व",
+      "उत्तर"
+    ],
+    "correctAnswerHi": "उत्तर-पूर्व",
+    "explanationHi": "कुल घूर्णन = +90° (CW) - 180° (ACW) + 45° (CW) = -45° (पूर्व से 45° वामावर्त) = उत्तर-पूर्व।"
+  },
+  {
+    "id": "RRB_REAS_020",
+    "type": "mcq",
+    "category": "General Intelligence & Reasoning",
+    "subCategory": "Syllogism",
+    "examTag": [
+      "CBT-1",
+      "CBT-2"
+    ],
+    "question": "Statements: All signals are lights. No light is dark. Conclusions: I. No signal is dark. II. Some lights are signals.",
+    "options": [
+      "Both I and II follow",
+      "Only I follows",
+      "Only II follows",
+      "Neither I nor II follows"
+    ],
+    "correctAnswer": "Both I and II follow",
+    "explanation": "Since all signals are inside lights and lights have zero overlap with dark, no signal can be dark (I). All signals are lights implies some lights are signals (II).",
+    "questionHi": "कथन: सभी सिग्नल लाइट हैं। कोई लाइट अंधेरा नहीं है। निष्कर्ष: I. कोई सिग्नल अंधेरा नहीं है। II. कुछ लाइट सिग्नल हैं।",
+    "optionsHi": [
+      "I और II दोनों अनुसरण करते हैं",
+      "केवल I अनुसरण करता है",
+      "केवल II अनुसरण करता है",
+      "न तो I और न ही II अनुसरण करता है"
+    ],
+    "correctAnswerHi": "I और II दोनों अनुसरण करते हैं",
+    "explanationHi": "चूंकि सभी सिग्नल लाइट के भीतर हैं और लाइट का अंधेरे से कोई संबंध नहीं है, इसलिए कोई सिग्नल अंधेरा नहीं हो सकता (I)। सभी सिग्नल लाइट हैं, अतः कुछ लाइट सिग्नल हैं (II)।"
+  }
+]

@@ -2,7 +2,7 @@
 
 > **Canonical AI Agent Memory** for **RRB NTPC & RRB Station Master 2026** Exam Prep & CBT Simulator.  
 > **Last Verified:** `2026-11-25`  
-> **Workspace Root:** `C:\Users\divya\.gemini\antigravity\scratch\rrb-ntpc-2026-prep`  
+> **Workspace Root:** `D:\f2\Personal Project\rrb-ntpc-2026-prep`  
 > **Live Production URL:** https://dvcodeworld.github.io/rrb-ntpc-2026-prep/  
 > **GitHub Repository:** https://github.com/dvCodeWorld/rrb-ntpc-2026-prep  
 > **Auto-Deploy:** GitHub Actions (`.github/workflows/deploy.yml`) on every push to `main` (`vite.config.ts` uses `base: './'`).

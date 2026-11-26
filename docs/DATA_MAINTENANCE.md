@@ -90,7 +90,12 @@ All error arrays (`badMcq`, `badBlank`, `badCat`) must be `[]`, `uniqueIds` must
 ## Rebuilding the PYQ bank (`public/pyq/`)
 
 Run on Windows (the extractor uses the built-in Windows OCR engine; Python 3 with `pymupdf`, `numpy`,
-`Pillow` and the `winrt-*` OCR packages):
+`Pillow` and the `winrt-*` OCR packages). Hindi-medium papers (question text printed as Devanagari images)
+also need **Tesseract**: install it (`winget install --id UB-Mannheim.TesseractOCR`) and put
+`hin.traineddata` + `eng.traineddata` from https://github.com/tesseract-ocr/tessdata_best, plus a copy of
+Tesseract's own `tessdata/configs` folder, in `scripts/extraction/tessdata/` (git-ignored) or point
+`TESSDATA_DIR` at them. Without Tesseract those papers are still processed, but their Hindi text stays blank
+and they go to the skip log.
 
 ```powershell
 # 1. Extract every PDF in a folder (per-file results are cached, so re-runs resume)
@@ -100,7 +105,9 @@ python -P scripts/extraction/extract.py "<pdf folder>" "<pdf folder>/_extraction
 python -P scripts/extraction/merge.py "<pdf folder>" "<pdf folder>/_extraction/out" "<pdf folder>"
 # 3. Build the app data (dedupe, sections, sittings, chunks, images)
 python -P scripts/build_pyq.py "<pdf folder>"
-# 4. Verify, then build/lint as usual
+# 4. Re-tag 2026 sub-topics (tags.json is aligned to index.json row order - always re-run after step 3)
+node scripts/tag_pyq_2026.mjs
+# 5. Verify, then build/lint as usual
 node scripts/check_pyq.mjs
 npm run build
 npm run lint

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Tesseract language models for the PDF extractor (large; download per docs/DATA_MAINTENANCE.md)
+scripts/extraction/tessdata/

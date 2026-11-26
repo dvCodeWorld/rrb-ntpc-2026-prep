@@ -121,6 +121,7 @@ log. Fully scanned Hindi pages are always skipped.
 node scripts/check_pyq.mjs
 node scripts/tag_pyq_2026.mjs   # re-run after rebuilding the bank; --report prints coverage + untagged samples
 ```
-`tag_pyq_2026.mjs` (2026-11-26): GA 15061/17933 tagged (84.0%, 4384 time-sensitive), Maths 12911/14596
-(88.5%), Reasoning 12398/12739 (97.3%); 807 time-sensitive GA questions were last asked before 2025.
+`tag_pyq_2026.mjs` (2026-11-26, 49,385-question bank): GA 16580/19917 tagged (83.2%, 4604 time-sensitive),
+Maths 13803/15853 (87.1%), Reasoning 13179/13615 (96.8%); 1,026 time-sensitive GA questions were last asked
+before 2025 (hidden in 2026 syllabus mode).
 Expected (2026-11-26): `{ questions: 49385, bodies: 49385, uniqueIds: 49385, papers: 619, sittings: 343, chunks: 55, imageRefs: 9829, askedTwicePlus: 452, problems: 0 }`.

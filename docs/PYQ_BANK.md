@@ -2,7 +2,7 @@
 
 > **Applies to:** `rrb-ntpc-2026-prep`
 > **Last Verified:** `2026-11-26`
-> **Data:** `public/pyq/` — 45,268 unique questions · 313 exam shifts (sittings) · 485 source papers · 2016–2026
+> **Data:** `public/pyq/` — 49,385 unique questions (29,405 English · 19,980 Hindi) · 343 exam shifts (sittings) · 619 source papers · 2016–2026
 
 The PYQ bank holds real RRB NTPC questions extracted from 626 previous-year PDF papers. Every
 question is stored **once** and tagged with every exam shift it was asked in, so the app can offer
@@ -14,9 +14,9 @@ year-wise mocks, original-paper replays and "asked again and again" revision lis
 
 | Path | Loaded | Contents |
 | :--- | :--- | :--- |
-| `index.json` (~2.5 MB, ~0.75 MB gzipped) | When the **Previous Papers** tab opens | `sittings`, `papers` (original question order) and one compact row per question |
-| `c/<year>_<ga\|math\|reas>_<n>.json` (51 chunks, ~18 MB total) | Only the chunks a test / page / search needs | Question bodies |
-| `img/<paper>/<file>` (~33 MB) | Lazily, by `<img loading="lazy">` | Only images a question needs: diagrams, formula/fraction options, scan crops |
+| `index.json` (~2.8 MB, ~0.8 MB gzipped) | When the **Previous Papers** tab opens | `sittings`, `papers` (original question order) and one compact row per question |
+| `c/<year>_<ga\|math\|reas>_<n>.json` (55 chunks, ~20 MB total) | Only the chunks a test / page / search needs | Question bodies |
+| `img/<paper>/<file>` (~37 MB) | Lazily, by `<img loading="lazy">` | Only images a question needs: diagrams, formula/fraction options, scan crops |
 | `tags.json` (~150 KB) | With `index.json` (optional — the bank works without it) | 2026 sub-topic per question + time-sensitive GA rows (built by `scripts/tag_pyq_2026.mjs`) |
 | `build_report.json` | Never (docs/checks) | Numbers from the last build |
 
@@ -68,7 +68,18 @@ kept and the second gets a `_xxxx` suffix (16 such questions in the current buil
    - Copies only the images a question needs; scan crops are re-encoded as JPEG.
 3. **`node scripts/check_pyq.mjs`** — integrity gate (see below).
 
-Current numbers: 415 questions asked in 2+ different exam shifts, 29 in 3+ (max 6).
+Current numbers: 452 questions asked in 2+ different exam shifts, 28 in 3+ (max 6).
+
+### Hindi-medium papers (Tesseract)
+137 of the 2019–2022 response sheets print the question text as Devanagari images. Windows OCR has no
+Hindi recogniser, so `scripts/extraction/tess.py` reads them with **Tesseract** (`hin+eng` models from
+github.com/tesseract-ocr/tessdata_best, plus Tesseract's `configs/` folder, in a `tessdata/` folder next to
+the script or `TESSDATA_DIR`; `TESSERACT_EXE` overrides the exe path). Tesseract is reliable on Devanagari
+words but drops or misreads digits, so each low-confidence number/Latin word is replaced by the Windows
+OCR word at the same position, and "र" before a number becomes "₹". Each such question gets
+`ocrConfidence` (share of confidently read words, lowest over its question and option images); only
+questions with `ocrConfidence >= 0.8` reach the app — about 4,300 recovered, ~9,700 still in the skip
+log. Fully scanned Hindi pages are always skipped.
 
 ---
 
@@ -112,4 +123,4 @@ node scripts/tag_pyq_2026.mjs   # re-run after rebuilding the bank; --report pri
 ```
 `tag_pyq_2026.mjs` (2026-11-26): GA 15061/17933 tagged (84.0%, 4384 time-sensitive), Maths 12911/14596
 (88.5%), Reasoning 12398/12739 (97.3%); 807 time-sensitive GA questions were last asked before 2025.
-Expected (2026-11-26): `{ questions: 45268, bodies: 45268, uniqueIds: 45268, papers: 485, sittings: 313, chunks: 51, imageRefs: 8685, askedTwicePlus: 415, problems: 0 }`.
+Expected (2026-11-26): `{ questions: 49385, bodies: 49385, uniqueIds: 49385, papers: 619, sittings: 343, chunks: 55, imageRefs: 9829, askedTwicePlus: 452, problems: 0 }`.

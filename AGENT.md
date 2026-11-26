@@ -19,7 +19,7 @@ Core capabilities:
 4. Authentic TCS iON–style bilingual CBT Exam Simulator with live `हिं+EN` / `हिंदी` / `EN` switcher, countdown timer, section switcher, 5-state Question Palette, and `-1/3` negative marking (`0` for CBAT/Study mode).
 5. Interactive Station Master CBAT Psycho Lab (Track/Station Memory, Sum of Odd Numbers, Spatial Shortest Route).
 6. Client-side **PDF Scorecard & Complete Answer Key** generator using `jspdf` + `jspdf-autotable` (lazy-loaded; Hindi/₹ text is drawn via canvas so it renders correctly).
-7. **Previous Year Papers (PYQ) bank** in `public/pyq/` — 45,268 unique real RRB NTPC questions (2016–2026) from 626 papers, each tagged with every exam shift it was asked in; year-wise mocks, original-paper replays, most-repeated lists and search. See [`docs/PYQ_BANK.md`](docs/PYQ_BANK.md).
+7. **Previous Year Papers (PYQ) bank** in `public/pyq/` — 49,385 unique real RRB NTPC questions (2016–2026, 29,405 English + 19,980 Hindi) from 626 papers, each tagged with every exam shift it was asked in; year-wise mocks, original-paper replays, most-repeated lists and search. See [`docs/PYQ_BANK.md`](docs/PYQ_BANK.md).
 
 ---
 
@@ -46,7 +46,7 @@ node -e "const qs = require('./src/data/questions.json'); const ids = new Set(qs
 ```
 Expected baseline (as of `2026-11-25`): `npm run build` exits 0, `npm run lint` reports `0 warnings and 0 errors`, and `questions.json` reports `{ total: 86, uniqueIds: 86, badMcq: [], badBlank: [], badHi: [] }`.
 
-PYQ bank check (as of `2026-11-26`): `node scripts/check_pyq.mjs` reports `problems: 0` with `questions: 45268, uniqueIds: 45268, sittings: 313` (see [`docs/PYQ_BANK.md`](docs/PYQ_BANK.md)).
+PYQ bank check (as of `2026-11-26`): `node scripts/check_pyq.mjs` reports `problems: 0` with `questions: 49385, uniqueIds: 49385, sittings: 343` (see [`docs/PYQ_BANK.md`](docs/PYQ_BANK.md)).
 
 ### Deployment Commands
 Pushing to `main` automatically deploys to GitHub Pages via `.github/workflows/deploy.yml`:

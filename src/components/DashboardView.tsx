@@ -158,7 +158,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
           <div>
             <h2 className="text-base font-bold text-slate-900">
-              Previous Year Papers — 45,000+ real questions (2016–2026)
+              Previous Year Papers — 49,000+ real questions (2016–2026)
             </h2>
             <p className="mt-0.5 text-xs leading-relaxed text-slate-600 sm:text-sm">
               Year-wise mocks, original shift papers, questions asked again and again, with the

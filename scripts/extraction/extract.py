@@ -7,6 +7,7 @@ import pymupdf
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import glyph
+import tess
 
 pymupdf.TOOLS.mupdf_display_errors(False)
 
@@ -25,12 +26,8 @@ def _engine():
     return _engs[lang]
 
 def hindi_ocr_available():
-    try:
-        from winrt.windows.media.ocr import OcrEngine
-        from winrt.windows.globalization import Language
-        return bool(OcrEngine.is_language_supported(Language('hi')))
-    except Exception:
-        return False
+    """Hindi OCR comes from Tesseract (Windows OCR has no Hindi recogniser)."""
+    return tess.available()
 
 STOPWORDS = set(('the of is in which a an to and what following from for are was be by that given on with as at '
                  'who find if its this select it his her not one many number').split())
@@ -68,7 +65,11 @@ async def _rec(pix):
                                                 pix.width, pix.height, BitmapAlphaMode.PREMULTIPLIED)
     r = await _engine().recognize_async(sb)
     out = []
+    words = []
     for ln in r.lines:
+        for wd in ln.words:
+            b_ = wd.bounding_rect
+            words.append((wd.text, b_.x, b_.y, b_.x + b_.width, b_.y + b_.height))
         ws = list(ln.words)
         if not ws:
             continue
@@ -76,7 +77,17 @@ async def _rec(pix):
         x1 = max(w.bounding_rect.x + w.bounding_rect.width for w in ws)
         y1 = max(w.bounding_rect.y + w.bounding_rect.height for w in ws)
         out.append((ln.text, x0, y0, x1, y1))
+    LAST_WORDS[0] = words
     return out
+
+LAST_WORDS = [[]]
+
+
+def ocr_words(pix):
+    """Windows OCR word boxes [(text, x0, y0, x1, y1)] in pixmap pixels."""
+    LAST_WORDS[0] = []
+    ocr_pix(pix)
+    return LAST_WORDS[0]
 
 OCR_TIMEOUTS = [0]
 OCR_BUSY = [None]
@@ -125,7 +136,7 @@ def ocr_pix(pix):
     if max(pix.width, pix.height) > mx:   # Windows OCR refuses images above this size: scale down
         f = (mx - 10) / max(pix.width, pix.height)
         pix = pymupdf.Pixmap(pix, int(pix.width * f), int(pix.height * f), None)
-    if OCR_LANG[0] != 'hi':
+    if True:  # Windows OCR is English-only here; Hindi images are handled by Tesseract in page_lines
         return _ocr_once(pix, 'en-US')
     # Hindi-medium paper: read with both engines; keep the Hindi reading when it is mostly Devanagari
     hi = _ocr_once(pix, 'hi')
@@ -257,6 +268,28 @@ def is_icon(page, im):
         _ICON_CACHE[key] = res
     return res
 
+def hindi_ocr_image(page, im):
+    """Image prepared for Hindi OCR: the embedded image at native resolution, greyscale, Lanczos-upscaled 3x
+    (clearly better for Tesseract than rendering the page clip). Falls back to a 3x page render."""
+    try:
+        import io
+        from PIL import Image
+        xref = im.get('xref', 0)
+        if not xref:
+            raise ValueError('inline image')
+        pix = pymupdf.Pixmap(page.parent, xref)
+        if pix.colorspace is None or pix.colorspace.n not in (1, 3) or pix.alpha:
+            pix = pymupdf.Pixmap(pymupdf.csRGB, pix) if pix.colorspace and pix.colorspace.n not in (1, 3) else pix
+            if pix.alpha:
+                pix = pymupdf.Pixmap(pix, 0)
+        img = Image.open(io.BytesIO(pix.tobytes('png'))).convert('L')
+        img = img.resize((img.width * 3, img.height * 3), Image.LANCZOS).convert('RGB')
+        buf = io.BytesIO(); img.save(buf, 'PNG')
+        return pymupdf.Pixmap(buf.getvalue())
+    except Exception:
+        x0, y0, x1, y1 = im['bbox']
+        return page.get_pixmap(matrix=pymupdf.Matrix(3, 3), clip=pymupdf.Rect(x0 - 2, y0 - 2, x1 + 2, y1 + 2))
+
 def page_lines(doc, pno, issues):
     page = doc[pno]
     W, H = page.rect.width, page.rect.height
@@ -283,12 +316,13 @@ def page_lines(doc, pno, issues):
             return [], 'blank', None
         zoom = 3.0
         pix = page.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom))
-        o = ocr_pix(pix)
+        o = tess.ocr_page_lines(pix) if OCR_LANG[0] == 'hi' else ocr_pix(pix)
         alltxt = ' '.join(t for (t, *_r) in o)
         if re.search(r'SUBSCRIPTION|ATTEMPT FREE MOCK|Mock Tests|Test Prime|Report Card', alltxt, re.I) and \
                 not re.search(r'Question\s*I[Dd]|\bAns\b', alltxt):
             return [], 'advert', None
-        lines = [dict(t=t, x0=a / zoom, y0=b_ / zoom, x1=c / zoom, y1=e / zoom, green=False, src='ocr-page')
+        lines = [dict(t=t, x0=a / zoom, y0=b_ / zoom, x1=c / zoom, y1=e / zoom, green=False, src='ocr-page',
+                      **({'conf': 0.0} if OCR_LANG[0] == 'hi' else {}))
                  for (t, a, b_, c, e) in o if a / zoom < 0.58 * W and e / zoom > max(48, 0.06 * H)]
         # option rows: find red-cross / green-tick icons in the left column, OCR each row on its own
         for (by0, by1, isgreen) in icon_bands(pix, zoom, W):
@@ -310,18 +344,39 @@ def page_lines(doc, pno, issues):
     else:
         # OCR embedded content images (question / option text rendered as images)
         imgs = page.get_image_info(xrefs=True)
-        for im in imgs:
+
+        def content_image(im):
             x0, y0, x1, y1 = im['bbox']
             w, h = x1 - x0, y1 - y0
             if (y1 <= 56 and y0 < 20) or (y0 < 0.04 * H and y1 < 0.12 * H and (x1 < 0.3 * W or x0 > 0.6 * W)):   # logos (any page size)
-                continue
+                return False
             if w <= 26 and h <= 22 and is_icon(page, im):   # red cross / green tick answer icons
-                continue
+                return False
             if w * h > 0.45 * W * H or w < 4 or h < 4:           # ads / backgrounds / specks
-                continue
-            if y0 > H - 20:
-                continue
+                return False
+            return y0 <= H - 20
+
+        imgs = [im for im in imgs if content_image(im)]
+        hindi_text = {}
+        if OCR_LANG[0] == 'hi' and imgs:
+            try:
+                pixes = [hindi_ocr_image(page, im) for im in imgs]
+                for k, words in enumerate(tess.ocr_batch_words(pixes)):
+                    raw = ' '.join(w[0] for w in words)
+                    if raw and tess.devanagari_ratio(raw) >= 0.3:
+                        hindi_text[k] = tess.merge_words(words, ocr_words(pixes[k]))
+            except Exception as e:
+                issues.append(f'page {pno+1}: Tesseract failed: {e}')
+        for k, im in enumerate(imgs):
+            x0, y0, x1, y1 = im['bbox']
+            w, h = x1 - x0, y1 - y0
             zoom = max(2.0, min(6.0, 60.0 / max(h, 1) if h < 30 else 3.0))
+            if k in hindi_text:
+                lines.append(dict(t=hindi_text[k][0], conf=hindi_text[k][1], x0=x0, y0=y0, x1=x1, y1=y1,
+                                  green=False, src='ocr-img-hi',
+                                  img=dict(xref=im.get('xref', 0), bbox=(x0, y0, x1, y1), page=pno)))
+                method = 'text+ocr'
+                continue
             try:
                 pix = page.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom), clip=pymupdf.Rect(x0 - 2, y0 - 2, x1 + 2, y1 + 2))
                 o = ocr_pix(pix)
@@ -385,7 +440,8 @@ def rows_from_lines(lines, gp):
         out.append(dict(t=txt, x0=x0, x1=x1, y0=r['y0'], y1=r['y1'], page=r['page'],
                         green=green_txt or gcount >= 6 * (gz / 1.5) ** 2, src={p['src'] for p in ps},
                         imgs=[p['img'] for p in ps if p.get('img')], optrow=any(p.get('optrow') for p in ps),
-                        letter=next((p['letter'] for p in ps if p.get('letter')), None)))
+                        letter=next((p['letter'] for p in ps if p.get('letter')), None),
+                        conf=min([p['conf'] for p in ps if p.get('conf') is not None], default=None)))
     return out
 
 # ---------------------------------------------------------------- parsing
@@ -438,6 +494,8 @@ def parse_rows(rows, numbered):
                        letters=[], map={}, passage=pre, section=section, src=set(r['src']), last=r,
                        qimgs=list(r['imgs']), oimgs=[], limgs=[], pimgs=preimgs, regions=[(r['page'], r['y0'], r['y1'])])
             pre = []; preimgs = []; pre_regions = []; mode = 'q'
+            if r.get('conf') is not None:
+                cur['conf'] = r['conf']
             continue
         if cur is None:
             if COMPREH_RE.match(t) or pre:
@@ -451,6 +509,8 @@ def parse_rows(rows, numbered):
                        qimgs=list(preimgs), oimgs=[], limgs=[], pimgs=[], regions=list(pre_regions))
             pre = []; preimgs = []; pre_regions = []; mode = 'q'
         cur['src'] |= r['src']
+        if r.get('conf') is not None:
+            cur['conf'] = min(cur.get('conf', 1.0), r['conf'])
         cur['regions'].append((r['page'], r['y0'], r['y1']))
         ma = ANS_RE.match(t)
         if ma and not numbered:
@@ -660,7 +720,7 @@ def process(path):
                           f'(probe: {pn} images, {ptoks} English tokens, common-word ratio {pratio:.2f})')
             if hindi_ocr_available():
                 OCR_LANG[0] = 'hi'; hindi_ocr = True
-                issues.append('Hindi OCR (Windows) used for this paper')
+                issues.append('Hindi OCR (Tesseract hin+eng) used for this paper')
             else:
                 issues.append('Windows Hindi OCR not installed: Devanagari image text left blank; images saved')
     rows = []
@@ -851,6 +911,7 @@ def process(path):
             'passageImages': pimg_paths,
             'sourceNote': q.get('note', ''),
             'ocrRawText': ocr_raw,
+            'ocrConfidence': round(q['conf'], 3) if q.get('conf') is not None else None,
         }
         rec.update({k: v for k, v in fmeta.items() if k != 'dateSource'})
         rec['examDateSource'] = fmeta.get('dateSource', '')

@@ -167,6 +167,14 @@ def main():
                              level=r.get('examLevel') or '', shift=r.get('shift'), time=r.get('examTime') or '',
                              lang=r.get('paperLanguage') or '', doc=r.get('documentType') or '',
                              cen=r.get('cenNumber') or '', rec=r.get('recruitmentYear'), qids=[])
+    # paper language from its questions (Hindi-medium answer sheets have no "Hindi" in the file name and no
+    # Hindi text layer, so the extraction metadata calls them English)
+    lang_votes = collections.defaultdict(collections.Counter)
+    for r in usable:
+        lang_votes[r['sourceFile']]['Hindi' if r['_hi'] else 'English'] += 1
+    for f, p in papers.items():
+        if lang_votes[f]:
+            p['lang'] = lang_votes[f].most_common(1)[0][0]
     plist = sorted(papers.values(), key=lambda p: (p['date'], str(p['shift']), p['file']))
     pidx = {p['file']: i for i, p in enumerate(plist)}
 

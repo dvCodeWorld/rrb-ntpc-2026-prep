@@ -293,7 +293,7 @@ export const PyqView: React.FC<PyqViewProps> = (props) => {
         ) : (
           <>
             <LoaderCircle className="h-8 w-8 animate-spin text-indigo-600" />
-            <p className="text-sm font-medium text-slate-600">Loading 45,000+ previous-year questions…</p>
+            <p className="text-sm font-medium text-slate-600">Loading 49,000+ previous-year questions…</p>
           </>
         )}
       </div>
@@ -938,7 +938,9 @@ const PapersPanel: React.FC<{ index: PyqIndex; busy: boolean; onStart: StartFn }
       <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs sm:p-5">
         <p className="mb-3 text-xs leading-relaxed text-slate-600">
           Attempt an exam shift exactly as it was set — same questions, same order. Unreadable
-          questions were skipped during extraction, so a paper may have slightly fewer than 100/120.
+          questions were skipped during extraction, so a paper may have fewer than 100/120. Hindi
+          versions of 2020–2022 shifts were printed as images and only include the questions whose
+          Hindi text could be read reliably.
         </p>
         <FieldLabel>Year</FieldLabel>
         <div className="flex flex-wrap gap-1.5">

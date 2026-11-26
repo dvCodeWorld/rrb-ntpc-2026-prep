@@ -7,7 +7,7 @@ pdfs = sorted(f for f in os.listdir(pdf_dir) if f.lower().endswith('.pdf'))
 ORDER = ['examTag', 'question', 'options', 'correctAnswer', 'explanation', 'questionHi', 'optionsHi',
          'correctAnswerHi', 'explanationHi', 'sourceFile', 'pageNumber', 'questionNumber', 'validation',
          # extra metadata
-         'hasImage', 'questionImages', 'optionImages', 'passageImages', 'sourceNote', 'ocrRawText',
+         'hasImage', 'questionImages', 'optionImages', 'passageImages', 'sourceNote', 'ocrRawText', 'ocrConfidence',
          'language', 'correctOptionNumber', 'section', 'passage', 'extractionMethod',
          'examName', 'examStage', 'examLevel', 'payLevel', 'subject', 'examDate', 'examYear', 'examDateSource',
          'examTime', 'shift', 'recruitmentYear', 'cenNumber', 'documentType', 'paperLanguage', 'sourceTotalPages']
@@ -16,6 +16,7 @@ STOP = set(('the of is in which a an to and what following from for are was be b
             'find if its this select it his her not one many number how when where most first has have can will '
             'all some no only these those their they were been between into among than then also each other').split())
 PLACEHOLDER = '[IMAGE: no OCR text]'
+HINDI_OCR_MIN_CONF = 0.8
 
 def unreadable_english(t):
     """OCR garbage test for English text: real sentences contain common words and few stray symbols."""
@@ -36,6 +37,9 @@ def skip_reasons(x):
     oimgs = x.get('optionImages') or []
     if 'Hindi text printed as image could not be OCR-read' in v:
         why.append('Hindi text printed as image (not machine-readable here)')
+    conf = x.get('ocrConfidence')
+    if conf is not None and conf < HINDI_OCR_MIN_CONF:
+        why.append(f'Hindi OCR not confident enough (ocrConfidence < {HINDI_OCR_MIN_CONF})')
     if not q.replace(PLACEHOLDER, '').strip() and not x.get('questionImages'):
         why.append('question text missing')
     elif not q.replace(PLACEHOLDER, '').strip():
@@ -236,11 +240,12 @@ for s in [
     'could not be read from the scan, options hold those letters and the record is flagged.',
     'Hindi-medium response sheets (2019-2022) print the question and many options as Devanagari images. They are '
     'detected by reading 15 question images with the English OCR engine (real English gives many common English words, '
-    'Devanagari gives almost none). Windows on this PC has no Hindi OCR, so for these papers the Hindi question/option text '
-    'is left blank (not guessed), numeric/symbol options (e.g. "24", "3/4") are kept, the correct option number is still '
-    'taken from the green tick (correctOptionNumber), every question/option image is saved, and the English OCR attempt is '
-    'kept only for reference in ocrRawText. Installing the Windows Hindi language pack (with OCR) and re-running these '
-    'papers would fill in the Hindi text.',
+    'Devanagari gives almost none). Their images are read with Tesseract (Hindi + English models; native image, '
+    'greyscale, 3x Lanczos upscale). Tesseract is reliable on Devanagari words but drops/misreads digits, so each '
+    'low-confidence number/Latin word is replaced by the Windows OCR word at the same position, and "र" before a number is '
+    'corrected to "₹". Every Hindi-OCR question gets ocrConfidence = share of words read confidently (lowest over its '
+    'question and option images); only questions with ocrConfidence >= 0.8 go to questions.json, the rest are skipped '
+    'and logged. Fully scanned Hindi pages could not be read reliably and are always skipped.',
     'correctOptionNumber (1-4) is given whenever exactly one option is marked green, even when the option text itself is '
     'an image; use it together with optionImages.',
     'Hard-to-read questions are NOT in questions.json. A question is skipped when: its Hindi text is only in an image, '

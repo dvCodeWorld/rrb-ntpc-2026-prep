@@ -1,48 +1,48 @@
 {
- "input_records": 47577,
- "dropped_duplicate_option_text": 444,
- "usable_records": 47133,
+ "input_records": 51855,
+ "dropped_duplicate_option_text": 508,
+ "usable_records": 51347,
  "section_classifier_holdout_accuracy_pct": 98.5,
  "section_classifier_holdout_size": 2550,
- "section_inferred": 30135,
- "section_inferred_by_keyword": 1550,
+ "section_inferred": 34349,
+ "section_inferred_by_keyword": 2034,
  "section_from_paper": 16998,
- "near_duplicate_merges": 304,
- "unique_questions": 45268,
+ "near_duplicate_merges": 327,
+ "unique_questions": 49385,
  "same_text_different_answer": 16,
- "images_shipped": 7242,
- "images_mb": 33.0,
- "sittings": 313,
- "asked_in_2plus_exams": 415,
- "asked_in_3plus_exams": 29,
+ "images_shipped": 8301,
+ "images_mb": 36.6,
+ "sittings": 343,
+ "asked_in_2plus_exams": 452,
+ "asked_in_3plus_exams": 28,
  "repeat_histogram": {
-  "1": 44853,
-  "2": 386,
+  "1": 48933,
+  "2": 424,
   "3": 14,
-  "4": 8,
+  "4": 7,
   "5": 6,
   "6": 1
  },
- "papers": 485,
- "chunks": 51,
+ "papers": 619,
+ "chunks": 55,
  "by_year": {
-  "2016": 1009,
+  "2016": 1061,
   "2017": 493,
-  "2020": 490,
-  "2021": 9692,
-  "2022": 2197,
-  "2025": 20568,
+  "2020": 655,
+  "2021": 12184,
+  "2022": 3567,
+  "2025": 20606,
   "2026": 10834
  },
  "by_section": {
-  "General Awareness": 17933,
-  "Mathematics": 14596,
-  "General Intelligence & Reasoning": 12739
+  "General Awareness": 19917,
+  "Mathematics": 15853,
+  "General Intelligence & Reasoning": 13615
  },
  "by_language": {
-  "en": 29412,
-  "hi": 15856
+  "en": 29405,
+  "hi": 19980
  },
- "index_kb": 2514,
- "chunks_mb": 18.4
+ "index_kb": 2771,
+ "chunks_mb": 20.3
 }

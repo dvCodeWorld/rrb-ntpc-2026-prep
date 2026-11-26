@@ -7,6 +7,7 @@ A responsive, bilingual (**Hindi + English**), local-first React + TypeScript + 
 
 ## Features
 - **Previous Year Papers (PYQ) — 45,268 real questions (2016–2026):** every question appears once and shows each exam shift it was asked in (e.g. `CBT-1 · 11 Jan 2021 · Shift 2`). Year / stage / level / section / language mock builder, full CBT-1 & CBT-2 PYQ mocks with official section ratios, replay of original shift papers, **Most Repeated** questions (asked in 2+ exams), and full-text search in English & Hindi. Data in `public/pyq/` is loaded on demand ([`docs/PYQ_BANK.md`](docs/PYQ_BANK.md)).
+- **2026 syllabus mode:** PYQ mocks start from the latest (2025–26) papers and hide old current-affairs questions whose answers may have changed; filter PYQs by 2026 syllabus topic; and take a **Station Master CEN 08/2026** mock (100 Qs, 120 min: Basic Science & Maths, Data Analysis & Interpretation, Logical Capability, Mental Reasoning).
 - **Bilingual Exam Interface (`हिं + EN` / `हिंदी` / `EN`):** Switch languages anytime in the navbar or mid-exam without losing selected answers.
 - **Official 2026 Syllabus Categorization:** General Awareness, Mathematics, General Intelligence & Reasoning, and Station Master CBAT across 45 official sub-categories.
 - **Weighted Mock Generators:** CBT-1 (`40:30:30`, `-1/3` negative marking), CBT-2 (`50:35:35`, `-1/3` negative marking), Station Master CBAT Battery (`0` negative marking), and Custom Topic Drill Builder.

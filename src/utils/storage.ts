@@ -15,6 +15,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   targetExam: 'Station Master',
   prioritizeUnseen: true,
   language: 'both',
+  syllabus2026Mode: true,
 };
 
 const DEFAULT_STORE: ProgressStore = {

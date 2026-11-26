@@ -7,6 +7,7 @@ import {
   Eye,
   EyeOff,
   FileText,
+  GraduationCap,
   Layers,
   LoaderCircle,
   PlayCircle,
@@ -15,22 +16,30 @@ import {
   Search,
   Sparkles,
   Timer,
+  TriangleAlert,
 } from 'lucide-react';
 import type { ExamCategory, ExamLanguage, Question, TestConfig } from '../types/exam';
+import { SYLLABUS } from '../data/syllabus';
 import {
   buildPyqTestConfig,
-  DEFAULT_PYQ_FILTER,
+  CURRENT_PATTERN_FROM,
   filterPyq,
   formatExamDate,
+  isOutdated,
   levelShort,
   loadPyqIndex,
   loadPyqQuestions,
   pickPyqIds,
+  pickSm2026Ids,
   PYQ_CATEGORIES,
+  recentYears,
+  SM2026_DURATION_SECONDS,
+  SM2026_SECTIONS,
   type PyqFilter,
   type PyqIndex,
   type PyqMeta,
   sittingVersions,
+  startFilter,
   startMinutes,
 } from '../utils/pyq';
 import { AskedInChips, ImageList, PassageBlock, SourceNotes } from './QuestionExtras';
@@ -40,6 +49,8 @@ interface PyqViewProps {
   bookmarkedIds: string[];
   language: ExamLanguage;
   prioritizeUnseen: boolean;
+  syllabus2026Mode: boolean;
+  onToggleSyllabus2026Mode: (on: boolean) => void;
   onStartTest: (config: TestConfig, questions: Question[]) => void;
   onToggleBookmark: (id: string) => void;
 }
@@ -162,6 +173,11 @@ const PyqQuestionCard: React.FC<{
           <span className="rounded-md bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold text-indigo-700">
             {q.category}
           </span>
+          {q.source?.topic2026 && (
+            <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600">
+              {q.source.topic2026}
+            </span>
+          )}
         </div>
         <button
           type="button"
@@ -292,6 +308,8 @@ const PyqLoaded: React.FC<PyqViewProps & { index: PyqIndex }> = ({
   bookmarkedIds,
   language,
   prioritizeUnseen,
+  syllabus2026Mode,
+  onToggleSyllabus2026Mode,
   onStartTest,
   onToggleBookmark,
 }) => {
@@ -307,13 +325,15 @@ const PyqLoaded: React.FC<PyqViewProps & { index: PyqIndex }> = ({
       rep2: index.metas.filter((m) => m.repeat >= 2).length,
       rep3: index.metas.filter((m) => m.repeat >= 3).length,
       seen: index.metas.filter((m) => seen.has(m.id)).length,
+      outdated: index.metas.filter(isOutdated).length,
     };
   }, [index, seenIds]);
+  const recent = recentYears(index);
 
   const start = (
     title: string,
     ids: string[],
-    opts: { stage: string; timed: boolean; negative: boolean; practice: boolean; paper?: boolean },
+    opts: StartOpts,
   ) => {
     if (ids.length === 0) {
       setStartError('No questions match these filters.');
@@ -372,6 +392,43 @@ const PyqLoaded: React.FC<PyqViewProps & { index: PyqIndex }> = ({
         </div>
       </section>
 
+      <section
+        className={`rounded-2xl border p-4 shadow-xs ${
+          syllabus2026Mode ? 'border-emerald-200 bg-emerald-50/60' : 'border-slate-200 bg-white'
+        }`}
+      >
+        <label className="flex cursor-pointer items-start justify-between gap-3">
+          <span className="flex items-start gap-2.5">
+            <GraduationCap
+              className={`mt-0.5 h-5 w-5 shrink-0 ${syllabus2026Mode ? 'text-emerald-600' : 'text-slate-400'}`}
+            />
+            <span>
+              <span className="block text-sm font-bold text-slate-900">2026 syllabus mode</span>
+              <span className="mt-0.5 block text-xs leading-relaxed text-slate-600">
+                {syllabus2026Mode ? (
+                  <>
+                    Mocks start from the latest papers ({recent.join(' & ') || 'n/a'}) and{' '}
+                    {stats.outdated.toLocaleString('en-IN')} current-affairs questions from before{' '}
+                    {CURRENT_PATTERN_FROM} are hidden because their answers may have changed. You can still pick
+                    older years in the filters.
+                  </>
+                ) : (
+                  <>All years {index.years[0]}–{index.years[index.years.length - 1]} are used, including old current affairs.</>
+                )}
+              </span>
+            </span>
+          </span>
+          <input
+            type="checkbox"
+            role="switch"
+            checked={syllabus2026Mode}
+            onChange={(e) => onToggleSyllabus2026Mode(e.target.checked)}
+            className="mt-1 h-5 w-5 shrink-0 accent-emerald-600"
+            aria-label="2026 syllabus mode"
+          />
+        </label>
+      </section>
+
       <nav className="grid grid-cols-2 gap-1.5 sm:flex sm:flex-wrap">
         {tabs.map((t) => {
           const Icon = t.icon;
@@ -406,6 +463,8 @@ const PyqLoaded: React.FC<PyqViewProps & { index: PyqIndex }> = ({
 
       {tab === 'mock' && (
         <MockPanel
+          key={String(syllabus2026Mode)}
+          syllabus2026Mode={syllabus2026Mode}
           index={index}
           seenIds={seenIds}
           prioritizeUnseen={prioritizeUnseen}
@@ -417,6 +476,8 @@ const PyqLoaded: React.FC<PyqViewProps & { index: PyqIndex }> = ({
       {tab === 'papers' && <PapersPanel index={index} busy={Boolean(busy)} onStart={start} />}
       {tab === 'repeated' && (
         <RepeatedPanel
+          key={String(syllabus2026Mode)}
+          syllabus2026Mode={syllabus2026Mode}
           index={index}
           bookmarkedIds={bookmarkedIds}
           busy={Boolean(busy)}
@@ -426,6 +487,8 @@ const PyqLoaded: React.FC<PyqViewProps & { index: PyqIndex }> = ({
       )}
       {tab === 'browse' && (
         <BrowsePanel
+          key={String(syllabus2026Mode)}
+          syllabus2026Mode={syllabus2026Mode}
           index={index}
           bookmarkedIds={bookmarkedIds}
           language={language}
@@ -438,11 +501,24 @@ const PyqLoaded: React.FC<PyqViewProps & { index: PyqIndex }> = ({
   );
 };
 
-type StartFn = (
-  title: string,
-  ids: string[],
-  opts: { stage: string; timed: boolean; negative: boolean; practice: boolean; paper?: boolean },
-) => void;
+interface StartOpts {
+  stage: string;
+  timed: boolean;
+  negative: boolean;
+  practice: boolean;
+  paper?: boolean;
+  durationSeconds?: number;
+}
+
+type StartFn = (title: string, ids: string[], opts: StartOpts) => void;
+
+/** 2026 sub-topics grouped by section, limited to topics that have tagged questions. */
+function topicGroups(index: PyqIndex, categories: ExamCategory[]) {
+  const available = new Set(index.topics);
+  return SYLLABUS.filter(
+    (s) => PYQ_CATEGORIES.includes(s.category) && (categories.length === 0 || categories.includes(s.category)),
+  ).map((s) => ({ category: s.category, topics: s.subCategories.filter((t) => available.has(t)) }));
+}
 
 // ------------------------------------------------------------------ shared filter controls
 const FilterControls: React.FC<{
@@ -506,13 +582,38 @@ const FilterControls: React.FC<{
           <Chip
             key={c}
             active={filter.categories.includes(c)}
-            onClick={() => onChange({ ...filter, categories: toggleIn<ExamCategory>(filter.categories, c) })}
+            onClick={() => onChange({ ...filter, categories: toggleIn<ExamCategory>(filter.categories, c), topic: '' })}
           >
             {SHORT_CAT[c]}
           </Chip>
         ))}
       </div>
     </div>
+    {index.topics.length > 0 && (
+      <div>
+        <FieldLabel>2026 syllabus topic</FieldLabel>
+        <select
+          value={filter.topic}
+          onChange={(e) => onChange({ ...filter, topic: e.target.value })}
+          className="h-10 w-full rounded-lg border border-slate-300 bg-white px-2 text-sm sm:max-w-md"
+          aria-label="2026 syllabus topic"
+        >
+          <option value="">All topics</option>
+          {topicGroups(index, filter.categories).map((g) => (
+            <optgroup key={g.category} label={g.category}>
+              {g.topics.map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+        <p className="mt-1 text-[11px] text-slate-500">
+          Topics are matched by keywords, so a few questions may sit under a neighbouring topic.
+        </p>
+      </div>
+    )}
     <div className="grid gap-4 sm:grid-cols-2">
       <div>
         <FieldLabel>Question language</FieldLabel>
@@ -550,6 +651,15 @@ const FilterControls: React.FC<{
       />
       Only clean text questions (skip ones read by OCR from scans)
     </label>
+    <label className="flex min-h-9 items-center gap-2 text-xs font-medium text-slate-700">
+      <input
+        type="checkbox"
+        checked={filter.hideOutdated}
+        onChange={(e) => onChange({ ...filter, hideOutdated: e.target.checked })}
+        className="h-4 w-4 rounded border-slate-300"
+      />
+      Hide current-affairs questions from before {CURRENT_PATTERN_FROM} (answers may have changed)
+    </label>
   </div>
 );
 
@@ -559,29 +669,66 @@ function filterTitle(f: PyqFilter): string {
   if (f.stage !== 'any') parts.push(f.stage);
   if (f.level !== 'any') parts.push(f.level === 'Undergraduate' ? 'UG' : 'Graduate');
   if (f.categories.length) parts.push(f.categories.map((c) => SHORT_CAT[c]).join(' + '));
+  if (f.topic) parts.push(f.topic);
   if (f.minRepeat > 1) parts.push(`asked ${f.minRepeat}+ times`);
   return parts.join(' · ');
 }
 
 // ------------------------------------------------------------------ Mock tests
+function langFilter(language: ExamLanguage): PyqFilter['lang'] {
+  return language === 'hi' ? 'hi' : language === 'en' ? 'en' : 'any';
+}
+
 const MockPanel: React.FC<{
   index: PyqIndex;
   seenIds: string[];
   prioritizeUnseen: boolean;
   language: ExamLanguage;
+  syllabus2026Mode: boolean;
   busy: boolean;
   onStart: StartFn;
-}> = ({ index, seenIds, prioritizeUnseen, language, busy, onStart }) => {
-  const [filter, setFilter] = useState<PyqFilter>({
-    ...DEFAULT_PYQ_FILTER,
-    lang: language === 'hi' ? 'hi' : language === 'en' ? 'en' : 'any',
-  });
+}> = ({ index, seenIds, prioritizeUnseen, language, syllabus2026Mode, busy, onStart }) => {
+  const [filter, setFilter] = useState<PyqFilter>(() => startFilter(index, syllabus2026Mode, langFilter(language)));
+  const [smNote, setSmNote] = useState<string | null>(null);
   const [count, setCount] = useState(100);
   const [mode, setMode] = useState<'exam' | 'practice'>('exam');
   const [negative, setNegative] = useState(true);
   const [official, setOfficial] = useState(true);
   const pool = useMemo(() => filterPyq(index, filter), [index, filter]);
   const latest = index.years[index.years.length - 1];
+  const recent = recentYears(index);
+  // Quick-start pool: in 2026 mode the latest papers with outdated current affairs hidden.
+  const start2026 = startFilter(index, syllabus2026Mode, filter.lang);
+  const quick: PyqFilter = {
+    ...filter,
+    years: start2026.years,
+    hideOutdated: start2026.hideOutdated,
+    stage: 'any',
+    categories: [],
+    topic: '',
+    minRepeat: 1,
+  };
+  const quickYears = syllabus2026Mode && recent.length ? ` · ${recent.join('–')} papers` : '';
+
+  const runSm2026 = () => {
+    // Station Master 2026 is topic based, so it draws from all years (minus outdated current affairs in 2026 mode).
+    const pool = filterPyq(index, { ...quick, years: [] });
+    const { ids, sections } = pickSm2026Ids(pool, seenIds, prioritizeUnseen);
+    const short = sections.filter((s) => s.got < s.want);
+    setSmNote(
+      'English Reading Comprehension is not in the PYQ bank yet, so Logical Capability uses reasoning questions only.' +
+        (short.length
+          ? ` Not enough questions for: ${short.map((s) => `${s.name} (${s.got}/${s.want})`).join(', ')}.`
+          : ''),
+    );
+    onStart(`Station Master 2026 (CEN 08) Mock (${ids.length} Qs)`, ids, {
+      stage: 'any',
+      timed: true,
+      negative: true,
+      practice: false,
+      durationSeconds: SM2026_DURATION_SECONDS,
+    });
+  };
 
   const run = (f: PyqFilter, n: number, title: string, practice = mode === 'practice') => {
     const p = filterPyq(index, f);
@@ -599,29 +746,29 @@ const MockPanel: React.FC<{
   const presets = [
     {
       label: 'Full CBT-1 mock',
-      sub: '100 Qs · 90 min · 40:30:30',
-      f: { ...filter, years: [], stage: 'CBT-1' as const, categories: [], minRepeat: 1 },
+      sub: `100 Qs · 90 min · 40:30:30${quickYears}`,
+      f: { ...quick, stage: 'CBT-1' as const },
       n: 100,
       title: 'PYQ CBT-1 Full Mock',
     },
     {
       label: 'Full CBT-2 mock',
-      sub: '120 Qs · 90 min · 50:35:35',
-      f: { ...filter, years: [], stage: 'CBT-2' as const, categories: [], minRepeat: 1 },
+      sub: `120 Qs · 90 min · 50:35:35${quickYears}`,
+      f: { ...quick, stage: 'CBT-2' as const },
       n: 120,
       title: 'PYQ CBT-2 Full Mock',
     },
     {
       label: `${latest} papers mock`,
       sub: `100 Qs from ${latest} exams`,
-      f: { ...filter, years: [latest], stage: 'any' as const, categories: [], minRepeat: 1 },
+      f: { ...quick, years: [latest] },
       n: 100,
       title: `PYQ ${latest} Mock`,
     },
     {
       label: 'Repeated questions',
       sub: 'Asked in 2+ exams',
-      f: { ...DEFAULT_PYQ_FILTER, lang: filter.lang, minRepeat: 2 },
+      f: { ...quick, years: [], minRepeat: 2 },
       n: 100,
       title: 'PYQ Repeated Questions Mock',
     },
@@ -631,6 +778,29 @@ const MockPanel: React.FC<{
     <div className="space-y-5">
       <section>
         <h2 className="mb-2 text-sm font-bold text-slate-900">Quick start</h2>
+        <button
+          type="button"
+          disabled={busy}
+          onClick={runSm2026}
+          className="mb-2 flex w-full items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/60 p-3 text-left shadow-xs transition hover:border-emerald-400 disabled:opacity-50"
+        >
+          <PlayCircle className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <span className="min-w-0">
+            <span className="block text-sm font-bold text-slate-900">
+              Station Master 2026 (CEN 08/2026) mock
+            </span>
+            <span className="block text-[11px] leading-snug text-slate-600">
+              100 Qs · 120 min · −1/3 ·{' '}
+              {SM2026_SECTIONS.map((s) => `${s.name} ${s.count}`).join(' · ')} · no GA section
+            </span>
+          </span>
+        </button>
+        {smNote && (
+          <p className="mb-2 flex items-start gap-1.5 text-[11px] leading-snug text-amber-700">
+            <TriangleAlert className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+            {smNote}
+          </p>
+        )}
         <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
           {presets.map((p) => (
             <button
@@ -855,19 +1025,25 @@ const PapersPanel: React.FC<{ index: PyqIndex; busy: boolean; onStart: StartFn }
 const RepeatedPanel: React.FC<{
   index: PyqIndex;
   bookmarkedIds: string[];
+  syllabus2026Mode: boolean;
   busy: boolean;
   onToggleBookmark: (id: string) => void;
   onStart: StartFn;
-}> = ({ index, bookmarkedIds, busy, onToggleBookmark, onStart }) => {
+}> = ({ index, bookmarkedIds, syllabus2026Mode, busy, onToggleBookmark, onStart }) => {
   const [minRepeat, setMinRepeat] = useState(2);
   const [category, setCategory] = useState<ExamCategory | 'all'>('all');
   const [page, setPage] = useState(0);
   const pool = useMemo(
     () =>
       index.metas
-        .filter((m) => m.repeat >= minRepeat && (category === 'all' || m.category === category))
+        .filter(
+          (m) =>
+            m.repeat >= minRepeat &&
+            (category === 'all' || m.category === category) &&
+            !(syllabus2026Mode && isOutdated(m)),
+        )
         .sort((a, b) => b.repeat - a.repeat || b.years[b.years.length - 1] - a.years[a.years.length - 1]),
-    [index, minRepeat, category],
+    [index, minRepeat, category, syllabus2026Mode],
   );
   const pages = Math.ceil(pool.length / PAGE_SIZE);
   const safePage = Math.min(page, Math.max(0, pages - 1));
@@ -1005,14 +1181,15 @@ const BrowsePanel: React.FC<{
   index: PyqIndex;
   bookmarkedIds: string[];
   language: ExamLanguage;
+  syllabus2026Mode: boolean;
   busy: boolean;
   onToggleBookmark: (id: string) => void;
   onStart: StartFn;
-}> = ({ index, bookmarkedIds, language, busy, onToggleBookmark, onStart }) => {
-  const [filter, setFilter] = useState<PyqFilter>({
-    ...DEFAULT_PYQ_FILTER,
-    lang: language === 'hi' ? 'hi' : language === 'en' ? 'en' : 'any',
-    years: [index.years[index.years.length - 1]],
+}> = ({ index, bookmarkedIds, language, syllabus2026Mode, busy, onToggleBookmark, onStart }) => {
+  const [filter, setFilter] = useState<PyqFilter>(() => {
+    const f = startFilter(index, syllabus2026Mode, langFilter(language));
+    // Browsing all 45k questions at once is slow to search, so outside 2026 mode start with the latest year.
+    return syllabus2026Mode ? f : { ...f, years: [index.years[index.years.length - 1]] };
   });
   const [savedOnly, setSavedOnly] = useState(false);
   const [draft, setDraft] = useState('');

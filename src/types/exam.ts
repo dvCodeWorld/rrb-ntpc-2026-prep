@@ -23,6 +23,10 @@ export interface QuestionSource {
   sectionInferred?: boolean;
   /** Note printed in the source paper (e.g. question dropped by RRB). */
   note?: string;
+  /** 2026 syllabus sub-topic guessed from keywords (approximate). */
+  topic2026?: string;
+  /** General Awareness question whose answer depends on when it was asked (office holders, events, rankings). */
+  timeSensitive?: boolean;
 }
 
 export interface Question {
@@ -141,6 +145,8 @@ export interface UserSettings {
   targetExam: ExamTag;
   prioritizeUnseen: boolean;
   language: ExamLanguage;
+  /** 2026 syllabus mode: recent papers by default, hide outdated current-affairs PYQs. */
+  syllabus2026Mode: boolean;
 }
 
 export interface ProgressStore {

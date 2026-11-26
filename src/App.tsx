@@ -227,6 +227,8 @@ export function App() {
             bookmarkedIds={store.bookmarkedIds}
             language={store.settings.language}
             prioritizeUnseen={store.settings.prioritizeUnseen}
+            syllabus2026Mode={store.settings.syllabus2026Mode}
+            onToggleSyllabus2026Mode={(on) => handleUpdateSettings({ syllabus2026Mode: on })}
             onStartTest={handleStartPyqTest}
             onToggleBookmark={handleToggleBookmark}
           />

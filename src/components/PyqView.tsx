@@ -31,7 +31,7 @@ import {
   type PyqIndex,
   type PyqMeta,
   sittingVersions,
-  startTime,
+  startMinutes,
 } from '../utils/pyq';
 import { AskedInChips, ImageList, PassageBlock, SourceNotes } from './QuestionExtras';
 
@@ -85,7 +85,7 @@ function toggleIn<T>(list: T[], v: T): T[] {
 
 /** Load question bodies for a list of ids; loading is derived from the request key (no setState in effect body). */
 function usePyqQuestions(index: PyqIndex, ids: string[]) {
-  const key = ids.join(',');
+  const key = useMemo(() => ids.join(','), [ids]);
   const [state, setState] = useState<{ key: string; questions: Question[]; error: string | null }>({
     key: '',
     questions: [],
@@ -759,7 +759,7 @@ const PapersPanel: React.FC<{ index: PyqIndex; busy: boolean; onStart: StartFn }
       index.sittings
         .map((s, i) => ({ s, i }))
         .filter(({ s }) => s.y === year && (stage === 'any' || s.s === stage))
-        .sort((a, b) => a.s.d.localeCompare(b.s.d) || startTime(a.s.t).localeCompare(startTime(b.s.t))),
+        .sort((a, b) => a.s.d.localeCompare(b.s.d) || startMinutes(a.s.t) - startMinutes(b.s.t) || (a.s.sh ?? 9) - (b.s.sh ?? 9)),
     [index, year, stage],
   );
 
@@ -1028,7 +1028,7 @@ const BrowsePanel: React.FC<{
   }, [index, filter, savedOnly, bookmarks]);
 
   // Search needs the question text, so it loads every question in the filtered pool on demand.
-  const searchIds = query ? pool.map((m) => m.id) : [];
+  const searchIds = useMemo(() => (query ? pool.map((m) => m.id) : []), [query, pool]);
   const searchState = usePyqQuestions(index, searchIds);
   const matches = useMemo(() => {
     if (!query) return [];

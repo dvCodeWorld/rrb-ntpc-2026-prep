@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="whitespace-nowrap text-sm font-bold leading-tight tracking-tight text-slate-900 sm:text-lg">
+              <span className="text-sm font-bold leading-tight tracking-tight text-slate-900 sm:text-lg xl:whitespace-nowrap">
                 RRB NTPC & SM 2026
               </span>
               <span className="hidden whitespace-nowrap rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 ring-1 ring-indigo-200 2xl:inline-block">

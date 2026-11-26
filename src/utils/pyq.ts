@@ -8,6 +8,7 @@ import type { ExamCategory, ExamTag, Question, TestConfig } from '../types/exam'
  *   index.json        exam sittings, papers (original question order) and one compact row per question
  *   c/<chunk>.json    question bodies grouped by year + section, fetched only when needed
  *   img/...           images that a question actually needs (diagrams, formulas, scans)
+ *   tags.json         2026 syllabus sub-topic + time-sensitive flag per question (scripts/tag_pyq_2026.mjs)
  */
 
 export interface PyqSitting {
@@ -49,6 +50,14 @@ interface PyqIndexRaw {
   questions: PyqRow[];
 }
 
+/** Output of scripts/tag_pyq_2026.mjs, aligned with `questions` in index.json. */
+interface PyqTagsRaw {
+  version: number;
+  topics: string[];
+  t: number[]; // topic index per question, -1 = untagged
+  ts: number[]; // row indexes of time-sensitive GA questions
+}
+
 interface PyqBody {
   id: string;
   c: number;
@@ -75,6 +84,10 @@ export interface PyqMeta {
   ocr: boolean;
   sectionInferred: boolean;
   hasExplanation: boolean;
+  /** 2026 syllabus sub-topic (keyword-based, approximate); null when no keyword matched. */
+  topic: string | null;
+  /** GA question whose answer depends on when it was asked. */
+  timeSensitive: boolean;
   sittings: number[];
   years: number[];
   stages: string[];
@@ -88,6 +101,23 @@ export interface PyqIndex {
   byId: Map<string, PyqMeta>;
   years: number[];
   chunks: string[];
+  /** 2026 sub-topics that have at least one tagged question, in syllabus order. */
+  topics: string[];
+}
+
+/**
+ * First exam year that follows the current (2026) CBT pattern. Papers from 2025 onwards are the
+ * latest NTPC cycle; older current-affairs answers may have changed since.
+ */
+export const CURRENT_PATTERN_FROM = 2025;
+
+export function recentYears(index: PyqIndex): number[] {
+  return index.years.filter((y) => y >= CURRENT_PATTERN_FROM);
+}
+
+/** Time-sensitive GA question last asked before the current pattern — its answer may be outdated. */
+export function isOutdated(m: PyqMeta): boolean {
+  return m.timeSensitive && (m.years[m.years.length - 1] ?? 0) < CURRENT_PATTERN_FROM;
 }
 
 export const PYQ_CATEGORIES: ExamCategory[] = [
@@ -148,9 +178,11 @@ export function sittingLabel(s: PyqSitting): string {
 let indexPromise: Promise<PyqIndex> | null = null;
 const chunkCache = new Map<number, Promise<Map<string, PyqBody>>>();
 
-function buildIndex(raw: PyqIndexRaw): PyqIndex {
+function buildIndex(raw: PyqIndexRaw, tags: PyqTagsRaw | null): PyqIndex {
   const yearSet = new Set<number>();
-  const metas: PyqMeta[] = raw.questions.map((row) => {
+  const tagsOk = tags !== null && tags.t.length === raw.questions.length;
+  const timeSensitive = new Set(tagsOk ? tags.ts : []);
+  const metas: PyqMeta[] = raw.questions.map((row, i) => {
     const [id, chunk, cat, lang, repeat, flags, paperIdx] = row;
     const sittings = Array.from(new Set(paperIdx.map((p) => raw.papers[p].si)));
     const years = Array.from(
@@ -167,6 +199,8 @@ function buildIndex(raw: PyqIndexRaw): PyqIndex {
       ocr: Boolean(flags & 2),
       sectionInferred: Boolean(flags & 4),
       hasExplanation: Boolean(flags & 8),
+      topic: tagsOk && tags.t[i] >= 0 ? (tags.topics[tags.t[i]] ?? null) : null,
+      timeSensitive: timeSensitive.has(i),
       sittings,
       years,
       stages: Array.from(new Set(sittings.map((s) => raw.sittings[s].s).filter(Boolean))),
@@ -180,17 +214,22 @@ function buildIndex(raw: PyqIndexRaw): PyqIndex {
     byId: new Map(metas.map((m) => [m.id, m])),
     years: Array.from(yearSet).sort(),
     chunks: raw.chunks,
+    topics: tagsOk ? tags.topics.filter((t) => metas.some((m) => m.topic === t)) : [],
   };
 }
 
 export function loadPyqIndex(): Promise<PyqIndex> {
   if (!indexPromise) {
-    indexPromise = fetch(pyqUrl('index.json'))
-      .then((res) => {
-        if (!res.ok) throw new Error(`Could not load the question index (HTTP ${res.status}).`);
-        return res.json() as Promise<PyqIndexRaw>;
-      })
-      .then(buildIndex)
+    const raw = fetch(pyqUrl('index.json')).then((res) => {
+      if (!res.ok) throw new Error(`Could not load the question index (HTTP ${res.status}).`);
+      return res.json() as Promise<PyqIndexRaw>;
+    });
+    // Tags are optional: without them the bank still works, just without 2026 topics / outdated flags.
+    const tags = fetch(pyqUrl('tags.json'))
+      .then((res) => (res.ok ? (res.json() as Promise<PyqTagsRaw>) : null))
+      .catch(() => null);
+    indexPromise = Promise.all([raw, tags])
+      .then(([r, t]) => buildIndex(r, t))
       .catch((err: unknown) => {
         indexPromise = null; // allow retry
         throw err;
@@ -234,7 +273,7 @@ function toQuestion(body: PyqBody, meta: PyqMeta, index: PyqIndex): Question {
     id: body.id,
     type: 'mcq',
     category: meta.category,
-    subCategory: `Previous Year (${meta.years.join(', ') || 'n/a'})`,
+    subCategory: meta.topic ?? `Previous Year (${meta.years.join(', ') || 'n/a'})`,
     examTag: stages,
     question: text,
     options: body.o,
@@ -251,6 +290,8 @@ function toQuestion(body: PyqBody, meta: PyqMeta, index: PyqIndex): Question {
       ...(meta.ocr ? { ocr: true } : {}),
       ...(meta.sectionInferred ? { sectionInferred: true } : {}),
       ...(body.n ? { note: body.n } : {}),
+      ...(meta.topic ? { topic2026: meta.topic } : {}),
+      ...(meta.timeSensitive ? { timeSensitive: true } : {}),
     },
   };
 }
@@ -293,6 +334,8 @@ export interface PyqFilter {
   lang: 'any' | 'en' | 'hi';
   minRepeat: number; // 1 = all
   excludeOcr: boolean;
+  topic: string; // 2026 sub-topic, '' = all
+  hideOutdated: boolean; // drop time-sensitive GA last asked before CURRENT_PATTERN_FROM
 }
 
 export const DEFAULT_PYQ_FILTER: PyqFilter = {
@@ -303,7 +346,19 @@ export const DEFAULT_PYQ_FILTER: PyqFilter = {
   lang: 'any',
   minRepeat: 1,
   excludeOcr: false,
+  topic: '',
+  hideOutdated: false,
 };
+
+/** Starting filter: in 2026 mode, recent papers only and outdated current affairs hidden. */
+export function startFilter(index: PyqIndex, syllabus2026Mode: boolean, lang: PyqFilter['lang']): PyqFilter {
+  return {
+    ...DEFAULT_PYQ_FILTER,
+    lang,
+    years: syllabus2026Mode ? recentYears(index) : [],
+    hideOutdated: syllabus2026Mode,
+  };
+}
 
 export function filterPyq(index: PyqIndex, f: PyqFilter): PyqMeta[] {
   const years = new Set(f.years);
@@ -316,6 +371,8 @@ export function filterPyq(index: PyqIndex, f: PyqFilter): PyqMeta[] {
     if (f.lang !== 'any' && m.lang !== f.lang) return false;
     if (m.repeat < f.minRepeat) return false;
     if (f.excludeOcr && m.ocr) return false;
+    if (f.topic && m.topic !== f.topic) return false;
+    if (f.hideOutdated && isOutdated(m)) return false;
     return true;
   });
 }
@@ -388,13 +445,16 @@ export function buildPyqTestConfig(opts: {
   negative: boolean;
   practice: boolean;
   paper?: boolean;
+  /** Fixed exam duration (overrides the per-question pace). */
+  durationSeconds?: number;
 }): TestConfig {
   return {
     id: `test_${Date.now()}`,
     title: opts.title,
     mode: opts.paper ? 'pyq_paper' : opts.practice ? 'practice' : 'pyq_mock',
     durationSeconds: opts.timed
-      ? Math.max(300, opts.questionIds.length * secondsPerQuestion(opts.stage))
+      ? (opts.durationSeconds ??
+        Math.max(300, opts.questionIds.length * secondsPerQuestion(opts.stage)))
       : 0,
     negativeMarking: opts.negative ? 1 / 3 : 0,
     marksPerQuestion: 1,
@@ -416,4 +476,87 @@ export function sittingVersions(
     if (!cur || paper.q.length > cur.count) best.set(lang, { paper: p, lang, count: paper.q.length });
   }
   return Array.from(best.values()).sort((a, b) => a.lang.localeCompare(b.lang));
+}
+
+// ------------------------------------------------------------------ Station Master CEN 08/2026
+/**
+ * CEN 08/2026 Station Master single-stage CBT: 100 Qs, 120 min, −1/3.
+ * Each section draws from PYQ sub-topics (2026 tags) in priority order; later sources fill gaps.
+ * English Reading Comprehension is part of "Logical Capability" but the PYQ bank has none.
+ */
+export const SM2026_DURATION_SECONDS = 120 * 60;
+
+export const SM2026_SECTIONS: Array<{ name: string; count: number; sources: string[][] }> = [
+  {
+    name: 'Basic Science & Mathematics',
+    count: 30,
+    sources: [
+      // ~12 science + ~18 arithmetic/algebra/geometry
+      ['General Science (Physics, Chemistry, Biology - up to 10th CBSE)'],
+      [
+        'Number System', 'Simplification & BODMAS', 'Decimals & Fractions', 'LCM & HCF', 'Ratio & Proportion',
+        'Mensuration (2D & 3D)', 'Time & Work', 'Time, Speed & Distance', 'Simple & Compound Interest',
+        'Profit & Loss', 'Elementary Algebra', 'Geometry & Trigonometry',
+      ],
+    ],
+  },
+  {
+    name: 'Data Analysis & Interpretation',
+    count: 30,
+    sources: [
+      ['Data Interpretation'],
+      ['Data Sufficiency', 'Venn Diagrams'],
+      ['Elementary Statistics', 'Percentage'],
+    ],
+  },
+  {
+    name: 'Logical Capability',
+    count: 20,
+    sources: [
+      [
+        'Syllogism', 'Statement-Conclusion & Courses of Action', 'Blood Relations', 'Puzzles',
+        'Decision Making', 'Analytical Reasoning',
+      ],
+    ],
+  },
+  {
+    name: 'Mental Reasoning',
+    count: 20,
+    sources: [
+      [
+        'Analogies', 'Number & Alphabet Series', 'Coding-Decoding', 'Ranking', 'Similarities & Differences',
+        'Mathematical Operations', 'Direction & Distance', 'Jumbling',
+      ],
+    ],
+  },
+];
+
+/** Science share of the first section (the rest is maths). */
+const SM2026_SCIENCE_COUNT = 12;
+
+export function pickSm2026Ids(
+  pool: PyqMeta[],
+  seenIds: string[],
+  unseenFirst: boolean,
+): { ids: string[]; sections: Array<{ name: string; want: number; got: number }> } {
+  const seen = new Set(seenIds);
+  const used = new Set<string>();
+  const ids: string[] = [];
+  const sections = SM2026_SECTIONS.map((sec, si) => {
+    let got = 0;
+    sec.sources.forEach((topics, k) => {
+      const topicSet = new Set(topics);
+      // Section 1: cap science so maths keeps its share; every other source fills what is left.
+      const limit = si === 0 && k === 0 ? Math.min(SM2026_SCIENCE_COUNT, sec.count) : sec.count;
+      const candidates = pool.filter((x) => x.topic !== null && topicSet.has(x.topic) && !used.has(x.id));
+      for (const m of ordered(candidates, seen, unseenFirst)) {
+        if (got >= limit) break;
+        used.add(m.id);
+        ids.push(m.id);
+        got += 1;
+      }
+    });
+    return { name: sec.name, want: sec.count, got };
+  });
+  return { ids, sections };
 }

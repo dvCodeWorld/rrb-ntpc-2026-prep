@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { History, Repeat, ScanText } from 'lucide-react';
+import { History, Repeat, ScanText, TriangleAlert } from 'lucide-react';
 import type { QuestionSource } from '../types/exam';
+import { CURRENT_PATTERN_FROM as OUTDATED_BEFORE } from '../utils/pyq';
 
 /** Images that belong to a question / option / passage (diagrams, formulas, scans). Tap to open full size. */
 export const ImageList: React.FC<{
@@ -101,9 +102,17 @@ export const SourceNotes: React.FC<{ source?: QuestionSource; hasImage?: boolean
   source,
   hasImage,
 }) => {
-  if (!source || (!source.ocr && !source.note)) return null;
+  const lastYear = source?.years[source.years.length - 1] ?? 0;
+  const outdated = Boolean(source?.timeSensitive) && lastYear > 0 && lastYear < OUTDATED_BEFORE;
+  if (!source || (!source.ocr && !source.note && !outdated)) return null;
   return (
     <div className="mt-3 space-y-1">
+      {outdated && (
+        <p className="flex items-start gap-1.5 text-[11px] font-medium leading-snug text-amber-700">
+          <TriangleAlert className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+          Current-affairs question from {lastYear}: the answer was right then but may have changed by 2026.
+        </p>
+      )}
       {source.ocr && (
         <p className="flex items-start gap-1.5 text-[11px] leading-snug text-slate-500">
           <ScanText className="mt-0.5 h-3.5 w-3.5 shrink-0" />

@@ -17,6 +17,7 @@ year-wise mocks, original-paper replays and "asked again and again" revision lis
 | `index.json` (~2.5 MB, ~0.75 MB gzipped) | When the **Previous Papers** tab opens | `sittings`, `papers` (original question order) and one compact row per question |
 | `c/<year>_<ga\|math\|reas>_<n>.json` (51 chunks, ~18 MB total) | Only the chunks a test / page / search needs | Question bodies |
 | `img/<paper>/<file>` (~33 MB) | Lazily, by `<img loading="lazy">` | Only images a question needs: diagrams, formula/fraction options, scan crops |
+| `tags.json` (~150 KB) | With `index.json` (optional — the bank works without it) | 2026 sub-topic per question + time-sensitive GA rows (built by `scripts/tag_pyq_2026.mjs`) |
 | `build_report.json` | Never (docs/checks) | Numbers from the last build |
 
 ### `index.json` shape (version 2)
@@ -81,6 +82,19 @@ Current numbers: 415 questions asked in 2+ different exam shifts, 29 in 3+ (max 
   *Mock Tests* (quick starts + builder: year, stage, level, section, language, asked-2+/3+ times,
   OCR filter, count, timed/practice), *Original Papers* (replay a shift in its original order),
   *Most Repeated*, *Browse & Search* (search loads only the chunks of the filtered pool).
+- **2026 syllabus mode** (`UserSettings.syllabus2026Mode`, default on, toggle at the top of the tab):
+  quick starts and filters start from papers asked in `CURRENT_PATTERN_FROM` (2025) onwards, and
+  `hideOutdated` drops time-sensitive GA questions last asked before 2025 (their answers may have
+  changed). Users can still pick older years. *Original Papers* always replays a paper unchanged.
+  Turning the mode off restores the old behaviour (all years).
+- **2026 topic filter**: `PyqFilter.topic` filters by the `tags.json` sub-topic (names match
+  `SYLLABUS` in `src/data/syllabus.ts`). Tags are keyword based (English + Hindi), so they are
+  approximate; untagged (`-1`) does **not** mean out of syllabus, and such questions are never hidden.
+- **Station Master CEN 08/2026 mock** (`pickSm2026Ids`, `SM2026_SECTIONS`): 100 Qs / 120 min / −1/3.
+  Basic Science & Maths 30 (12 General Science + 18 maths), Data Analysis & Interpretation 30
+  (DI → Data Sufficiency / Venn → Statistics / Percentage), Logical Capability 20, Mental Reasoning 20.
+  The bank has no English Reading Comprehension, so Logical Capability uses reasoning only (the app
+  says so). The simulator groups sections by `category`, so it shows GA / Maths / Reasoning tabs.
 - PYQ questions are converted to the normal `Question` type (with optional `images`, `optionImages`,
   `passage`, `source`) and run through the existing `ExamSimulator`, `TestResultView` and PDF export.
   `App.tsx` keeps loaded PYQs in `pyqQuestions` (session only); the curated `questions.json` bank is
@@ -94,5 +108,8 @@ Current numbers: 415 questions asked in 2+ different exam shifts, 29 in 3+ (max 
 
 ```powershell
 node scripts/check_pyq.mjs
+node scripts/tag_pyq_2026.mjs   # re-run after rebuilding the bank; --report prints coverage + untagged samples
 ```
+`tag_pyq_2026.mjs` (2026-11-26): GA 15061/17933 tagged (84.0%, 4384 time-sensitive), Maths 12911/14596
+(88.5%), Reasoning 12398/12739 (97.3%); 807 time-sensitive GA questions were last asked before 2025.
 Expected (2026-11-26): `{ questions: 45268, bodies: 45268, uniqueIds: 45268, papers: 485, sittings: 313, chunks: 51, imageRefs: 8685, askedTwicePlus: 415, problems: 0 }`.

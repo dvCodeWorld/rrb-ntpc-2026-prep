@@ -47,7 +47,7 @@ App (ProgressStore in localStorage)
   - `bookmarkedIds: string[]` — User-saved question IDs.
   - `customQuestions: Question[]` — Validated user-imported questions merged over `BASE_QUESTIONS` by ID.
   - `testHistory: TestAttempt[]` — Capped at the 50 most recent attempts (`appendTestAttempt`). If the ~5 MB `localStorage` quota is hit, `saveProgressStore` drops the oldest attempts until the store fits.
-  - `settings: UserSettings` — `{ candidateName, targetExam, prioritizeUnseen, language }` (`language` defaults to `'both'`).
+  - `settings: UserSettings` — `{ candidateName, targetExam, prioritizeUnseen, language, syllabus2026Mode }` (`language` defaults to `'both'`; `syllabus2026Mode` defaults to `true` and is filled in for old stores by `loadProgressStore()`'s default merge).
 
 ### Deployment Architecture
 - `vite.config.ts` sets `base: './'` for portable static hosting.
